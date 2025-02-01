@@ -1,0 +1,18 @@
+{
+  "home": {
+    "title": "Page d'accueil",
+    "description": "Bienvenue sur la page d'accueil"
+  },
+  "projects": {
+    "title": "Page des projets",
+    "description": "Bienvenue sur la page des projets"
+  },
+  "contact": {
+    "title": "Page de contact",
+    "description": "Bienvenue sur la page de contact"
+  },
+  "skills": {
+    "title": "Page des compétences",
+    "description": "Bienvenue sur la page des compétences"
+  }
+}

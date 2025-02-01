@@ -1,0 +1,18 @@
+{
+  "home": {
+    "title": "Home Page",
+    "description": "Welcome to the home page"
+  },
+  "projects": {
+    "title": "Projects Page",
+    "description": "Welcome to the projects page"
+  },
+  "contact": {
+    "title": "Contact Page",
+    "description": "Welcome to the contact page"
+  },
+  "skills": {
+    "title": "Skills Page",
+    "description": "Welcome to the skills page"
+  }
+}
