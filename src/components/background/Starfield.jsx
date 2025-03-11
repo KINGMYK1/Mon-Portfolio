@@ -1,17 +1,17 @@
-// src/components/background/Starfield.jsx
 import React, { useRef, useEffect } from 'react';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const Starfield = () => {
   const canvasRef = useRef(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const context = canvas.getContext('2d');
 
-    // Variables et constantes
-    const STAR_COLOR = '#fff';
-    const STAR_SIZE = 3;
+    const STAR_COLOR = theme === 'dark' ? '#fff' : '#000';
+    const STAR_SIZE = 1.8 ;
     const STAR_MIN_SCALE = 0.2;
     const OVERFLOW_THRESHOLD = 50;
     const STAR_COUNT = (window.innerWidth + window.innerHeight) / 8;
@@ -24,7 +24,6 @@ const Starfield = () => {
     let touchInput = false;
     let animationFrameId;
 
-    // Génère les étoiles
     function generate() {
       for (let i = 0; i < STAR_COUNT; i++) {
         stars.push({
@@ -35,25 +34,19 @@ const Starfield = () => {
       }
     }
 
-    // Place une étoile à une position aléatoire
     function placeStar(star) {
       star.x = Math.random() * width;
       star.y = Math.random() * height;
     }
 
-    // Réinitialise l’étoile quand elle sort du cadre
     function recycleStar(star) {
       let direction = 'z';
       const vx = Math.abs(velocity.x),
             vy = Math.abs(velocity.y);
 
       if (vx > 1 || vy > 1) {
-        let axis;
-        if (vx > vy) {
-          axis = Math.random() < vx / (vx + vy) ? 'h' : 'v';
-        } else {
-          axis = Math.random() < vy / (vx + vy) ? 'v' : 'h';
-        }
+        let axis = vx > vy ? (Math.random() < vx / (vx + vy) ? 'h' : 'v')
+                          : (Math.random() < vy / (vx + vy) ? 'v' : 'h');
         direction = axis === 'h' ? (velocity.x > 0 ? 'l' : 'r') : (velocity.y > 0 ? 't' : 'b');
       }
 
@@ -77,7 +70,6 @@ const Starfield = () => {
       }
     }
 
-    // Met à jour la taille du canvas
     function resize() {
       scale = window.devicePixelRatio || 1;
       width = window.innerWidth * scale;
@@ -87,7 +79,6 @@ const Starfield = () => {
       stars.forEach(placeStar);
     }
 
-    // Met à jour la position des étoiles
     function update() {
       velocity.tx *= 0.96;
       velocity.ty *= 0.96;
@@ -101,7 +92,6 @@ const Starfield = () => {
         star.y += (star.y - height / 2) * velocity.z * star.z;
         star.z += velocity.z;
 
-        // Recycle l’étoile si elle sort des limites
         if (
           star.x < -OVERFLOW_THRESHOLD ||
           star.x > width + OVERFLOW_THRESHOLD ||
@@ -113,7 +103,6 @@ const Starfield = () => {
       });
     }
 
-    // Affiche les étoiles
     function render() {
       context.clearRect(0, 0, width, height);
       stars.forEach(star => {
@@ -133,14 +122,12 @@ const Starfield = () => {
       });
     }
 
-    // Boucle d’animation
     function step() {
       update();
       render();
       animationFrameId = requestAnimationFrame(step);
     }
 
-    // Gère le mouvement de la souris ou du toucher
     function movePointer(x, y) {
       if (typeof pointerX === 'number' && typeof pointerY === 'number') {
         const ox = x - pointerX,
@@ -152,44 +139,39 @@ const Starfield = () => {
       pointerY = y;
     }
 
-    function onMouseMove(e) {
+    const onMouseMove = (e) => {
       touchInput = false;
       movePointer(e.clientX, e.clientY);
-    }
+    };
 
-    function onTouchMove(e) {
+    const onTouchMove = (e) => {
       touchInput = true;
       movePointer(e.touches[0].clientX, e.touches[0].clientY);
       e.preventDefault();
-    }
+    };
 
-    function onMouseLeave() {
+    const onMouseLeave = () => {
       pointerX = null;
       pointerY = null;
-    }
+    };
 
-    // Initialisation
     generate();
     resize();
     step();
 
-    // Évènements
     window.addEventListener('resize', resize);
-    canvas.addEventListener('mousemove', onMouseMove);
-    canvas.addEventListener('touchmove', onTouchMove);
-    canvas.addEventListener('touchend', onMouseLeave);
-    document.addEventListener('mouseleave', onMouseLeave);
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('touchmove', onTouchMove);
+    window.addEventListener('mouseleave', onMouseLeave);
 
-    // Nettoyage lors du démontage du composant
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', resize);
-      canvas.removeEventListener('mousemove', onMouseMove);
-      canvas.removeEventListener('touchmove', onTouchMove);
-      canvas.removeEventListener('touchend', onMouseLeave);
-      document.removeEventListener('mouseleave', onMouseLeave);
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('touchmove', onTouchMove);
+      window.removeEventListener('mouseleave', onMouseLeave);
     };
-  }, []);
+  }, [theme]);
 
   return (
     <canvas
@@ -200,8 +182,8 @@ const Starfield = () => {
         left: 0,
         width: '100%',
         height: '100%',
-        zIndex: -1, // Permet d'afficher le canvas derrière tous les autres composants
-        pointerEvents: 'none' // Pour éviter d'interférer avec les interactions utilisateur
+        zIndex: 1000,
+        pointerEvents: 'none'
       }}
     />
   );

@@ -3,6 +3,8 @@
   --title-size: clamp(1.25rem, 4vw + 0.5rem, 2.5rem);
   --icon-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem);
   --menu-text-size: clamp(0.9rem, 2vw + 0.5rem, 1.2rem);
+  --menu-bg: #ffffff;
+  --header-text-color: #ffffff;
 }
 
 .header {
@@ -13,9 +15,10 @@
   width: 100%;
   position: fixed;
   top: 0;
-  background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent),
-          radial-gradient(circle at 20% 80%,  #1b2735 0%, #12141d 10%, transparent);
+  background-image: var(--header-bg);
   padding: 0 clamp(1rem, 5vw, 3rem);
+  z-index: 10;
+  color: var(--header-text-color);
 }
 
 .header-title {
@@ -30,6 +33,7 @@
   cursor: pointer;
   width: var(--icon-size);
   height: var(--icon-size);
+  color: var(--icon-color);
 }
 
 .settings-menu {
@@ -53,4 +57,64 @@
   background: none;
   border: none;
   text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+}
+
+/* Media queries pour les différentes tailles d'écran */
+@media (max-width: 1024px) {
+  .settings-option-lang {
+    transform: translate(-85px, -10px);
+  }
+
+  .settings-option-theme {
+    transform: translate(-42.5px, 32.5px);
+  }
+
+  .settings-option-robot {
+    transform: translate(-77.5px, 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .settings-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .settings-menu {
+    top: 1.5rem;
+  }
+
+  .settings-option-lang {
+    transform: translate(-60px, -7px);
+  }
+
+  .settings-option-theme {
+    transform: translate(-30px, 22px);
+  }
+
+  .settings-option-robot {
+    transform: translate(-55px, 15px);
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-option-lang {
+    transform: translate(-40px, -5px);
+  }
+
+  .settings-option-theme {
+    transform: translate(-20px, 15px);
+  }
+
+  .settings-option-robot {
+    transform: translate(-35px, 10px);
+  }
 }

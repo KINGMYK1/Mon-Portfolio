@@ -1,14 +1,24 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import Layout from './components/layout/Layout';
 import AppRoutes from './routes/AppRoutes';
-import Header from './components/layout/Header/Header';
+import Starfield from './components/background/Starfield'; // ton background animé
+import { ThemeProvider } from './contexts/ThemeContext';
+import { LanguageProvider } from './contexts/LanguageContext';
+import './styles/theme.css'; // Importer le fichier CSS des thèmes
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <AppRoutes />
+      <ThemeProvider>
+        <LanguageProvider>
+          {/* Le background animé sera en bas grâce à son z-index négatif */}
+          <Starfield />
+          <Layout>
+            <AppRoutes />
+          </Layout>
+        </LanguageProvider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }
