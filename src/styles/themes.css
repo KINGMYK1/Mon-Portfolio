@@ -1,0 +1,12 @@
+/* Exemple de thème clair */
+.light-theme {
+    --background-color: #fff;
+    --text-color: #333;
+  }
+  
+  /* Exemple de thème sombre */
+  .dark-theme {
+    --background-color: #12141d;
+    --text-color: #fff;
+  }
+  

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import './Loading.css';
 
 const Loading = () => {
   return (
@@ -6,18 +7,18 @@ const Loading = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-light dark:bg-dark flex items-center justify-center"
+      className="loading-container"
     >
-      <div className="flex flex-col items-center space-y-4">
+      <div className="loading-content">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 1 }}
-          className="w-12 h-12 border-4 border-t-transparent border-primary rounded-full"
+          className="loading-spinner"
         />
         <motion.p
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
-          className="text-gray-600 dark:text-gray-400"
+          className="loading-text"
         >
           Initialisation du portfolio...
         </motion.p>

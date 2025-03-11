@@ -1,11 +1,10 @@
-/* eslint-disable no-unused-vars */
-
 import React from 'react';
+import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer>
-      <p>&copy; 2023 Mon Portfolio. All rights reserved.</p>
+    <footer className="footer">
+      <p>© {new Date().getFullYear()} Mohamed Yehiya Koïta</p>
     </footer>
   );
 };

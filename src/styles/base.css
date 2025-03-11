@@ -1,0 +1,24 @@
+/* Reset et styles de base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  /* Masquer la navbar verticale par défaut et l'afficher en desktop */
+  .vertical-navbar {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .vertical-navbar {
+      display: block;
+    }
+  }
+  
