@@ -62,26 +62,26 @@ const Home = () => {
         <motion.p variants={textItemVariants(textDirection)}>{t('home.bio2')}</motion.p>
 
         <motion.div variants={textItemVariants(textDirection)} className="social-media">
-          <a href="https://github.com/votrePseudo" className="social-icon" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/MYK-OTAKU" className="social-icon" target="_blank" rel="noopener noreferrer">
             <AiFillGithub />
           </a>
-          <a href="mailto:email@example.com" className="social-icon">
+          <a href="mailto:mohamedyehiyakoita@gmail.com" className="social-icon">
             <AiOutlineMail />
           </a>
-          <a href="https://www.linkedin.com/in/votreProfil" className="social-icon" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/mohamed-yehiya-koita" className="social-icon" target="_blank" rel="noopener noreferrer">
             <AiOutlineLinkedin />
           </a>
-          <a href="https://www.instagram.com/votreProfil" className="social-icon" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/mohamed_yehiya_koita/" className="social-icon" target="_blank" rel="noopener noreferrer">
             <AiOutlineInstagram />
           </a>
-          <a href="https://wa.me/votreNumero" className="social-icon" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/+2120620836989" className="social-icon" target="_blank" rel="noopener noreferrer">
             <FaWhatsapp />
           </a>
         </motion.div>
 
         <motion.a
           variants={textItemVariants(textDirection)}
-          href="/CV.pdf"
+          href="/Mon-cv.pdf"
           className="btn"
           download
         >
