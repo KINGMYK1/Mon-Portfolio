@@ -1,4 +1,3 @@
-// src/components/layout/Navbar/Navbar.jsx
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
@@ -14,20 +13,39 @@ const Navbar = () => {
     `nav-circle ${isActive ? 'active' : ''}`;
 
   return (
-    <div className="vertical-nav">
-      <NavLink to="/" className={linkClasses} title="Accueil">
-        <AiOutlineHome className="nav-icon" />
-      </NavLink>
-      <NavLink to="/about" className={linkClasses} title="À propos">
-        <AiOutlineUser className="nav-icon" />
-      </NavLink>
-      <NavLink to="/projects" className={linkClasses} title="Projets">
-        <AiOutlineBook className="nav-icon" />
-      </NavLink>
-      <NavLink to="/contact" className={linkClasses} title="Contact">
-        <AiOutlineMail className="nav-icon" />
-      </NavLink>
-    </div>
+    <>
+      {/* Navbar vertical pour les écrans larges */}
+      <div className="vertical-nav">
+        <NavLink to="/" className={linkClasses} title="Accueil">
+          <AiOutlineHome className="nav-icon" />
+        </NavLink>
+        <NavLink to="/about" className={linkClasses} title="À propos">
+          <AiOutlineUser className="nav-icon" />
+        </NavLink>
+        <NavLink to="/projects" className={linkClasses} title="Projets">
+          <AiOutlineBook className="nav-icon" />
+        </NavLink>
+        <NavLink to="/contact" className={linkClasses} title="Contact">
+          <AiOutlineMail className="nav-icon" />
+        </NavLink>
+      </div>
+
+      {/* Navbar horizontal pour les petits écrans */}
+      <div className="horizontal-nav">
+        <NavLink to="/" className={linkClasses} title="Accueil">
+          <AiOutlineHome className="nav-icon" />
+        </NavLink>
+        <NavLink to="/about" className={linkClasses} title="À propos">
+          <AiOutlineUser className="nav-icon" />
+        </NavLink>
+        <NavLink to="/projects" className={linkClasses} title="Projets">
+          <AiOutlineBook className="nav-icon" />
+        </NavLink>
+        <NavLink to="/contact" className={linkClasses} title="Contact">
+          <AiOutlineMail className="nav-icon" />
+        </NavLink>
+      </div>
+    </>
   );
 };
 

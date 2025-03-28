@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 .main-container {
   display: flex;
   min-height: 100vh;
@@ -36,20 +37,66 @@
 
 @media (max-width: 768px) {
   .navbar {
-    width: 7%;
-  }
-
-  .page-content {
-    width: 80%;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar {
+    width: 0px;
     display: none;
+    
+  }
+    .footer{
+    display: none !important;  
+    }
+  .horizontal-nav{
+    display: flex;
+  }
+  .vertical-nav {
+    justify-content: space-around;
+  
+    
+    
+    padding: 0.5rem 0;
   }
 
   .page-content {
     width: 100%;
+
+    overflow-y: auto; 
+
+  }
+}
+@media (max-width: 550px) {
+  .page-content {
+    padding: 0.5rem;
+    width: 100%;
+    overflow-y: auto; 
+
+  }
+
+  .navbar {
+   display: none;
+    bottom: 0px !important ;
+
+  }
+
+  .vertical-nav {
+    position: fixed;
+    top:90% ;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    flex-direction: row;
+    justify-content: space-around;
+    /* background-color: var(--color-grey-5); */
+    background-color:   #2a2e35;
+    
+    
+    padding: 0.5rem 0;
+  }
+
+  .nav-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-icon {
+    font-size: 1.2rem;
   }
 }

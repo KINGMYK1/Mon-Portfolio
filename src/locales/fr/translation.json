@@ -1,6 +1,13 @@
 {
   "welcome": "Bienvenue",
-  "home": "Accueil",
+  "home": {
+    "title": "Page d'accueil",
+    "description": "Bienvenue sur la page d'accueil",
+    "greeting": "Bonjour, je suis",
+    "name": "Mohamed Yehiya Koïta",
+    "bio1": "Développeur Full Stack animé par la passion de créer des applications web et mobiles intuitives, sécurisées et performantes.",
+    "bio2": "Actuellement étudiant en ingénierie des applications web et mobiles à OMNIA School of Business and Technology, j’explore sans cesse de nouvelles technologies pour concevoir des solutions innovantes et évolutives."
+  },
   "projects": "Projets",
   "contact": "Contact",
   "skills": "Compétences"

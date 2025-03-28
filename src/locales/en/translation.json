@@ -1,6 +1,15 @@
 {
+  "home": {
+    "title": "Home Page",
+    "description": "Welcome to the home page",
+    "greeting": "Hello, I am",
+    "name": "Mohamed Yehiya Koïta",
+    "bio1": "A Full Stack Developer passionate about creating intuitive, secure, and high-performance web and mobile applications.",
+    "bio2": "Currently studying web and mobile application engineering at OMNIA School of Business and Technology, I continuously explore new technologies to design innovative and scalable solutions."
+  },
+  
   "welcome": "Welcome",
-  "home": "Home",
+  
   "projects": "Projects",
   "contact": "Contact",
   "skills": "Skills" 

@@ -12,33 +12,32 @@ const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const { toggleLanguage } = useLanguage();
   const t = useTranslation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef(null);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const settingsRef = useRef(null);
 
   const handleSettingsClick = (event) => {
-    event.stopPropagation(); // Empêche la propagation de l'événement
-    setIsMenuOpen(!isMenuOpen);
-    console.log(`Menu ${!isMenuOpen ? 'ouvert' : 'fermé'} par clic sur l'icône des paramètres`);
+    event.stopPropagation();
+    setIsSettingsOpen(prev => !prev);
+    console.log(`Menu paramètres ${!isSettingsOpen ? 'ouvert' : 'fermé'} par clic`);
   };
 
   const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setIsMenuOpen(false);
-      console.log('Menu fermé par clic en dehors du menu');
+    if (settingsRef.current && !settingsRef.current.contains(event.target)) {
+      setIsSettingsOpen(false);
+      console.log('Menu paramètres fermé par clic en dehors');
     }
   };
 
   useEffect(() => {
-    if (isMenuOpen) {
+    if (isSettingsOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     } else {
       document.removeEventListener('mousedown', handleClickOutside);
     }
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isMenuOpen]);
+  }, [isSettingsOpen]);
 
   const menuVariants = {
     hidden: { opacity: 0, scale: 0 },
@@ -61,13 +60,13 @@ const Header = () => {
   return (
     <header className="header fade-in">
       <div className="header-title">Mohamed Yehiya Koïta</div>
-      <div className="header-center"></div>
+
       <div className="header-settings">
         <Cog6ToothIcon onClick={handleSettingsClick} className="settings-icon" />
         <AnimatePresence>
-          {isMenuOpen && (
+          {isSettingsOpen && (
             <motion.div
-              ref={menuRef}
+              ref={settingsRef}
               initial="hidden"
               animate="visible"
               exit="exit"

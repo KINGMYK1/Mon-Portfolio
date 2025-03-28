@@ -16,3 +16,14 @@
     margin: 0;
     font-size: 0.875rem;
   }
+
+@media (max-width: 650px) {
+.footer{
+  display: none;
+  position: absolute;
+  z-index: 1;
+
+}
+
+
+}
