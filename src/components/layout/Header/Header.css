@@ -1,3 +1,4 @@
+/* Variables CSS de base */
 :root {
   --header-height: 10vh;
   --title-size: clamp(1.25rem, 4vw + 0.5rem, 2.5rem);
@@ -5,8 +6,10 @@
   --menu-text-size: clamp(0.9rem, 2vw + 0.5rem, 1.2rem);
   --menu-bg: #ffffff;
   --header-text-color: #ffffff;
+  --menu-button-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem);
 }
 
+/* Header principal */
 .header {
   display: flex;
   justify-content: space-between;
@@ -21,6 +24,7 @@
   color: var(--header-text-color);
 }
 
+/* Titre du header */
 .header-title {
   font-size: var(--title-size);
   font-weight: bold;
@@ -29,13 +33,28 @@
   transition: font-size 0.3s ease;
 }
 
+/* Bouton du menu mobile (hamburger) */
+.header-menu-button {
+  display: none;
+  cursor: pointer;
+}
 .settings-icon {
   cursor: pointer;
-  width: var(--icon-size);
-  height: var(--icon-size);
-  color: var(--icon-color);
+  width: clamp(2rem, 4vw, 3.5rem); /* Taille proportionnelle à l'écran */
+  height: clamp(2rem, 4vw, 3.5rem);
+  color: var(--icon-color); /* Couleur dépendante du thème */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Bouton du menu mobile */
+.menu-icon {
+  width: clamp(2rem, 4vw, 3rem); /* Taille proportionnelle à l'écran */
+  height: clamp(2rem, 4vw, 3rem);
+  color: var(--icon-color); /* Couleur dépendante du thème */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Menu des paramètres */
 .settings-menu {
   position: absolute;
   top: 2rem;
@@ -49,7 +68,6 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 3;
 }
-
 .settings-option {
   cursor: pointer;
   font-size: var(--menu-text-size);
@@ -61,60 +79,117 @@
   align-items: center;
   gap: 0.5rem;
   position: absolute;
+  color: var(--icon-color); /* Couleur des options dépendante du thème */
+  transition: color 0.3s ease;
 }
 
-/* Media queries pour les différentes tailles d'écran */
+/* Menu mobile */
+.mobile-menu {
+  position: absolute;
+  top: calc(var(--header-height) + 1rem);
+  right: 0;
+  background-color: var(--menu-bg);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 20;
+}
+.mobile-menu a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Adaptations responsives */
+
+/* Pour écrans moyens */
 @media (max-width: 1024px) {
   .settings-option-lang {
-    transform: translate(-85px, -10px);
+    transform: translate(-100px, -10px);
   }
-
   .settings-option-theme {
-    transform: translate(-42.5px, 32.5px);
+    transform: translate(-50px, 40px);
   }
-
   .settings-option-robot {
-    transform: translate(-77.5px, 20px);
+    transform: translate(-90px, 30px);
   }
+  .settings-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .menu-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  } 
 }
 
+/* Pour tablettes */
 @media (max-width: 768px) {
   .header-title {
     font-size: 1.5rem;
   }
-
   .settings-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
-
+  .menu-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
   .settings-menu {
     top: 1.5rem;
   }
-
   .settings-option-lang {
-    transform: translate(-60px, -7px);
-  }
-
+    transform: translate(-133px, -19px) !important;
+   
+}
   .settings-option-theme {
-    transform: translate(-30px, 22px);
-  }
+    /*transform: translate(-35px, 30px);
+    */transform: translate(-78px, 70px) !important;
 
+}
   .settings-option-robot {
-    transform: translate(-55px, 15px);
-  }
+    transform: translate(-130px, 35px) !important;
+   
+}
 }
 
+/* Pour mobiles */
 @media (max-width: 480px) {
+  .header-menu-button {
+    display: block;
+  }
+  .header-title {
+    font-size: 1.25rem;
+  }
+  .settings-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .menu-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  .settings-menu {
+    top: 1.2rem;
+  }
   .settings-option-lang {
-    transform: translate(-40px, -5px);
-  }
-
+    transform: translate(-125px, -11px) !important;
+    
+}
   .settings-option-theme {
-    transform: translate(-20px, 15px);
-  }
-
+    transform: translate(-50px, 65px) !important;
+    
+}
   .settings-option-robot {
-    transform: translate(-35px, 10px);
+    transform: translate(-105px, 38px) !important;
+    
+}
+  .mobile-menu a {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
   }
 }

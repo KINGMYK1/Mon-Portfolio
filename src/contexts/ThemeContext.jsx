@@ -4,14 +4,17 @@ import PropTypes from 'prop-types';
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('dark');
+  // Restaurer le thème depuis localStorage ou utiliser "dark" par défaut
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme); // Sauvegarder dans localStorage
   };
 
   useEffect(() => {
-    document.body.className = theme;
+    document.body.className = theme; // Appliquer la classe du thème au body
   }, [theme]);
 
   return (

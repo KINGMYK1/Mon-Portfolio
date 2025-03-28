@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Navbar from '../Navbar/Navbar';
 import './Main.css';
+import HorizontalNav from '../HorizontalNav/HorizontalNav'; // Import du nouveau composant
 
 const Main = ({ children }) => {
   return (
@@ -12,6 +13,7 @@ const Main = ({ children }) => {
       <aside className="navbar">
         <Navbar />
       </aside>
+      <HorizontalNav/>
     </div>
   );
 };
