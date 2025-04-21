@@ -1,4 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+/* eslint-disable no-unused-vars */
+
+import React, { useState, useEffect, useRef } from 'react';
 import { useTheme } from '../../../contexts/ThemeContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import useTranslation from '../../../hooks/useTranslation';
@@ -14,6 +16,9 @@ const Header = () => {
   const t = useTranslation();
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const settingsRef = useRef(null);
+  React.useEffect(() => {
+    document.body.className = theme; // Appliquer la classe du thème au body
+  }, [theme]);
 
   const handleSettingsClick = (event) => {
     event.stopPropagation();

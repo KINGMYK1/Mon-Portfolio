@@ -1,3 +1,18 @@
+:root {
+  /* Variables de couleurs */
+  --bg-color: #121212;
+  --text-color: #333;
+  --main-color: #754ef9;
+  --white-color: #fdfdfd;
+  --shadow-color: rgba(0, 0, 0, .2);
+  --nav-bg: #2a2e35;
+  
+  /* Variables de dimensions */
+  --header-height: 10vh;
+  --footer-height: 5vh;
+  --navbar-width: 80px;
+  --horizontal-nav-height: 60px;
+}
 .footer {
     position: fixed;
     bottom: 0;

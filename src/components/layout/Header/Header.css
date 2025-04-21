@@ -40,16 +40,16 @@
 }
 .settings-icon {
   cursor: pointer;
-  width: clamp(2rem, 4vw, 3.5rem); /* Taille proportionnelle à l'écran */
-  height: clamp(2rem, 4vw, 3.5rem);
+  width: clamp(2rem, 4vw, 2.8rem); /* Taille proportionnelle à l'écran */
+  height: clamp(2rem, 4vw, 2.8rem);
   color: var(--icon-color); /* Couleur dépendante du thème */
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 /* Bouton du menu mobile */
 .menu-icon {
-  width: clamp(2rem, 4vw, 3rem); /* Taille proportionnelle à l'écran */
-  height: clamp(2rem, 4vw, 3rem);
+  width: clamp(2rem, 2.8vw, 2rem); /* Taille proportionnelle à l'écran */
+  height: clamp(2rem, 2.8vw, 2rem);
   color: var(--icon-color); /* Couleur dépendante du thème */
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -116,28 +116,31 @@
   .settings-option-robot {
     transform: translate(-90px, 30px);
   }
+  .header-title {
+    font-size: 1.5rem; /* Taille cohérente pour les écrans moyens */
+  }
   .settings-icon {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
   .menu-icon {
     width: 2.5rem;
     height: 2.5rem;
-  } 
+  }
 }
 
 /* Pour tablettes */
 @media (max-width: 768px) {
   .header-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem; /* Taille cohérente pour les tablettes */
   }
   .settings-icon {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 2rem;
+    height: 2rem;
   }
   .menu-icon {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
   }
   .settings-menu {
     top: 1.5rem;
@@ -163,15 +166,15 @@
     display: block;
   }
   .header-title {
-    font-size: 1.25rem;
+    font-size: 1rem; /* Taille cohérente pour les mobiles */
   }
   .settings-icon {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 1.8rem;
+    height: 1.8rem;
   }
   .menu-icon {
-    width: 3rem;
-    height: 3rem;
+    width: 1.8rem;
+    height: 1.8rem;
   }
   .settings-menu {
     top: 1.2rem;

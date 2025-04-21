@@ -7,7 +7,15 @@
     "bio1": "A Full Stack Developer passionate about creating intuitive, secure, and high-performance web and mobile applications.",
     "bio2": "Currently studying web and mobile application engineering at OMNIA School of Business and Technology, I continuously explore new technologies to design innovative and scalable solutions."
   },
-  
+  "about": {
+    "title": "About Me",
+    "education": "Education",
+    "skills": "Skills"
+  },
+  "education": {
+    "licence": "Bachelor in Web and Mobile Application Engineering",
+    "technician": "Specialized Technician in Software Development"
+  },
   "welcome": "Welcome",
   
   "projects": "Projects",

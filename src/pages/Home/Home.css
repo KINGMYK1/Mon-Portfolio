@@ -18,7 +18,7 @@
   --white-color: #fdfdfd;
   --shadow-color: rgba(0, 0, 0, .2);
   --header-height: 10vh; /* Hauteur du header */
-  --footer-height: 10vh; /* Hauteur du footer */
+  --footer-height: 5vh; /* Hauteur du footer */
 }
 
 *::selection {
@@ -48,7 +48,9 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  height: calc(100vh - var(--header-height) - var(--footer-height)); /* Ajuster la hauteur */
+  height: 100%;
+  /* z-index: 2222; */
+    height: calc(100vh - var(--header-height) - var(--footer-height));
   padding: 7rem 7% 2rem;
 }
 
@@ -218,7 +220,7 @@ body {
   z-index:3;
   position: absolute;
   bottom: 0;
-  right: -30px;
+  right: 0px;
   pointer-events: none;
   max-width: 480px;
   max-height: 100%;
@@ -243,7 +245,7 @@ span {
   }
 
   .home-img img {
-    right: -50px;
+    right: 0px;
   }
 }
 
@@ -262,7 +264,7 @@ span {
 
   .home-img img {
     max-width: 400px;
-    right: -150px !important;
+    right: 0px !important;
 
   } 
 }
@@ -272,7 +274,7 @@ span {
     width: 100vw;
   }
   .home-img img {
-    right: -70px ;
+    right: 0px ;
 }
   /* .home .profession-container .profession-box {
     position: absolute;
@@ -308,19 +310,12 @@ span {
     /* background: linear-gradient(to right, transparent,var(--proffession-container-bg), transparent); Dégradé linéaire */
     
   }
+  .home-img  img {
+    right: 16% !important ;
+    z-index : 0;
+}
   
-  .home-img img {
-    /* display: none; */
-    max-width: 300px;
-    justify-content :center ;
-    /* align-items:center; */
-    align-items: center;
-    position: static;
-    right: 250px !important;
-    top:222px !important;
-    z-index : -1 ;
-
-  }
+  
 }
 @media (max-width: 860px) {
   .home-img img {
@@ -425,8 +420,9 @@ span {
     text-align: center;
     padding: 1rem;
     height: auto; /* Permet au contenu de s'étendre */
-    overflow-y: auto; /* Permet le défilement vertical */
+    /* overflow-y: auto; Permet le défilement vertical */
   }
+
 
   .home-content {
     margin-bottom: 2rem;
@@ -505,7 +501,7 @@ span {
     flex-direction: column;
     align-items: center;
     height: auto; /* Permet au contenu de s'étendre */
-    overflow-y: auto; /* Permet le défilement vertical */
+    /* overflow-y: auto; */
   }
 
   .home-content h3 {

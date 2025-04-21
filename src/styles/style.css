@@ -330,7 +330,7 @@ span {
 }
 
 .services {
-    min-height: auto;
+    /* min-height: auto; */
     padding-bottom: 10rem;
 }
 
@@ -939,3 +939,17 @@ span {
 img {
     border-radius: 20px;
 }
+
+
+
+/* Classes utilitaires pour la gestion du scroll */
+.scroll-enabled {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - var(--header-height));
+  }
+  
+  .scroll-disabled {
+    overflow: hidden;
+    height: 100vh;
+  }

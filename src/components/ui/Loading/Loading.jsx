@@ -20,7 +20,7 @@ const Loading = () => {
           transition={{ repeat: Infinity, duration: 1.5 }}
           className="loading-text"
         >
-          Initialisation du portfolio...
+          Loading du portfolio...
         </motion.p>
       </div>
     </motion.div>

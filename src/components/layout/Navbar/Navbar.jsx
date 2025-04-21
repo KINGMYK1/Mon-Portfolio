@@ -1,7 +1,10 @@
+/* eslint-disable no-unused-vars */
+
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import {
+
   AiOutlineHome,
   AiOutlineUser,
   AiOutlineBook,
@@ -19,7 +22,7 @@ const Navbar = () => {
         <NavLink to="/" className={linkClasses} title="Accueil">
           <AiOutlineHome className="nav-icon" />
         </NavLink>
-        <NavLink to="/about" className={linkClasses} title="À propos">
+        <NavLink to="/AboutMe" className={linkClasses} title="AboutMe ">
           <AiOutlineUser className="nav-icon" />
         </NavLink>
         <NavLink to="/projects" className={linkClasses} title="Projets">
@@ -30,12 +33,12 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-      {/* Navbar horizontal pour les petits écrans */}
+      {/* Navbar horizontal pour les petits écrans
       <div className="horizontal-nav">
         <NavLink to="/" className={linkClasses} title="Accueil">
           <AiOutlineHome className="nav-icon" />
         </NavLink>
-        <NavLink to="/about" className={linkClasses} title="À propos">
+        <NavLink to="/AboutMe" className={linkClasses} title="AboutMe">
           <AiOutlineUser className="nav-icon" />
         </NavLink>
         <NavLink to="/projects" className={linkClasses} title="Projets">
@@ -44,7 +47,7 @@ const Navbar = () => {
         <NavLink to="/contact" className={linkClasses} title="Contact">
           <AiOutlineMail className="nav-icon" />
         </NavLink>
-      </div>
+      </div> */}
     </>
   );
 };
