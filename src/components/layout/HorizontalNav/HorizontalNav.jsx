@@ -17,7 +17,7 @@ const HorizontalNav = () => {
       <NavLink to="/" className={linkClasses} title="Accueil">
         <AiOutlineHome className="nav-icon" />
       </NavLink>
-      <NavLink to="/about" className={linkClasses} title="À propos">
+      <NavLink to="/AboutMe" className={linkClasses} title="À propos">
         <AiOutlineUser className="nav-icon" />
       </NavLink>
       <NavLink to="/projects" className={linkClasses} title="Projets">

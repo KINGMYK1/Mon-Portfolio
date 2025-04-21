@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Layout from './components/layout/Layout';
@@ -7,10 +8,11 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import './styles/theme.css'; // Importer le fichier CSS des thèmes
 
+
 function App() {
   return (
     <BrowserRouter>
-      <ThemeProvider>
+      <ThemeProvider  >
         <LanguageProvider>
           {/* Le background animé sera en bas grâce à son z-index négatif */}
           <Starfield />

@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import React from 'react';
 import useTranslation from '../../hooks/useTranslation';
 import './Home.css';
@@ -41,7 +43,7 @@ const Home = () => {
   const t = useTranslation();
 
   const greetingText = t('home.greeting') || "Hello, I am";
-  const nameText = t('home.name') || "Your Name";
+  const nameText = t('home.name') || "Mohamed Yehiya Koiïta";
 
   const isMobile = window.innerWidth <= 768;
   const textDirection = isMobile ? 'top' : 'left';
@@ -90,7 +92,7 @@ const Home = () => {
       </motion.div>
 
       <motion.div variants={imageVariants} className="home-img">
-        <img src="/Profil.png" alt="Home" loading="eager" />
+        <img src="/Profil.png" alt="Home"  loading="eager" />
       </motion.div>
 
       <div className="profession-container">

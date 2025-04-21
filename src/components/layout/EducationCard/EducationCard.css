@@ -1,0 +1,69 @@
+.education-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--card-bg); /* Couleur dépendante du thème */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .education-card-icon {
+    font-size: 2.5rem;
+    color: var(--icon-color); /* Couleur dépendante du thème */
+    margin-right: 1rem;
+  }
+  
+  .education-card-content {
+    flex: 1;
+  }
+  
+  .education-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    color: var(--text-color); /* Couleur dépendante du thème */
+  }
+  
+  .education-card-school {
+    font-size: 1rem;
+    color: var(--link-color); /* Couleur dépendante du thème */
+    text-decoration: none;
+    margin-top: 0.5rem;
+    display: inline-block;
+  }
+  
+  .education-card-school:hover {
+    text-decoration: underline;
+  }
+  
+  .education-card-year {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-secondary-color); /* Couleur dépendante du thème */
+  }
+  
+  /* Responsivité */
+  @media (max-width: 768px) {
+    .education-card {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+  
+    .education-card-icon {
+      margin-bottom: 1rem;
+    }
+  
+    .education-card-year {
+      align-self: flex-end;
+      margin-top: 1rem;
+    }
+  }

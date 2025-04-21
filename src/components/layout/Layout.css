@@ -1,0 +1,78 @@
+/* Variables globales pour les dimensions */
+:root {
+    --header-height: 10vh;
+    --footer-height: 7vh;
+    --horizontal-nav-height: 60px;
+  }
+  
+  .layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  /* Section principale */
+  
+  
+  /* Version desktop */
+  @media (min-width: 769px) {
+    .layout-container {
+      padding-bottom: var(--footer-height);
+    }
+    
+    /* Le footer est visible */
+    .footer {
+      display: flex;
+    }
+    
+    /* La navbar horizontale est cachée */
+    .horizontal-nav {
+      display: none;
+    }
+  }
+  
+  /* Version mobile */
+  @media (max-width: 768px) {
+    .main-container {
+      /* min-height: calc(100vh - var(--header-height) - var(--horizontal-nav-height)); */
+      padding-bottom: var(--horizontal-nav-height);
+    }
+    .layout-container {
+      padding-bottom: var(--horizontal-nav-height);
+    }
+    
+    .layout-main {
+      /* min-height: calc(100vh - var(--header-height) - var(--horizontal-nav-height)); */
+    }
+    
+    /* Le  est caché */
+    .footer {
+      display: none;
+    }
+    .horizontal-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: var(--horizontal-nav-height);
+      background-color: var(--nav-bg);
+      padding: 0.5rem 0;
+      justify-content: space-around;
+      align-items: center;
+      /* z-index: 100; */
+    }
+    
+    /* La navbar horizontale est visible */
+    /* .horizontal-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: var(--horizontal-nav-height);
+      background-color: var(--color-grey-5);
+      z-index: 100;
+    } */
+  }
