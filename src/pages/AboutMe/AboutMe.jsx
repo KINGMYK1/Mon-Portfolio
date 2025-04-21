@@ -3,7 +3,7 @@ import "./AboutMe.css";
 // import Skills from "./../Skills/Skills";
 // import EducationCard from "./../../components/layout/EducationCard/EducationCard";
 import ExperienceCard from "./../../components/layout/ExperienceCard/ExperienceCard";
-import DegreeCard from "../../shared/degreeCard/DegreeCard";
+import DegreeCard from "../../components/layout/degreeCard/DegreeCard";
 import useTranslation from "../../hooks/useTranslation";
 // import { AiFillGithub, AiOutlineMail, AiOutlineLinkedin, AiOutlineInstagram  } from 'react-icons/ai';
 // import { FaWhatsapp } from 'react-icons/fa';
