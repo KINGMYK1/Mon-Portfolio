@@ -73,6 +73,8 @@
 
   .page-content {
     width: calc(100% - var(--navbar-width));
+    overflow-y:auto;
+    overflow-x:hidden
   }
 }
 

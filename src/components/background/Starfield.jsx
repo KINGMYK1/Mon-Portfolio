@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { useTheme } from '../../contexts/ThemeContext';
+import  useTheme  from '../../hooks/useTheme';
 
 const Starfield = () => {
   const canvasRef = useRef(null);

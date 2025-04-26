@@ -1,22 +1,56 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import "./ExperienceCard.css";
+import  useTheme  from "./../../../hooks/useTheme";
 
-const ExperienceCard = ({ title, companyName, duration, description, image, link }) => {
+import "./ExperienceCard.css";
+import useTranslation from './../../../hooks/useTranslation';
+
+const ExperienceCard = ({ 
+  title, 
+  companyName, 
+  duration, 
+  description, 
+  media, 
+  mediaType = "image", 
+  link 
+}) => {
   const navigate = useNavigate();
+  const t = useTranslation();
+  const { theme } = useTheme();
 
   return (
     <motion.div
-      className="experience-card"
-      style={{ backgroundImage: `url(${image})` }}
+      className={`experience-card ${theme}`}
       onClick={() => navigate(link)}
-      whileHover={{ scale: 1.0 }}
+      whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.3 }}
     >
-      {/* Informations toujours visibles (affichées par défaut) */}
+      {/* Background media (image ou vidéo) */}
+      <div className="media-container">
+        {mediaType === "video" ? (
+          <video 
+            className="background-media"
+            src={media}
+            autoPlay
+            loop
+            muted
+            playsInline
+            
+            preload="metadata"
+          />
+        ) : (
+          <img 
+            className="background-media"
+            src={media}
+            alt={title} 
+          />
+        )}
+      </div>
+      
+      {/* Informations toujours visibles */}
       <div className="experience-info">
-        <h className="experience-title">{title}</h>
+        <h3 className="experience-title">{title}</h3>
         <p className="experience-company">{companyName}</p>
         <span className="experience-duration">{duration}</span>
       </div>
@@ -27,7 +61,6 @@ const ExperienceCard = ({ title, companyName, duration, description, image, link
         initial={{ opacity: 0 }}
         whileHover={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
-        onClick={(e) => e.stopPropagation()}
       >
         <div className="overlay-content">
           <p className="experience-description">{description}</p>
@@ -38,12 +71,14 @@ const ExperienceCard = ({ title, companyName, duration, description, image, link
               navigate(link);
             }}
           >
-            En savoir plus
+            {t("experience.learnMore")}
           </button>
         </div>
       </motion.div>
     </motion.div>
   );
 };
+
+
 
 export default ExperienceCard;

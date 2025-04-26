@@ -7,10 +7,54 @@
     "bio1": "A Full Stack Developer passionate about creating intuitive, secure, and high-performance web and mobile applications.",
     "bio2": "Currently studying web and mobile application engineering at OMNIA School of Business and Technology, I continuously explore new technologies to design innovative and scalable solutions."
   },
-  "about": {
-    "title": "About Me",
-    "education": "Education",
-    "skills": "Skills"
+  
+    "about": {
+      "title": "About Me",
+      "name": "Mohamed Yehiya Koïta",
+      "jobTitle": "Full Stack Developer",
+      "education": "My Education",
+      "experience": "My Experience",
+      "present": "Present",
+      "degrees": {
+        "degree1": {
+          "title": "Bachelor's Degree in Web and Mobile Applications Engineering",
+          "school": "Omnia School of Business and Technology",
+          "schoolShort": "Omnia School Logo",
+          "description1": "Training focused on web and mobile development.",
+          "description2": "Learning modern technologies such as React, Node.js, and Laravel.",
+          "description3": "Hands-on projects to strengthen technical skills."
+        },
+        "degree2": {
+          "title": "Specialized Technician in Software Development",
+          "school": "Omnia School of Business and Technology",
+          "schoolShort": "Omnia School Logo",
+          "description1": "Training focused on the fundamentals of software development.",
+          "description2": "Learning programming languages such as Java, PHP, and MySQL.",
+          "description3": "Practical projects to build simple applications."
+        }
+      },
+      "experiences": {
+        "exp1": {
+          "title": "Full Stack Developer",
+          "company": "Freelance",
+          "description": "Created websites and mobile applications for various clients."
+        },
+        "exp2": {
+          "title": "Mobile Development Intern",
+          "company": "Digicard",
+          "description": "Developed a mobile application for internal projects."
+        },
+        "exp3": {
+          "title": "Stage en Développement Web",
+          "company": "Gouvernancia",
+          "description": "Developed and maintain a web  application for internal projects."
+        }
+      }
+    }
+  
+  ,
+  "experience": {
+    "learnMore": "Show more"
   },
   "education": {
     "licence": "Bachelor in Web and Mobile Application Engineering",

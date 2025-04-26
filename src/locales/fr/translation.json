@@ -8,15 +8,76 @@
     "bio1": "Développeur Full Stack animé par la passion de créer des applications web et mobiles intuitives, sécurisées et performantes.",
     "bio2": "Actuellement étudiant en ingénierie des applications web et mobiles à OMNIA School of Business and Technology, j’explore sans cesse de nouvelles technologies pour concevoir des solutions innovantes et évolutives."
   },
-  "about": {
-    "title": "À propos de moi",
-    "education": "Formation",
-    "skills": "Compétences"
-  }, "education": {
+  
+    "about": {
+      "title": "À propos de moi",
+      "name": "Mohamed Yehiya Koïta",
+      "jobTitle": "Développeur Full Stack",
+      "education": "Mes Formations",
+      "experience": "Mes Expériences",
+      "present": "Présent",
+      "degrees": {
+        "degree1": {
+          "title": "Licence en Ingénierie des Applications Web et Mobiles",
+          "school": "Omnia School of Business and Technology",
+          "description1": "Formation axée sur le développement web et mobile.",
+          "description2": "Apprentissage des technologies modernes comme React, Node.js, et Laravel.",
+          "description3": "Projets pratiques pour renforcer les compétences techniques."
+        },
+        "degree2": {
+          "title": "Technicien Spécialisé en Développement Informatique",
+          "school": "Omnia School of Business and Technology",
+          "description1": "Formation axée sur les bases du développement logiciel.",
+          "description2": "Apprentissage des langages comme Java, PHP, et MySQL.",
+          "description3": "Projets pratiques pour développer des applications simples."
+        }
+      },
+      "experiences": {
+        "exp1": {
+          "title": "Développeur Full Stack",
+          "company": "Freelance",
+          "description": "Création de sites web et applications mobiles pour divers clients."
+        },
+        "exp2": {
+          "title": "Stage en Développement Mobile",
+          "company": "Digicard",
+          "description": "Participation au développement d'applications Mobile pour des projets internes."
+        },
+        "exp3": {
+          "title": "Stage en Développement Web",
+          "company": "Gouvernancia",
+          "description": "Participation au développement et la maintenance d'applications web pour des projets internes."
+        }
+      }
+    },
+    "skills": {
+      "title": "Mes Compétences",
+      "react": "React",
+      "laravel": "Laravel",
+      "html": "HTML",
+      "css": "CSS",
+      "javascript": "JavaScript",
+      "php": "PHP",
+      "node.js": "Node.js",
+      "spring-boot": "Spring Boot",
+      "java": "Java",
+      "tailwind": "Tailwind",
+      "mysql": "MySQL",
+      "mongodb": "MongoDB",
+      "express": "Express",
+      "github": "Github"
+    },
+    "degree": {
+      "visitWebsite": "Visiter le site"
+    },
+    "experience": {
+      "learnMore": "En savoir plus"
+    }
+  , "education": {
     "licence": "Licence en Ingénierie des Applications Web et Mobiles",
     "technician": "Technicien Spécialisé en Développement Informatique"
   },
   "projects": "Projets",
-  "contact": "Contact",
-  "skills": "Compétences"
+  "contact": "Contact"
+ 
 }
