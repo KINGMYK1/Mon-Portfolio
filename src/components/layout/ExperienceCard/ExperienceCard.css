@@ -116,7 +116,9 @@
   }
   
   .experience-button:hover {
-    background: #00d1cc;
+    /* background: #00d1cc; */
+  background: linear-gradient(to top right, rgba(117, 78, 249, 0.6), rgba(117, 78, 249, 0.8));
+
   }
   
   @media (min-width: 768px) {
