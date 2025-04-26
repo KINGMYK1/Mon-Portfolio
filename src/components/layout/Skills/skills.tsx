@@ -95,7 +95,7 @@ const Skills = () => {
         className="skills-header"
       >
         <h2 className="section-title bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
-        {t("about.skills", "My Skills")}
+        {t("about.skills")}
          
         </h2>
         <div className="w-20 h-1 bg-indigo-600 mx-auto rounded-full mb-4"></div>
