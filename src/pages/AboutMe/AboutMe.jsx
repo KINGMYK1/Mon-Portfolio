@@ -4,8 +4,9 @@ import { motion } from 'framer-motion';
 import './AboutMe.css';
 import DegreeCard from "../../components/layout/degreeCard/DegreeCard";
 import ExperienceCard from "../../components/layout/ExperienceCard/ExperienceCard";
-import Skills from "../../components/layout/Skills/Skills";
-
+// import Skills from "../../components/layout/Skills/Skills";
+import Skills from './../../components/layout/Skills/skills';
+ 
 const AboutMe = () => {
   const t = useTranslation();
   
