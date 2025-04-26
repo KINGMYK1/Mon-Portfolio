@@ -2,10 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import "./DegreeCard.css"; // Vous pouvez créer ce fichier pour le CSS spécifique au carte
+// import useTranslationion from "../../hooks/useTranslation";
+import useTranslation from './../../../hooks/useTranslation';
 
 const DegreeCard = ({ degree, compact = true }) => {
   const imageSrc = `/${degree.logo_path}`;
   const websiteLink = degree.website_link || "https://www.osbt.ma";
+  const t = useTranslation();
 
   return (
     <motion.div 
@@ -63,7 +66,9 @@ const DegreeCard = ({ degree, compact = true }) => {
               className="degree-link"
               whileHover={{ scale: 1.05, x: 3 }}
             >
-              Visiter le site
+                                      {t("degree.visitWebsite")}
+                          
+
             </motion.a>
           </div>
         </div>
