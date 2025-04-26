@@ -1,21 +1,30 @@
 import React from "react";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import "./DegreeCard.css"; // Vous pouvez créer ce fichier pour le CSS spécifique au carte
 
-const DegreeCard = ({ degree }) => {
+const DegreeCard = ({ degree, compact = true }) => {
   const imageSrc = `/${degree.logo_path}`;
+  const websiteLink = degree.website_link || "https://www.osbt.ma";
 
   return (
-    <div className="w-[80%] mx-auto my-6 p-4 bg-white dark:bg-neutral-900 rounded-xl shadow-md transition-colors duration-300 flex flex-col md:flex-row justify-center items-center">
+    <motion.div 
+      className="degree-card"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ scale: 1.02 }}
+    >
       {degree.logo_path && (
         <motion.div
-          className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mb-4 md:mb-0 md:mr-6 flex-shrink-0"
+          className="logo-container"
           initial={{ rotateY: 90, opacity: 0 }}
           animate={{ rotateY: 0, opacity: 1 }}
-          transition={{ duration: 1.2 }}
+          transition={{ duration: 0.8 }}
+          whileHover={{ scale: 1.1, rotate: 5 }}
         >
           <img
-            className="w-full h-full object-contain rounded-full border border-gray-300 shadow-md p-2"
+            className="logo-image"
             src={imageSrc}
             alt={degree.alt_name}
           />
@@ -23,52 +32,52 @@ const DegreeCard = ({ degree }) => {
       )}
 
       <motion.div
-        className="flex-1 w-full"
-        initial={{ x: 40, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1.2 }}
+        className="degree-content"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
       >
-        <div className="flex flex-col md:flex-row justify-center items-start md:items-center bg-gradient-to-br from-purple-100/20 via-neutral-100/10 to-transparent dark:from-neutral-800 dark:via-neutral-700/10 p-4 rounded-t-xl w-full">
-          <div className="w-full md:w-4/5">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-gray-800 dark:text-white">
-              {degree.title}
-            </h2>
-            <h3 className="text-sm sm:text-md md:text-lg text-gray-600 dark:text-gray-300 mt-1">
-              {degree.subtitle}
-            </h3>
-          </div>
-          <div className="w-full md:w-1/5 mt-2 md:mt-0 text-right">
-            <h3 className="text-sm sm:text-md md:text-lg font-normal text-gray-500 dark:text-gray-400">
-              {degree.duration}
-            </h3>
-          </div>
-        </div>
-
-        <div className="p-4 rounded-b-xl border border-t-0 border-gray-200 dark:border-gray-700">
-          {degree.descriptions.map((sentence, index) => (
-            <p
-              key={index}
-              className="text-sm sm:text-md md:text-lg text-gray-700 dark:text-gray-300 mb-2"
-            >
-              {sentence}
+        <div>
+          <motion.h2 
+            className="degree-title"
+            whileHover={{ x: 5 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            {degree.title}
+          </motion.h2>
+          <h3 className="degree-subtitle">
+            {degree.subtitle}
+          </h3>
+          
+          <div className="mt-2">
+            <p className="degree-description">
+              {degree.descriptions[0]}
             </p>
-          ))}
-
-          {degree.website_link && (
-            <a
-              href={degree.website_link}
+          </div>
+          
+          <div className="mt-2">
+            <motion.a
+              href={websiteLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-4"
+              className="degree-link"
+              whileHover={{ scale: 1.05, x: 3 }}
             >
-              <div className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm sm:text-md md:text-lg font-medium px-4 py-2 rounded-md float-right">
-                Visit Website
-              </div>
-            </a>
-          )}
+              Visiter le site
+            </motion.a>
+          </div>
         </div>
       </motion.div>
-    </div>
+
+      <motion.div 
+        className="degree-duration"
+        whileHover={{ scale: 1.05 }}
+      >
+        <h3 className="duration-pill">
+          {degree.duration}
+        </h3>
+      </motion.div>
+    </motion.div>
   );
 };
 
@@ -82,6 +91,7 @@ DegreeCard.propTypes = {
     descriptions: PropTypes.arrayOf(PropTypes.string).isRequired,
     website_link: PropTypes.string,
   }).isRequired,
+  compact: PropTypes.bool
 };
 
 export default DegreeCard;

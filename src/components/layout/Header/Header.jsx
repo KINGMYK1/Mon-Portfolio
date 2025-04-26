@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import React, { useState, useEffect, useRef } from 'react';
-import { useTheme } from '../../../contexts/ThemeContext';
+import  useTheme  from '../../../hooks/useTheme';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import useTranslation from '../../../hooks/useTranslation';
 import { motion, AnimatePresence } from 'framer-motion';

@@ -2,7 +2,7 @@
 import React, { useState, createContext, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const ThemeContext = createContext();
+export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   // Restaurer le thème depuis localStorage ou utiliser "dark" par défaut
@@ -29,4 +29,4 @@ ThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export const useTheme = () => useContext(ThemeContext);
+// Removed useTheme hook to comply with Fast Refresh requirements.

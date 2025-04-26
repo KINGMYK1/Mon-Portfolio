@@ -16,6 +16,7 @@
     "@tailwindcss/vite": "^4.0.15",
     "framer-motion": "^12.4.3",
     "i18next": "^24.2.2",
+    "imagemin": "^9.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
@@ -24,8 +25,10 @@
     "react-reveal": "^1.2.2",
     "react-router-dom": "^7.1.4",
     "react-tsparticles": "^2.12.2",
+    "sharp": "^0.34.1",
     "styled-components": "^6.1.17",
-    "tsparticles": "^3.8.0"
+    "tsparticles": "^3.8.0",
+    "webp-converter": "^2.3.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
