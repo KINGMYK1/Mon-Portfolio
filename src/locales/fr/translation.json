@@ -79,7 +79,50 @@
     "licence": "Licence en Ingénierie des Applications Web et Mobiles",
     "technician": "Technicien Spécialisé en Développement Informatique"
   },
-  "projects": "Projets",
-  "contact": "Contact"
- 
+  "projects": {
+     "moreInfo": "En savoir plus",
+    "notFound": "Projet non trouvé.",
+    "title": "Mes Projets",
+    "subtitle": "Récents",
+    "description": "Une sélection de mes travaux récents mettant en valeur mes compétences et mon expertise.",
+    "project1": {
+      "title": "Application de Gestion de Restaurant (Web)",
+      "description": "Une application web pour gérer les opérations d'un restaurant, migrée d'une version desktop vers Angular et Node.js.",
+      "details": "Ce projet a été développé avec Angular et Node.js pour migrer une application desktop vers une solution web moderne."
+    },
+    "project2": {
+      "title": "Application de Gestion de Restaurant (Desktop)",
+      "description": "Une application desktop pour gérer les opérations d'un restaurant, développée avec C# et SQL Server.",
+      "details": "Ce projet a été développé avec C# et SQL Server pour offrir une solution complète de gestion de restaurant."
+    },
+    "project3": {
+      "title": "Site Vitrine pour une Pharmacie",
+      "description": "Un site vitrine simple pour une pharmacie, mettant en avant les services et les informations de contact.",
+      "details": "Ce projet a été développé pour fournir des informations essentielles et des services offerts par la pharmacie."
+      
+    },
+    "project4": {
+      "title": "Landing Page pour une École",
+      "description": "Une landing page pour une école, présentant ses programmes, ses installations et ses coordonnées.",
+      "details": "Ce projet a été développé pour fournir des informations sur les offres de l'école et ses coordonnées."
+    },
+    "project7": {
+      "title": "Site Portfolio",
+      "description": "Un site portfolio personnel pour présenter mes compétences et mes projets.",
+      "details": "Ce projet a été développé pour mettre en avant mon parcours professionnel et les projets sur lesquels j'ai travaillé."
+    },
+    "project5": {
+      "title": "Portfolio Personnel",
+      "description": "Mon portfolio personnel développé avec React, présentant mes projets et compétences.",
+      "details": "Ce portfolio a été conçu pour montrer mon parcours professionnel, mes compétences techniques et les projets sur lesquels j'ai travaillé. J'ai utilisé React pour sa flexibilité et sa performance, Framer Motion pour les animations fluides, et un design responsive pour assurer une expérience utilisateur optimale sur tous les appareils."
+    },
+    "project6": {
+      "title": "Application Météo",
+      "description": "Une application météo simple qui récupère les données météorologiques en temps réel via une API.",
+      "details":" Ce projet a été développé pour fournir aux utilisateurs des informations météorologiques actuelles et des prévisions."
+        }
+  },
+  "contact": "Contact",
+  "skills": "Mes Compétences"
+
 }

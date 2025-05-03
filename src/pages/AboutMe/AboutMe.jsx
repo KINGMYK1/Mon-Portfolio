@@ -54,7 +54,7 @@ const AboutMe = () => {
       duration: `2024 - ${t("about.present", "Présent")}`,
       media: "/portfolio1.jpg",
       mediaType: "image", 
-      link: "/projects/freelance",
+      link: "/projects/5",
     },
     {
       title: t("about.experiences.exp2.title", "Stage en Développement Mobile"),
@@ -63,7 +63,7 @@ const AboutMe = () => {
       duration: "2024",
       media: "/text.mp4",
       mediaType: "video",
-      link: "/projects/stage",
+      link: "#",
     },
         {
       title: t("about.experiences.exp3.title", "Stage en Développement Mobile"),
@@ -72,7 +72,7 @@ const AboutMe = () => {
       duration: "2024",
       media: "/portfolio2.jpg",
       mediaType: "image",
-      link: "/projects/stage",
+      link: "/projects/1",
     },
     
   ];

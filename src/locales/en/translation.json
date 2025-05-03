@@ -66,7 +66,48 @@
   },
   "welcome": "Welcome",
   
-  "projects": "Projects",
+  "projects": {
+    "moreInfo": "Learn more",
+  "notFound": "Project not found.",
+    "title": "My Projects",
+    "subtitle": "Latest",
+    "description": "A selection of my recent work showcasing my skills and expertise.",
+    "project1": {
+      "title": "Restaurant Management App (Web)",
+      "description": "A web application for managing restaurant operations, migrated from a desktop version to Angular and Node.js.",
+      "details": "This project was developed using Angular and Node.js to migrate a desktop application to a modern web solution."
+
+    },
+    "project2": {
+      "title": "Restaurant Management App (Desktop)",
+      "description": "A desktop application for managing restaurant operations, built with C# and SQL Server.",
+      "details": "This project was developed using C# and SQL Server to provide a complete restaurant management solution."
+      
+    },
+    "project3": {
+      "title": "Pharmacy Showcase Website",
+      "description": "A simple showcase website for a pharmacy, highlighting services and contact information.",
+      "details": "This project was developed to provide essential information and services offered by the pharmacy."
+      
+    },
+    "project4": {
+      "title": "School Landing Page",
+      "description": "A landing page for a school, showcasing its programs, facilities, and contact details.",
+      "details": "This project was developed to provide information about the school's offerings and contact details."
+      
+    },
+    "project5": {
+      "title": "Portfolio Website",
+      "description": "A personal portfolio website to showcase my skills and projects.",
+      "details": "This project was developed to highlight my professional journey and the projects I have worked on."
+      
+    },
+    "project6": {
+      "title": "Weather App",
+      "description": "A simple weather application that fetches real-time weather data using an API.",
+      "details": "This project was developed to provide users with current weather information and forecasts."
+    }
+  },
   "contact": "Contact",
-  "skills": "Skills" 
+  "skills": "My Skills" 
 }

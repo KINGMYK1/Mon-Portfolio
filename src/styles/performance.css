@@ -1,0 +1,14 @@
+/* Optimisations CSS pour les animations */
+.animated-element {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* Réduire les animations sur les appareils à faibles performances */
+@media (prefers-reduced-motion: reduce) {
+  .animated-element {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,365 @@
+body {
+    /* background: var(--bg-color); */
+    color: var(--text-color);
+    height: 100vh; /* Hauteur fixe pour le corps */
+    overflow: hidden; /* Empêcher le défilement */
+  }
+  html {
+    font-size: 62.5%;
+    overflow: hidden; /* Empêcher le défilement */
+  }
+  .project-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    padding: 2rem;
+    color: #f0f0f0;
+    gap: 2rem;
+    background-color: #121212;
+  }
+  
+  /* Bouton de retour */
+  .back-button-container {
+    margin-bottom: 1rem;
+  }
+  
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: #f0f0f0;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(-3px);
+  }
+  
+  .back-icon {
+    font-size: 1rem;
+  }
+  
+  /* Section supérieure - Header du projet */
+  .top-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+  }
+  
+  /* En-tête avec titre et liens */
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.3rem;
+    flex-wrap: wrap;
+  }
+  
+  .left-content {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .right-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 0.5rem;
+  }
+  
+  .project-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #00d4ff, #754ef9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    letter-spacing: -0.5px;
+    max-width: 90%;
+  }
+  
+  .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .technology-badge {
+    padding: 0.4rem 0.8rem;
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
+    color: #00d4ff;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    letter-spacing: 0.5px;
+  }
+  
+  .project-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .project-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .github-link {
+    background: #222;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+  }
+  
+  .demo-link {
+    background: linear-gradient(45deg, #00d4ff, #754ef9);
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .link-icon {
+    font-size: 1.2rem;
+  }
+  
+  /* Section du carousel et de la description - disposition horizontale sur PC */
+  .bottom-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+  
+  .carousel-section {
+    width: 100%;
+  }
+  
+  .details-section {
+    width: 100%;
+  }
+  
+  .project-description {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Carousel */
+  .carousel-wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    background-color: #0a0a0a;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    padding: 0.8rem 0;
+  }
+  
+  .carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .carousel-indicator.active {
+    background: #00d4ff;
+    box-shadow: 0 0 10px #00d4ff;
+    transform: scale(1.2);
+  }
+  
+  /* Navigation du carousel */
+  .carousel-nav-buttons {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    z-index: 5;
+  }
+  
+  .carousel-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .carousel-button:hover {
+    background: #00d4ff;
+    color: #000;
+    transform: scale(1.1);
+  }
+  
+  .project-details-info {
+    max-width: 800px;
+    padding: 1.8rem;
+    background: rgba(30, 30, 45, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+  }
+  
+  .project-details-info h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    color: #fff;
+    position: relative;
+    padding-bottom: 0.8rem;
+  }
+  
+  .project-details-info h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #00d4ff;
+  }
+  
+  .project-details-info p {
+    font-size: 1rem;
+    color: #b0b0b0;
+    line-height: 1.7;
+  }
+  
+  /* Layout horizontal sur desktop */
+  @media (min-width: 992px) {
+    .bottom-section {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 2.5rem;
+    }
+    
+    .carousel-section {
+      width: 60%;
+    }
+    
+    .details-section {
+      width: 40%;
+      padding-top: 0;
+    }
+    
+    .carousel-slide {
+      height: 450px;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .project-details {
+      padding: 1.5rem 1rem;
+    }
+    
+    .project-header {
+      flex-direction: column;
+    }
+    
+    .right-content {
+      width: 100%;
+      justify-content: flex-start;
+      margin-top: 1rem;
+    }
+    
+    .project-title {
+      font-size: 1.8rem;
+      max-width: 100%;
+    }
+    
+    .carousel-slide {
+      height: 350px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .bottom-section {
+      gap: 1.5rem;
+    }
+    
+    .project-links {
+      flex-direction: row;
+    }
+    
+    .carousel-slide {
+      height: 250px;
+    }
+    
+    .carousel-button {
+      width: 32px;
+      height: 32px;
+    }
+  }
