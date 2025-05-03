@@ -5,22 +5,20 @@
 @import './styles/base.css';
 @import './styles/themes.css';
 @import './styles/animations.css';
-@import './styles/performance.css';@import './styles/performance.css';
+@import './styles/performance.css';
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; 
  
   width: 100%;
   height: 100%;
-  color: rgba(255, 255, 255, 0.87); 0.87);
-  background-color: #242424;  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424; 
 
    
 }
 body {
   margin: 0;
-  /* Tu peux décider si tu gardes overflow hidden ou non en fonction du comportement désiré */si tu gardes overflow hidden ou non en fonction du comportement désiré */
   overflow-x: hidden;
-  font-family: sans-serif; font-family: sans-serif;
-
-}}
+  font-family: sans-serif;
+}
