@@ -1,113 +1,178 @@
 {
+  "welcome": "Welcome",
   "home": {
     "title": "Home Page",
     "description": "Welcome to the home page",
     "greeting": "Hello, I am",
     "name": "Mohamed Yehiya Koïta",
     "bio1": "A Full Stack Developer passionate about creating intuitive, secure, and high-performance web and mobile applications.",
-    "bio2": "Currently studying web and mobile application engineering at OMNIA School of Business and Technology, I continuously explore new technologies to design innovative and scalable solutions."
+    "bio2": "Currently studying Web and Mobile Application Engineering at OMNIA School of Business and Technology, I continuously explore new technologies to design innovative and scalable solutions."
   },
-  
-    "about": {
-      "title": "About Me",
-      "name": "Mohamed Yehiya Koïta",
-      "jobTitle": "Full Stack Developer",
-      "education": "My Education",
-      "experience": "My Experience",
-      "skills": "My Skills",
-      "present": "Present",
-      "degrees": {
-        "degree1": {
-          "title": "Bachelor's Degree in Web and Mobile Applications Engineering",
-          "school": "Omnia School of Business and Technology",
-          "schoolShort": "Omnia School Logo",
-          "description1": "Training focused on web and mobile development.",
-          "description2": "Learning modern technologies such as React, Node.js, and Laravel.",
-          "description3": "Hands-on projects to strengthen technical skills."
-        },
-        "degree2": {
-          "title": "Specialized Technician in Software Development",
-          "school": "Omnia School of Business and Technology",
-          "schoolShort": "Omnia School Logo",
-          "description1": "Training focused on the fundamentals of software development.",
-          "description2": "Learning programming languages such as Java, PHP, and MySQL.",
-          "description3": "Practical projects to build simple applications."
-        }
+  "about": {
+    "title": "About Me",
+    "name": "Mohamed Yehiya Koïta",
+    "jobTitle": "Full Stack Developer",
+    "education": "My Education",
+    "experience": "My Experience",
+    "skills": "My Skills",
+    "present": "Present",
+    "degrees": {
+      "degree1": {
+        "title": "Bachelor's Degree in Web and Mobile Applications Engineering",
+        "school": "Omnia School of Business and Technology",
+        "description1": "Training focused on web and mobile development.",
+        "description2": "Learning modern technologies such as React, Node.js, and Laravel.",
+        "description3": "Hands-on projects to strengthen technical skills."
       },
-      "experiences": {
-        "exp1": {
-          "title": "Full Stack Developer",
-          "company": "Freelance",
-          "description": "Created websites and mobile applications for various clients."
-        },
-        "exp2": {
-          "title": "Mobile Development Intern",
-          "company": "Digicard",
-          "description": "Developed a mobile application for internal projects."
-        },
-        "exp3": {
-          "title": "Stage en Développement Web",
-          "company": "Gouvernancia",
-          "description": "Developed and maintain a web  application for internal projects."
-        }
+      "degree2": {
+        "title": "Specialized Technician in Software Development",
+        "school": "Omnia School of Business and Technology",
+        "description1": "Training focused on software development fundamentals.",
+        "description2": "Learning programming languages such as Java, PHP, and MySQL.",
+        "description3": "Practical projects to build simple applications."
+      }
+    },
+    "experiences": {
+      "exp1": {
+        "title": "Full Stack Developer (Freelance)",
+        "company": "Freelance",
+        "period": "January 2024 – Present",
+        "description": "Completed small web and mobile projects for various clients; designed frontend components and integrated backend services."
+      },
+      "exp2": {
+        "title": "Mobile Developer Intern",
+        "company": "Digicard",
+        "period": "February 2024 – April 2024",
+        "description": "Developed an internal mobile application using Expo React Native, Node.js, and Realm, from requirements analysis to delivery."
+      },
+      "exp3": {
+        "title": "IT Intern",
+        "company": "Gouvernancia",
+        "period": "July 2023 – August 2023",
+        "description": "Enhanced and maintained internal tools, including scripting SSH session logging via Apache Guacamole."
       }
     }
-  
-  ,
+  },
+  "skills": {
+    "title": "My Skills",
+    "react": "React",
+    "laravel": "Laravel",
+    "html": "HTML",
+    "css": "CSS",
+    "javascript": "JavaScript",
+    "php": "PHP",
+    "node.js": "Node.js",
+    "spring-boot": "Spring Boot",
+    "java": "Java",
+    "tailwind": "Tailwind",
+    "mysql": "MySQL",
+    "mongodb": "MongoDB",
+    "express": "Express",
+    "github": "GitHub"
+  },
   "experience": {
-    "learnMore": "Show more"
+    "learnMore": "Show more",
+    "overview": "Overview",
+    "responsibilities": "Responsibilities",
+    "skillsUsed": "Skills Used",
+    "relatedProject": "Related Project",
+    "viewProject": "View Project",
+    "notFound": "This experience doesn't exist",
+    "freelance": {
+      "title": "Full Stack Developer",
+      "company": "Freelance",
+      "location": "Casablanca, Morocco",
+      "dateStart": "January 2024",
+      "dateEnd": "Present",
+      "description": "Small-scale freelance work and personal projects involving frontend and backend development.",
+      "details": "As a freelance developer, I worked on small web components and custom frontend features for clients, including GPT‑MA. I also pursued various personal projects to improve my skills across the full web and mobile development stack.\n\nThese experiences allowed me to deepen my understanding of component-based design, RESTful API integration, and modern development tools.",
+      "tasks": [
+        "Developed a mega dropdown menu for GPT‑MA's navigation bar",
+        "Created and maintained personal portfolio and restaurant management systems",
+        "Built responsive UI components using Angular and React",
+        "Implemented backend services with Node.js and Express",
+        "Performed local testing and deployment on platforms like Vercel and Netlify"
+      ]
+    },
+    "digicard": {
+      "title": "Mobile Developer Intern",
+      "company": "Digicard",
+      "location": "Rabat, Morocco",
+      "dateStart": "February 2024",
+      "dateEnd": "April 2024",
+      "description": "Designed and built a mobile app based on provided specifications.",
+      "details": "During my internship at Digicard, I developed a mobile application for internal use from scratch based on a provided functional specification document. The app was developed using React Native with Expo, Node.js for the backend, and Realm for local storage.\n\nThis experience helped me enhance my skills in mobile development, local data handling, and full-stack integration in a real-world context.",
+      "tasks": [
+        "Designed UI screens following design specifications",
+        "Developed mobile app using Expo and React Native",
+        "Implemented backend logic with Node.js and Express",
+        "Used Realm for local database and offline support",
+        "Handled navigation, state management, and API integration",
+        "Tested and debugged features across Android environments"
+      ]
+    },
+    "gouvernancia": {
+      "title": "IT Intern",
+      "company": "Gouvernancia",
+      "location": "Casablanca, Morocco",
+      "dateStart": "July 2023",
+      "dateEnd": "August 2023",
+      "description": "Maintained and extended internal systems with added SSH logging features.",
+      "details": "My internship at Gouvernancia involved working on existing internal tools to enhance their functionality. I was particularly focused on developing a script that records SSH sessions using Apache Guacamole.\n\nI also gained practical experience with SSH, PuTTY, and server-side configuration by installing and reconfiguring Guacamole for testing and production use.",
+      "tasks": [
+        "Added new features to existing internal applications",
+        "Developed a script to log SSH sessions using Apache Guacamole",
+        "Configured and reinstalled Guacamole for testing purposes",
+        "Used PuTTY and SSH for secure server access and testing",
+        "Documented setup processes and best practices for future use"
+      ]
+    },
+   "buttons": {
+    "back": "Back",
+    "backToExperiences": "Back to experiences"
+  }
   },
   "degree": {
-      "visitWebsite": "Visit the website"
-    },
+    "visitWebsite": "Visit the website"
+  },
   "education": {
-    "licence": "Bachelor in Web and Mobile Application Engineering",
+    "licence": "Bachelor's Degree in Web and Mobile Application Engineering",
     "technician": "Specialized Technician in Software Development"
   },
-  "welcome": "Welcome",
-  
   "projects": {
     "moreInfo": "Learn more",
-  "notFound": "Project not found.",
+    "notFound": "Project not found.",
     "title": "My Projects",
-    "subtitle": "Latest",
+    "subtitle": "Recent",
     "description": "A selection of my recent work showcasing my skills and expertise.",
     "project1": {
       "title": "Restaurant Management App (Web)",
-      "description": "A web application for managing restaurant operations, migrated from a desktop version to Angular and Node.js.",
-      "details": "This project was developed using Angular and Node.js to migrate a desktop application to a modern web solution."
-
+      "description": "A comprehensive web application for managing restaurant operations, migrated from a desktop version to a modern architecture.",
+      "details": "This web application represents the complete migration of a desktop solution to a modern and scalable architecture. Developed with Angular for the frontend and Node.js for the backend, it enables integrated management of daily restaurant operations.\n\nMain features:\n- Secure admin interface with JWT authentication\n- Real-time order management\n- Table organization and reservations\n- Complete inventory and stock management\n- Sales tracking and detailed statistics\n- Responsive interface adapted for tablet use by servers\n\nThe project required a complete architecture redesign to ensure scalability and implement an automatic update system. The MongoDB database offers significant flexibility while maintaining excellent performance even during peak periods."
     },
     "project2": {
       "title": "Restaurant Management App (Desktop)",
-      "description": "A desktop application for managing restaurant operations, built with C# and SQL Server.",
-      "details": "This project was developed using C# and SQL Server to provide a complete restaurant management solution."
-      
+      "description": "A robust desktop application for managing restaurant operations, developed with C# and SQL Server.",
+      "details": "This desktop application is a complete solution for the daily management of restaurants. Developed with C# and .NET Framework, it ensures optimal performance even on modest hardware configurations.\n\nMain features:\n- Integrated POS system with ticket management\n- Distinct kitchen interface with real-time notifications\n- Table and reservation management\n- Precise inventory tracking with restocking alerts\n- Employee and schedule management\n- Dashboard with financial reports and statistics\n\nThe architecture was designed to work with or without an Internet connection, with automatic data synchronization when the connection is restored. SQL Server database ensures data integrity and allows complex queries for analyzing restaurant performance."
     },
     "project3": {
       "title": "Pharmacy Showcase Website",
-      "description": "A simple showcase website for a pharmacy, highlighting services and contact information.",
-      "details": "This project was developed to provide essential information and services offered by the pharmacy."
-      
+      "description": "A complete showcase website for a pharmacy, presenting services, products, and facilitating customer contact.",
+      "details": "This modern showcase website for a pharmacy was developed with WordPress and customized with Elementor to provide an optimal user experience. The responsive design adapts perfectly to all devices, from smartphones to large screens.\n\nMain features:\n- Presentation of pharmacy services and specialties\n- Interactive catalog of featured products with filters\n- Dynamic duty system and opening hours\n- Contact form and preparation requests\n- Integrated Google Maps location\n- Online booking for specialized consultations\n\nThe site incorporates advanced SEO optimizations to improve the local visibility of the pharmacy. The customized admin interface makes it easy for non-technical staff to update content. A caching system and image optimization ensure fast loading times."
     },
     "project4": {
-      "title": "School Landing Page",
-      "description": "A landing page for a school, showcasing its programs, facilities, and contact details.",
-      "details": "This project was developed to provide information about the school's offerings and contact details."
-      
+      "title": "OtakuWorld",
+      "description": "Community platform dedicated to manga and anime culture, developed with React and Tailwind CSS.",
+      "details": "OtakuWorld is an immersive community platform celebrating manga and anime culture. Developed with React and styled with Tailwind CSS, it offers a smooth and engaging user experience for enthusiasts.\n\nMain features:\n- Anime and manga catalog with rating system\n- Personalized news feed based on preferences\n- Thematic discussion forums\n- Recommendation system based on preferences\n- Release and event calendar\n- Dark mode and interface customization\n\nThe project architecture is based on a RESTful API allowing real-time updates. Performance optimization was paramount, with the implementation of lazy loading techniques and code splitting to ensure a smooth experience even with a large content library."
     },
     "project5": {
-      "title": "Portfolio Website",
-      "description": "A personal portfolio website to showcase my skills and projects.",
-      "details": "This project was developed to highlight my professional journey and the projects I have worked on."
-      
+      "title": "Personal Portfolio",
+      "description": "My personal portfolio developed with React, showcasing my projects and skills in an interactive way.",
+      "details": "This portfolio represents my vision of a modern and interactive professional presentation. Developed with React and enriched with Framer Motion for animations, it highlights my journey and technical skills.\n\nMain features:\n- Responsive design adapting to all devices\n- Subtle and fluid animations to enhance user experience\n- Dark/light mode with smooth transition\n- Multilingual support (French and English)\n- Performance optimization with lazy loading\n- Detailed visualization of projects and skills\n\nThe site's architecture was designed with reusable components, facilitating maintenance and future evolutions. Particular attention was paid to accessibility and performance, with optimizations for Core Web Vitals and SEO."
     },
-    "project6": {
-      "title": "Weather App",
-      "description": "A simple weather application that fetches real-time weather data using an API.",
-      "details": "This project was developed to provide users with current weather information and forecasts."
-    }
+    "features": "Key Features",
+    "details": "Project Details",
+    "moreDetails": "See more details"
   },
-  "contact": "Contact",
-  "skills": "My Skills" 
+  "contact": "Contact"
 }

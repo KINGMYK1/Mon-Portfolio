@@ -1,6 +1,8 @@
 body.dark {
   --background-color: #121212;
   --text-color: #ffffff;
+  --text-color2: #ffffff;
+
   --header-bg: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent),
                radial-gradient(circle at 20% 80%,  #1b2735 0%, #12141d 40%, transparent);
   --menu-bg: #333333;
@@ -11,14 +13,19 @@ body.dark {
   /* --nav-circle-active-bg: #121212; */
   --nav-circle-active-bg: #3C3D37;
   --proffession-container-bg:  #121212;
-  
+  --details-section-background-color:#333;
+
   --nav-circle-border: #ffff;
   /* --nav-circle-active-bg: #121212; */
 }
 
 body.light {
-  --background-color: #ffffff;
+  --background-color: #FEF9F2;
+  --details-section-background-color:#EBE8DB;
+
+  /* --background-color: linear-gradient(115deg, #fafafa, #faf7f7, #f0f0f0); */
   --text-color: #000000;
+  --text-color2: #ffffff;
   --header-bg: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent),
                radial-gradient(circle at 20% 80%,  #1b2735 0%, #12141d 40%, transparent);
   --menu-bg: #f0f0f0;
@@ -28,7 +35,7 @@ body.light {
   --nav-circle-hover-bg: #e0e0e0;
   --nav-circle-active-bg: #d0d0d0;
   --nav-circle-border: #333333;
-  --proffession-container-bg:   #ffffff;
+  --proffession-container-bg:   #FEF9F2;
 
 }
 

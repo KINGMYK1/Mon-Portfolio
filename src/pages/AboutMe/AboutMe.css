@@ -3,7 +3,7 @@
   --bg-color: #00000;
   --text-color: #333;
   --main-color: #754ef9;
-  --white-color: #fdfdfd;
+  --white-color: #FAF1E6;
   --shadow-color: rgba(0, 0, 0, .2);
   --header-height: 10vh;
   --footer-height: 5vh;
@@ -17,7 +17,7 @@ body {
   /* background: var(--bg-color); */
   color: var(--text-color);
   height: 100vh; /* Hauteur fixe pour le corps */
-  overflow: hidden; /* Empêcher le défilement */
+  overflow: hidden; /* Empêcheri le défilement */
 }
 /* Mode sombre */
 .dark-mode {
@@ -249,7 +249,7 @@ body {
   .education-container {
     width: 65%;
     height: 100%;
-    overflow-y: auto;
+    overflow-y: hidden;
   }
 }
 
@@ -305,9 +305,9 @@ body {
     /* flex-shrink: 0; */
   }
   .experience-section {
-    height: 25%; /* Hauteur fixe UNIQUEMENT sur desktop */
+    height: 27%; /* Hauteur fixe UNIQUEMENT sur desktop */
     min-height: 180px;
-    overflow-y: auto;
+    overflow-y: hidden;
   }
 }
 
@@ -333,8 +333,8 @@ body {
 @media (min-width: 1024px) {
   .experience-section {
     height: 25%; /* Réduit de 30% à 25% */
-    min-height: 180px; /* Réduit de 200px à 180px */
-    overflow-y: auto;
+    min-height: 200px; /* Réduit de 200px à 180px */
+    overflow-y: hidden;
   }
 }
 
@@ -349,7 +349,7 @@ body {
   .experiences-container {
     flex-direction: row;
     flex-wrap: nowrap;
-    overflow-x: auto;
+    overflow-x: hidden;
     padding-bottom: 0.5rem;
   }
 }

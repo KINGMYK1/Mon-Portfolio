@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import useTranslation from '../../hooks/useTranslation';
 import './Home.css';
 import { motion } from 'framer-motion';
@@ -35,18 +35,35 @@ const textItemVariants = (direction) => {
 };
 
 const imageVariants = {
-  hidden: { opacity: 0, x: 100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 1.2 } },
+  hidden: { opacity: 0, scale: 0.8, x: 100 },
+  visible: { 
+    opacity: 1, 
+    scale: 1, 
+    x: 0, 
+    transition: { 
+      duration: 1.2,
+      type: "spring", 
+      stiffness: 100,
+      damping: 15
+    }
+  }
 };
 
 const Home = () => {
   const t = useTranslation();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const isMobile = window.innerWidth <= 768;
+  const textDirection = isMobile ? 'top' : 'left';
+  
+  // Préchargement de l'image de profil
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/Profil.png";
+    img.onload = () => setImageLoaded(true);
+  }, []);
 
   const greetingText = t('home.greeting') || "Hello, I am";
   const nameText = t('home.name') || "Mohamed Yehiya Koiïta";
-
-  const isMobile = window.innerWidth <= 768;
-  const textDirection = isMobile ? 'top' : 'left';
 
   return (
     <motion.div
@@ -91,8 +108,23 @@ const Home = () => {
         </motion.a>
       </motion.div>
 
-      <motion.div variants={imageVariants} className="home-img">
-        <img src="/Profil.png" alt="Home"  loading="eager" />
+      <motion.div 
+        variants={imageVariants} 
+        className={`home-img ${imageLoaded ? 'loaded' : 'loading'}`}
+      >
+        {!imageLoaded && (
+          <div className="image-skeleton-loader">
+            <div className="pulse-effect"></div>
+          </div>
+        )}
+        <img 
+          src="/Profil.png" 
+          alt="Home"
+          loading="eager"
+          fetchPriority="high"
+          onLoad={() => setImageLoaded(true)}
+          style={{ opacity: imageLoaded ? 1 : 0 }}
+        />
       </motion.div>
 
       <div className="profession-container">

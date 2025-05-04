@@ -3,13 +3,14 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Loading from '../components/ui/Loading/Loading';
 
-// Import intelligent des composants avec prefetch
+// Import intelligent des composants
 const Home = lazy(() => import(/* webpackPrefetch: true */ '../pages/Home/Home'));
 const Skills = lazy(() => import('../pages/Skills/Skills'));
 const Projects = lazy(() => import('../pages/Projects/Projects'));
 const Contact = lazy(() => import('../pages/Contact/Contact'));
 const AboutMe = lazy(() => import('../pages/AboutMe/AboutMe'));
 const ProjectDetails = lazy(() => import('../components/layout/ProjectDetails/ProjectDetails'));
+const ExperienceDetails = lazy(() => import('../components/layout/ExperienceDetails/ExperienceDetails'));
 
 // Composant plus léger pour le chargement
 const LightLoading = () => <div className="simple-loader"></div>;
@@ -17,15 +18,19 @@ const LightLoading = () => <div className="simple-loader"></div>;
 const AppRoutes = () => {
   const location = useLocation();
   
-  // Préchargement intelligent des pages liées à la page actuelle
+  // Préchargement intelligent des pages
   React.useEffect(() => {
-    // Si l'utilisateur est sur la page d'accueil, précharger AboutMe car c'est probablement la prochaine
     if (location.pathname === '/') {
-      const prefetchAbout = import('../pages/AboutMe/AboutMe');
+      import('../pages/AboutMe/AboutMe');
     }
-    // Si l'utilisateur est sur AboutMe, précharger Projects
     if (location.pathname === '/AboutMe') {
-      const prefetchProjects = import('../pages/Projects/Projects');
+      import('../pages/Projects/Projects');
+    }
+    if (location.pathname.startsWith('/projects/')) {
+      import('../components/layout/ProjectDetails/ProjectDetails');
+    }
+    if (location.pathname.startsWith('/experience/')) {
+      import('../components/layout/ExperienceDetails/ExperienceDetails');
     }
   }, [location.pathname]);
 
@@ -42,6 +47,7 @@ const AppRoutes = () => {
           <Route path="/AboutMe" element={<AboutMe />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetails />} />
+          <Route path="/experience/:id" element={<ExperienceDetails />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<div>404 - Page non trouvée</div>} />
         </Routes>
