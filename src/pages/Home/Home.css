@@ -15,7 +15,7 @@
   --bg-color:  #121212;
   --text-color: #333;
   --main-color: #754ef9;
-  --white-color: #fdfdfd;
+  --white-color: #f8f9fa;
   --shadow-color: rgba(0, 0, 0, .2);
   --header-height: 10vh; /* Hauteur du header */
   --footer-height: 5vh; /* Hauteur du footer */
@@ -213,6 +213,10 @@ body {
   border-bottom: 50vh solid var(--main-color);
   border-left: 384px solid transparent;
 }
+.home-img.loading {
+  min-height: 300px;
+}
+
 .home-img{
   right:0;
 }
@@ -224,8 +228,46 @@ body {
   pointer-events: none;
   max-width: 480px;
   max-height: 100%;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+}
+.image-skeleton-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.pulse-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(99, 102, 241, 0.2),
+    rgba(255, 255, 255, 0)
+  );
+  animation: pulse-animation 1.5s infinite;
 }
 
+@keyframes pulse-animation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.home-img.loaded .image-skeleton-loader {
+  display: none;
+}
 span {
   color: var(--main-color);
 }

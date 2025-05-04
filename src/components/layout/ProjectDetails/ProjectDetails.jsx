@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import useTranslation from "../../../hooks/useTranslation";
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight, FaArrowLeft } from "react-icons/fa";
+import  OptimizedImage  from "../../ui/OptimizedImage/OptimizedImage";
 import "./ProjectDetails.css";
-
 
 // Mise à jour des données de projet avec les chemins des captures d'écran
 const projectsData = [
@@ -92,20 +93,7 @@ const ProjectDetails = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const project = projectsData.find((p) => p.id === parseInt(id));
 
-  // Défilement automatique du carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (project && project.screenshots.length > 1) {
-        setCurrentIndex((prevIndex) =>
-          prevIndex === project.screenshots.length - 1 ? 0 : prevIndex + 1
-        );
-      }
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [project]);
-
-  // Dans la fonction ProjectDetails, ajoutez ce code pour précharger les images du carousel
+  // Préchargement des images du carousel
   useEffect(() => {
     if (project) {
       // Préchargement des images du carousel après chargement de l'image actuelle
@@ -120,6 +108,19 @@ const ProjectDetails = () => {
       };
     }
   }, [project, currentIndex]);
+
+  // Défilement automatique du carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (project && project.screenshots.length > 1) {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === project.screenshots.length - 1 ? 0 : prevIndex + 1
+        );
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [project]);
 
   if (!project) {
     return <div className="not-found">{t("projects.notFound")}</div>;
@@ -137,6 +138,14 @@ const ProjectDetails = () => {
     );
   };
 
+  // Ajoutez ceci pour formater correctement le détail du projet
+  const formatProjectDetails = (details) => {
+    if (!details) return "";
+    return details.split('\n').map((paragraph, i) => (
+      <p key={i} className="details-paragraph">{paragraph}</p>
+    ));
+  };
+
   return (
     <div className="project-details">
       {/* Bouton Retour */}
@@ -152,10 +161,10 @@ const ProjectDetails = () => {
         {/* En-tête avec titre à gauche et liens à droite */}
         <div className="project-header">
           <div className="left-content">
-            <h1 className="project-title">{t(project.titleKey)}</h1>
+            <h1 className="project-title text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">{t(project.titleKey)}</h1>
             <div className="technologies">
               {project.technologies.map((tech, index) => (
-                <span key={index} className="technology-badge">
+                <span key={index} className="technology-badge text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
                   {tech}
                 </span>
               ))}
@@ -166,25 +175,29 @@ const ProjectDetails = () => {
             <div className="project-links">
               {/* N'afficher l'icône GitHub que si le lien est valide */}
               {project.link && project.link !== "https://github.com/MYK-OTAKU/" && (
-                <a 
+                <motion.a 
                   href={project.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="project-link github-link"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <FaGithub className="link-icon" />
-                </a>
+                </motion.a>
               )}
               
               {project.demoLink && (
-                <a 
+                <motion.a 
                   href={project.demoLink} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="project-link demo-link"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <FaExternalLinkAlt className="link-icon" />
-                </a>
+                </motion.a>
               )}
             </div>
           </div>
@@ -205,21 +218,37 @@ const ProjectDetails = () => {
                   <div key={index} className="carousel-slide">
                     <OptimizedImage 
                       src={src} 
-                      alt={`Screenshot ${index + 1}`}
+                      alt={`Screenshot ${index + 1}`} 
+                      className="carousel-image"
                     />
                   </div>
                 ))}
               </div>
               
               {project.screenshots.length > 1 && (
-                <div className="carousel-nav-buttons">
-                  <button className="carousel-button prev" onClick={handlePrev}>
+                <motion.div 
+                  className="carousel-nav-buttons"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <motion.button 
+                    className="carousel-button prev" 
+                    onClick={handlePrev}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
                     <FaChevronLeft />
-                  </button>
-                  <button className="carousel-button next" onClick={handleNext}>
+                  </motion.button>
+                  <motion.button 
+                    className="carousel-button next" 
+                    onClick={handleNext}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
                     <FaChevronRight />
-                  </button>
-                </div>
+                  </motion.button>
+                </motion.div>
               )}
             </div>
             
@@ -238,16 +267,38 @@ const ProjectDetails = () => {
         </div>
         
         {/* Partie droite - Information du projet */}
-        <div className="details-section">
-          <div className="project-info-container">
-            <p className="project-description">{t(project.descriptionKey)}</p>
-          </div>
+        <motion.div 
+          className="details-section"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          
           
           <div className="project-details-info">
-            <h2>{t("projects.details")}</h2>
-            <p>{t(project.detailsKey)}</p>
+            <h3 className="project-details-title   text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
+              {t("projects.details")}
+            </h3>
+            <div className="project-details-text">
+              {formatProjectDetails(t(project.detailsKey))}
+            </div>
+            
+            {/* Section des fonctionnalités clés */}
+            {project.features && (
+              <div className="project-features">
+                <h4 className="features-title">{t("projects.features")}</h4>
+                <ul className="features-list">
+                  {project.features.map((featureKey, idx) => (
+                    <li key={idx} className="feature-item">
+                      <span className="feature-icon">✦</span>
+                      <span className="feature-text">{t(featureKey)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

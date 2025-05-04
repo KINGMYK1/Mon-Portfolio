@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useTranslation from "../../hooks/useTranslation";
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import './AboutMe.css';
 import DegreeCard from "../../components/layout/degreeCard/DegreeCard";
 import ExperienceCard from "../../components/layout/ExperienceCard/ExperienceCard";
-// import Skills from "../../components/layout/Skills/Skills";
 import Skills from './../../components/layout/Skills/skills';
+import OptimizedAvatar from "../../components/ui/OptimizedAvatar/OptimizedAvatar";
  
 const AboutMe = () => {
   const t = useTranslation();
+  const controls = useAnimation();
+  
+  // Animation au chargement de la page
+  useEffect(() => {
+    controls.start({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, staggerChildren: 0.2 }
+    });
+  }, [controls]);
   
   // Utilisation des traductions pour les données personnelles
   const aboutData = {
@@ -45,9 +55,10 @@ const AboutMe = () => {
     },
   ];
 
-  // Nouvelles données d'expérience avec traductions
+  // Données d'expérience mises à jour avec les IDs pour la navigation vers les pages de détails
   const experienceData = [
     {
+      experienceId: "freelance", // ID pour la navigation vers ExperienceDetails
       title: t("about.experiences.exp1.title", "Développeur Full Stack"),
       companyName: t("about.experiences.exp1.company", "Freelance"),
       description: t("about.experiences.exp1.description", "Création de sites web et applications mobiles pour divers clients."),
@@ -57,30 +68,46 @@ const AboutMe = () => {
       link: "/projects/5",
     },
     {
+      experienceId: "digicard-mobile", // ID pour la navigation vers ExperienceDetails
       title: t("about.experiences.exp2.title", "Stage en Développement Mobile"),
       companyName: t("about.experiences.exp2.company", "Digicard"),
       description: t("about.experiences.exp2.description", "Développement d'une application Mobile pour des projets internes."),
       duration: "2024",
-      media: "/text.mp4",
+      media: "/text.mp4", // Remplacez par le chemin réel de la vidéo
       mediaType: "video",
       link: "#",
     },
-        {
-      title: t("about.experiences.exp3.title", "Stage en Développement Mobile"),
-      companyName: t("about.experiences.exp3.company", "Digicard"),
-      description: t("about.experiences.exp3.description", "Développement d'une application Mobile pour des projets internes."),
-      duration: "2024",
+    {
+      experienceId: "gouvernancia", // ID pour la navigation vers ExperienceDetails
+      title: t("about.experiences.exp3.title", "Stage en IT"),
+      companyName: t("about.experiences.exp3.company", "Gouvernancia"),
+      description: t("about.experiences.exp3.description", "Maintenance et extension d'outils internes avec ajout de fonctionnalités SSH."),
+      duration: "2023",
       media: "/portfolio2.jpg",
+      // Chemin vers l'image optimisée
       mediaType: "image",
-      link: "/projects/1",
+      link: "/experience/gouvernancia",
     },
-    
   ];
 
-  // Le reste du code reste inchangé
+  // Variantes d'animation pour les sections
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
-    <div className="about-container">
-      {/* Header */}
+    <motion.div 
+      className="about-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      {/* Header avec animation */}
       <motion.div 
         className="about-header"
         initial={{ opacity: 0, y: -20 }}
@@ -97,37 +124,23 @@ const AboutMe = () => {
         {/* Section Profil + Éducation */}
         <motion.div 
           className="profile-education-section"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {/* Profil - Divisé en deux parties */}
           <div className="profile-container">
-            {/* Partie Avatar (80%) */}
+            {/* Partie Avatar avec composant optimisé */}
             <div className="avatar-container">
-              <motion.div 
-                className="avatar-wrapper"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
-              >
-                <div className="avatar-image-container">
-                  <div className="avatar-glow" aria-hidden="true" />
-                  <div className="avatar-image-wrapper">
-                    <img 
-                      src="/avatar.png" 
-                      loading="lazy"
-                      alt={aboutData.name}
-                      className="avatar-image"
-                      fetchPriority="high" // Priorité élevée pour l'avatar qui est critique
-
-                    />
-                  </div>
-                </div>
-              </motion.div>
+              <OptimizedAvatar 
+                src="/avatar.png" 
+                alt={aboutData.name}
+                priority={true}
+              />
             </div>
             
-            {/* Partie Titre (20%) */}
+            {/* Partie Titre */}
             <div className="profile-info">
               <h3 className="section-title text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
                 {aboutData.name}
@@ -139,28 +152,40 @@ const AboutMe = () => {
           </div>
 
           {/* Éducation - En colonne avec DegreeCard */}
-          <div className="education-container">
+          <motion.div 
+            className="education-container"
+            variants={sectionVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <div className="education-title text-center">
-              <h2 className="section-title textcenter text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
+              <h2 className="section-title text-center text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
                 {t("about.education", "Formation")}
               </h2>
             </div>
             <div className="degrees-list">
               {degreeData.map((degree, index) => (
-                <div key={index} className="degree-card-wrapper">
+                <motion.div 
+                  key={index} 
+                  className="degree-card-wrapper"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                >
                   <DegreeCard degree={degree} compact={true} />
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
-        {/* Section Expérience */}
+        {/* Section Expérience avec animation décalée */}
         <motion.div 
           className="experience-section text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={{ duration: 0.9, delay: 0.8 }}
         >
            <h2 className="section-title text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
              {t("about.experience", "Expérience")}
@@ -174,17 +199,18 @@ const AboutMe = () => {
           </div>
         </motion.div>
 
-        {/* Section Compétences */}
+        {/* Section Compétences avec animation décalée */}
         <motion.div 
           className="skills-section"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.9, delay: 0.8 }}
         >
           <Skills/>
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

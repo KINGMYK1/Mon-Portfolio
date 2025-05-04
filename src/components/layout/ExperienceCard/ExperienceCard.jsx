@@ -1,30 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import  useTheme  from "./../../../hooks/useTheme";
-
 import "./ExperienceCard.css";
-import useTranslation from './../../../hooks/useTranslation';
 
 const ExperienceCard = ({ 
   title, 
   companyName, 
   duration, 
   description, 
-  media, 
-  mediaType = "image", 
+  media, // Renommé de "image" à "media" pour plus de clarté
+  mediaType = "image", // Nouveau prop pour spécifier "image" ou "video"
   link 
 }) => {
   const navigate = useNavigate();
-  const t = useTranslation();
-  const { theme } = useTheme();
 
   return (
     <motion.div
-      className={`experience-card ${theme}`}
+      className="experience-card"
       onClick={() => navigate(link)}
       whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.8 }}
     >
       {/* Background media (image ou vidéo) */}
       <div className="media-container">
@@ -36,8 +31,6 @@ const ExperienceCard = ({
             loop
             muted
             playsInline
-            
-            preload="metadata"
           />
         ) : (
           <img 
@@ -48,7 +41,7 @@ const ExperienceCard = ({
         )}
       </div>
       
-      {/* Informations toujours visibles */}
+      {/* Informations toujours visibles (affichées par défaut) */}
       <div className="experience-info">
         <h3 className="experience-title">{title}</h3>
         <p className="experience-company">{companyName}</p>
@@ -61,6 +54,7 @@ const ExperienceCard = ({
         initial={{ opacity: 0 }}
         whileHover={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="overlay-content">
           <p className="experience-description">{description}</p>
@@ -71,14 +65,12 @@ const ExperienceCard = ({
               navigate(link);
             }}
           >
-            {t("experience.learnMore")}
+            En savoir plus
           </button>
         </div>
       </motion.div>
     </motion.div>
   );
 };
-
-
 
 export default ExperienceCard;

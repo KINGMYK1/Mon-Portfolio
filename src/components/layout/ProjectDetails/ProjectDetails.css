@@ -10,18 +10,19 @@ body {
   }
   .project-details {
     display: flex;
+    overflow-y:auto;
     flex-direction: column;
     width: 100%;
     min-height: calc(100vh - var(--header-height) - var(--footer-height));
-    padding: 2rem;
+    padding: 0.5rem;
     color: #f0f0f0;
     gap: 2rem;
-    background-color: #121212;
+    /* background-color: #121212; */
   }
   
   /* Bouton de retour */
   .back-button-container {
-    margin-bottom: 1rem;
+    margin-bottom: 0.4rem;
   }
   
   .back-button {
@@ -34,6 +35,7 @@ body {
     border-radius: 4px;
     color: #f0f0f0;
     font-size: 0.9rem;
+    margin-left:10px;
     text-decoration: none;
     transition: all 0.3s ease;
   }
@@ -45,6 +47,9 @@ body {
   
   .back-icon {
     font-size: 1rem;
+    color: var(--icon-color); /* Couleur dépendante du thème */
+    /* background-color: var(--menu-bg); */
+
   }
   
   /* Section supérieure - Header du projet */
@@ -82,12 +87,14 @@ body {
   .project-title {
     font-size: 2.2rem;
     font-weight: 700;
+    font-weight: bold;
+
     margin-bottom: 1rem;
-    background: linear-gradient(to right, #00d4ff, #754ef9);
-    -webkit-background-clip: text;
+    /* background: linear-gradient(to right, #00d4ff, #754ef9);
+    -webkit-background-clip: text; */
     background-clip: text;
     color: transparent;
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    /* text-shadow: 0 0 10px rgba(0, 212, 255, 0.3); */
     letter-spacing: -0.5px;
     max-width: 90%;
   }
@@ -101,8 +108,8 @@ body {
   
   .technology-badge {
     padding: 0.4rem 0.8rem;
-    background: linear-gradient(45deg, #1a1a2e, #16213e);
-    color: #00d4ff;
+    /* background: linear-gradient(45deg, #1a1a2e, #16213e); */
+    /* color: #00d4ff; */
     border-radius: 2rem;
     font-size: 0.8rem;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
@@ -163,12 +170,18 @@ body {
   }
   
   .details-section {
+    border-radius:8px;
+    color: var(--text-color2);
+    
+    background:var(--details-section-background-color);
     width: 100%;
   }
   
   .project-description {
+    color: var(--text-color2);
     font-size: 1.1rem;
-    color: #b0b0b0;
+    /* color: #b0b0b0; */
+    font-weight: bold;
     line-height: 1.6;
     margin-bottom: 1.5rem;
   }
@@ -186,6 +199,7 @@ body {
     position: relative;
     overflow: hidden;
     background-color: #0a0a0a;
+    /* margin-bottom: 2rem; */
   }
   
   .carousel-track {
@@ -266,7 +280,7 @@ body {
   
   .project-details-info {
     max-width: 800px;
-    padding: 1.8rem;
+    padding: 1rem;
     background: rgba(30, 30, 45, 0.5);
     border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -293,9 +307,129 @@ body {
   
   .project-details-info p {
     font-size: 1rem;
-    color: #b0b0b0;
+    /* color: #b0b0b0; */
+    color: var(--text-color22);
+
     line-height: 1.7;
+    font-weight: bold;
+
   }
+  /* Ajoutez ces styles pour améliorer l'aspect des détails */
+
+.project-description-title,
+.project-details-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  /* color: #fff; */
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.project-description-title::after,
+.project-details-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #00d4ff, #754ef9);
+  border-radius: 2px;
+}
+
+.project-description-text {
+  font-size: 1.2rem;
+  /* color: #d0d0d0; */
+  color: var(--text-color22);
+
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.project-details-text {
+  /* color: #c0c0c0;
+   */
+
+   color: var(--text-color22);
+
+}
+
+.details-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.project-features {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.features-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+}
+
+.feature-icon {
+  color: #00d4ff;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  margin-top: 0.2rem;
+}
+
+.feature-text {
+  font-size: 1.1rem;
+  color: #d0d0d0;
+  line-height: 1.5;
+}
+
+/* Améliorations pour le carousel */
+.carousel-section {
+  width: 60%;
+}
+
+.carousel-slide {
+  height: 500px; /* Plus grand pour de meilleures images */
+}
+
+.carousel-slide img {
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Adaptations pour mobile */
+@media (max-width: 768px) {
+  .carousel-section {
+    width: 100%;
+  }
+  
+  .carousel-slide {
+    height: 300px;
+  }
+  
+  .project-description-title,
+  .project-details-title {
+    font-size: 1.5rem;
+  }
+  
+  .project-description-text,
+  .details-paragraph {
+    font-size: 1rem;
+  }
+}
   
   /* Layout horizontal sur desktop */
   @media (min-width: 992px) {

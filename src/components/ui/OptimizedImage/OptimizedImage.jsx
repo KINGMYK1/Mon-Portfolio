@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './OptimizedImage.css';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
-const OptimizedImage = ({ src, alt, className = '' }) => {
+const OptimizedImage = ({ src, alt, className = '', priority = false }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
-  const imageRef = React.useRef(null);
+  const imageRef = useRef(null);
   
-  // Générer une miniature (très petite version de l'image)
-  // Dans un vrai projet, vous auriez des miniatures pré-générées
-  const thumbSrc = src?.replace('.png', '-thumb.png')
-                      .replace('.jpg', '-thumb.jpg')
-                      .replace('.webp', '-thumb.webp') || src;
-
   useEffect(() => {
+    // Si l'image est prioritaire, on la charge immédiatement
+    if (priority) {
+      setIsInView(true);
+      return;
+    }
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -21,7 +22,7 @@ const OptimizedImage = ({ src, alt, className = '' }) => {
           observer.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: "100px" }
+      { threshold: 0.1, rootMargin: "200px" }
     );
 
     if (imageRef.current) {
@@ -29,42 +30,56 @@ const OptimizedImage = ({ src, alt, className = '' }) => {
     }
 
     return () => {
-      if (imageRef.current) {
-        observer.unobserve(imageRef.current);
+      if (imageRef.current && observer) {
+        observer.disconnect();
       }
     };
-  }, []);
+  }, [priority]);
+
+  // Générer une version miniature pour le flou
+  const placeholderSrc = src?.replace(/\.(png|jpe?g|webp)$/, '-thumb.$1') || src;
 
   return (
     <div 
       ref={imageRef} 
-      className={`optimized-image-container ${className} animated-element`}
+      className={`optimized-image-container ${className}`}
     >
       {/* Image miniature floue pendant le chargement */}
       {!isLoaded && (
-        <div className="image-placeholder" style={{
-          backgroundImage: isInView ? `url(${thumbSrc})` : 'none',
-          backgroundColor: '#e0e0e0'
-        }} />
+        <div 
+          className="image-placeholder"
+          style={{
+            backgroundImage: isInView ? `url(${placeholderSrc})` : 'none',
+          }}
+        >
+          <div className="loading-shimmer"></div>
+        </div>
       )}
       
       {/* Image réelle chargée progressivement */}
       {isInView && (
-        <img 
+        <motion.img 
           src={src} 
           alt={alt} 
-          className={`optimized-image ${isLoaded ? 'loaded' : ''}`}
-          loading="lazy"
+          className="optimized-image"
+          loading={priority ? "eager" : "lazy"}
           onLoad={() => setIsLoaded(true)}
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: isLoaded ? 1 : 0,
+          }}
+          transition={{ duration: 0.5 }}
         />
       )}
     </div>
   );
 };
+
 OptimizedImage.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
+  priority: PropTypes.bool,
 };
 
 export default OptimizedImage;

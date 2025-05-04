@@ -8,121 +8,169 @@
     "bio1": "Développeur Full Stack animé par la passion de créer des applications web et mobiles intuitives, sécurisées et performantes.",
     "bio2": "Actuellement étudiant en ingénierie des applications web et mobiles à OMNIA School of Business and Technology, j’explore sans cesse de nouvelles technologies pour concevoir des solutions innovantes et évolutives."
   },
-  
-    "about": {
-      "title": "À propos de moi",
-      "name": "Mohamed Yehiya Koïta",
-      "jobTitle": "Développeur Full Stack",
-      "education": "Mes Formations",
-      "experience": "Mes Expériences",
-      "skills": "Mes Compétences",
-
-      "present": "Présent",
-      "degrees": {
-        "degree1": {
-          "title": "Licence en Ingénierie des Applications Web et Mobiles",
-          "school": "Omnia School of Business and Technology",
-          "description1": "Formation axée sur le développement web et mobile.",
-          "description2": "Apprentissage des technologies modernes comme React, Node.js, et Laravel.",
-          "description3": "Projets pratiques pour renforcer les compétences techniques."
-        },
-        "degree2": {
-          "title": "Technicien Spécialisé en Développement Informatique",
-          "school": "Omnia School of Business and Technology",
-          "description1": "Formation axée sur les bases du développement logiciel.",
-          "description2": "Apprentissage des langages comme Java, PHP, et MySQL.",
-          "description3": "Projets pratiques pour développer des applications simples."
-        }
+  "about": {
+    "title": "À propos de moi",
+    "name": "Mohamed Yehiya Koïta",
+    "jobTitle": "Développeur Full Stack",
+    "education": "Mes Formations",
+    "experience": "Mes Expériences",
+    "skills": "Mes Compétences",
+    "present": "Présent",
+    "degrees": {
+      "degree1": {
+        "title": "Licence en Ingénierie des Applications Web et Mobiles",
+        "school": "Omnia School of Business and Technology",
+        "description1": "Formation axée sur le développement web et mobile.",
+        "description2": "Apprentissage des technologies modernes comme React, Node.js, et Laravel.",
+        "description3": "Projets pratiques pour renforcer les compétences techniques."
       },
-      "experiences": {
-        "exp1": {
-          "title": "Développeur Full Stack",
-          "company": "Freelance",
-          "description": "Création de sites web et applications mobiles pour divers clients."
-        },
-        "exp2": {
-          "title": "Stage en Développement Mobile",
-          "company": "Digicard",
-          "description": "Participation au développement d'applications Mobile pour des projets internes."
-        },
-        "exp3": {
-          "title": "Stage en Développement Web",
-          "company": "Gouvernancia",
-          "description": "Participation au développement et la maintenance d'applications web pour des projets internes."
-        }
+      "degree2": {
+        "title": "Technicien Spécialisé en Développement Informatique",
+        "school": "Omnia School of Business and Technology",
+        "description1": "Formation axée sur les bases du développement logiciel.",
+        "description2": "Apprentissage des langages comme Java, PHP, et MySQL.",
+        "description3": "Projets pratiques pour développer des applications simples."
       }
     },
-    "skills": {
-      "title": "Mes Compétences",
-      "react": "React",
-      "laravel": "Laravel",
-      "html": "HTML",
-      "css": "CSS",
-      "javascript": "JavaScript",
-      "php": "PHP",
-      "node.js": "Node.js",
-      "spring-boot": "Spring Boot",
-      "java": "Java",
-      "tailwind": "Tailwind",
-      "mysql": "MySQL",
-      "mongodb": "MongoDB",
-      "express": "Express",
-      "github": "Github"
-    },
-    "degree": {
-      "visitWebsite": "Visiter le site"
-    },
-    "experience": {
-      "learnMore": "En savoir plus"
+    "experiences": {
+      "exp1": {
+        "title": "Développeur Full Stack (Freelance)",
+        "company": "Freelance",
+        "period": "Janvier 2024 – Présent",
+        "description": "Réalisation de petits projets web et mobile pour divers clients, conception de composants frontend et intégration backend."
+      },
+      "exp2": {
+        "title": "Stagiaire Développeur Mobile",
+        "company": "Digicard",
+        "period": "Février 2024 – Avril 2024",
+        "description": "Développement d'une application mobile interne avec Expo React Native, Node.js et Realm, de l’analyse du cahier des charges jusqu’à la livraison."
+      },
+      "exp3": {
+        "title": "Stagiaire IT",
+        "company": "Gouvernancia",
+        "period": "Juillet 2023 – Août 2023",
+        "description": "Ajout de fonctionnalités et maintenance d’outils internes, dont un script de journalisation des sessions SSH via Apache Guacamole."
+      }
     }
-  , "education": {
+  },
+  "skills": {
+    "title": "Mes Compétences",
+    "react": "React",
+    "laravel": "Laravel",
+    "html": "HTML",
+    "css": "CSS",
+    "javascript": "JavaScript",
+    "php": "PHP",
+    "node.js": "Node.js",
+    "spring-boot": "Spring Boot",
+    "java": "Java",
+    "tailwind": "Tailwind",
+    "mysql": "MySQL",
+    "mongodb": "MongoDB",
+    "express": "Express",
+    "github": "GitHub"
+  },
+  "experience": {
+    "learnMore": "En savoir plus",
+    "overview": "Aperçu",
+    "responsibilities": "Responsabilités",
+    "skillsUsed": "Compétences utilisées",
+    "relatedProject": "Projet associé",
+    "viewProject": "Voir le projet",
+    "notFound": "Cette expérience n'existe pas",
+    "freelance": {
+      "title": "Développeur Full Stack",
+      "company": "Freelance",
+      "location": "Casablanca, Morocco",
+      "dateStart": "January 2024",
+      "dateEnd": "Present",
+      "description": "Travail en freelance sur de petits projets web et mobiles, ainsi que projets personnels.",
+      "details": "En tant que développeur freelance, j'ai réalisé des composants web et des fonctionnalités frontend pour des clients, notamment GPT‑MA. J'ai également mené divers projets personnels pour approfondir mes compétences en développement web et mobile.\n\nCes expériences m'ont permis de renforcer ma maîtrise du design de composants, de l'intégration d'API REST et des outils modernes de développement.",
+      "tasks": [
+        "Développement d’un mega-dropdown pour la barre de navigation de GPT‑MA",
+        "Création et maintenance de portfolio personnel et de systèmes de gestion de restaurant",
+        "Conception de composants UI responsives avec Angular et React",
+        "Implémentation de services backend avec Node.js et Express",
+        "Tests locaux et déploiement sur Vercel et Netlify"
+      ]
+    },
+    "digicard": {
+      "title": "Stagiaire Développeur Mobile",
+      "company": "Digicard",
+      "location": "Rabat, Morocco",
+      "dateStart": "February 2024",
+      "dateEnd": "April 2024",
+      "description": "Conception et développement d’une application mobile interne selon un cahier des charges.",
+      "details": "Durant mon stage chez Digicard, j'ai développé une application mobile de A à Z avec Expo React Native, un backend Node.js, et Realm pour la base locale.\n\nCette expérience m’a permis de perfectionner mes compétences en développement mobile et en intégration full‑stack.",
+      "tasks": [
+        "Conception des écrans UI suivant le cahier des charges",
+        "Développement avec Expo et React Native",
+        "Implémentation de la logique serveur avec Node.js et Express",
+        "Utilisation de Realm pour la gestion locale et le support hors‑ligne",
+        "Tests et débogage sur environnements Android"
+      ]
+    },
+    "gouvernancia": {
+      "title": "Stagiaire IT",
+      "company": "Gouvernancia",
+      "location": "Casablanca, Morocco",
+      "dateStart": "July 2023",
+      "dateEnd": "August 2023",
+      "description": "Maintenance et extension d’outils internes, création d’un script de journalisation SSH.",
+      "details": "Pendant mon stage, j’ai travaillé sur des outils internes existants pour ajouter des fonctionnalités, notamment un script d’enregistrement des sessions SSH via Apache Guacamole.\n\nJ’ai configuré et testé Guacamole et PuTTY, ce qui m’a permis d’approfondir mes connaissances en SSH.",
+      "tasks": [
+        "Ajout de fonctionnalités à des applications internes",
+        "Développement d’un script de journalisation SSH avec Apache Guacamole",
+        "Configuration et tests de Guacamole et PuTTY",
+        "Documentation des procédures et bonnes pratiques"
+      ]
+    },
+    "buttons": {
+      "back": "Retour",
+      "backToExperiences": "Retour aux expériences"
+    }
+  },
+  "degree": {
+    "visitWebsite": "Visiter le site"
+  },
+  "education": {
     "licence": "Licence en Ingénierie des Applications Web et Mobiles",
     "technician": "Technicien Spécialisé en Développement Informatique"
   },
   "projects": {
-     "moreInfo": "En savoir plus",
+    "moreInfo": "En savoir plus",
     "notFound": "Projet non trouvé.",
     "title": "Mes Projets",
     "subtitle": "Récents",
     "description": "Une sélection de mes travaux récents mettant en valeur mes compétences et mon expertise.",
     "project1": {
       "title": "Application de Gestion de Restaurant (Web)",
-      "description": "Une application web pour gérer les opérations d'un restaurant, migrée d'une version desktop vers Angular et Node.js.",
-      "details": "Ce projet a été développé avec Angular et Node.js pour migrer une application desktop vers une solution web moderne."
+      "description": "Une application web complète pour gérer les opérations d'un restaurant, migrée d'une version desktop vers une architecture moderne.",
+      "details": "Cette application web représente la migration complète d'une solution desktop vers une architecture moderne et évolutive. Développée avec Angular pour le frontend et Node.js pour le backend, elle permet une gestion intégrée des opérations quotidiennes d'un restaurant.\n\nFonctionnalités principales :\n- Interface administrateur sécurisée avec authentification JWT\n- Gestion des commandes en temps réel\n- Organisation des tables et réservations\n- Gestion complète du stock et des inventaires\n- Suivi des ventes et statistiques détaillées\n- Interface responsive adaptée aux tablettes pour les serveurs\n\nLe projet a nécessité une refonte complète de l'architecture pour assurer la scalabilité et implémenter un système de mise à jour automatique. La base de données MongoDB offre une flexibilité importante tout en maintenant d'excellentes performances même en période de forte affluence."
     },
     "project2": {
       "title": "Application de Gestion de Restaurant (Desktop)",
-      "description": "Une application desktop pour gérer les opérations d'un restaurant, développée avec C# et SQL Server.",
-      "details": "Ce projet a été développé avec C# et SQL Server pour offrir une solution complète de gestion de restaurant."
+      "description": "Une application desktop robuste pour gérer les opérations d'un restaurant, développée avec C# et SQL Server.",
+      "details": "Cette application desktop constitue une solution complète pour la gestion quotidienne des restaurants. Développée avec C# et .NET Framework, elle assure des performances optimales même sur des configurations matérielles modestes.\n\nFonctionnalités principales :\n- Système de caisse intégré avec gestion des tickets\n- Interface distincte pour la cuisine avec notifications en temps réel\n- Gestion des tables et des réservations\n- Suivi précis des stocks et alerte de réapprovisionnement\n- Gestion des employés et des plannings\n- Tableau de bord avec rapports financiers et statistiques\n\nL'architecture a été conçue pour fonctionner avec ou sans connexion Internet, avec une synchronisation automatique des données lorsque la connexion est rétablie. La base de données SQL Server garantit l'intégrité des données et permet des requêtes complexes pour l'analyse des performances du restaurant."
     },
     "project3": {
       "title": "Site Vitrine pour une Pharmacie",
-      "description": "Un site vitrine simple pour une pharmacie, mettant en avant les services et les informations de contact.",
-      "details": "Ce projet a été développé pour fournir des informations essentielles et des services offerts par la pharmacie."
-      
+      "description": "Un site vitrine complet pour une pharmacie, développé avec WordPress et Elementor.",
+      "details": "Ce site vitrine moderne pour une pharmacie a été développé avec WordPress et personnalisé avec Elementor pour offrir une expérience utilisateur optimale. Le design responsive s'adapte parfaitement à tous les appareils, des smartphones aux grands écrans.\n\nFonctionnalités principales :\n- Présentation des services et spécialités de la pharmacie\n- Catalogue interactif des produits phares avec filtres\n- Système de garde et horaires d'ouverture dynamiques\n- Formulaire de contact et demandes de préparation\n- Localisation Google Maps intégrée\n- Réservation en ligne de consultations spécialisées\n\nLe site intègre des optimisations SEO avancées pour améliorer la visibilité locale de la pharmacie. L'interface administrateur personnalisée facilite la mise à jour des contenus par le personnel non technique. Un système de cache et d'optimisation d'images garantit des temps de chargement rapides."
     },
     "project4": {
-      "title": "Landing Page pour une École",
-      "description": "Une landing page pour une école, présentant ses programmes, ses installations et ses coordonnées.",
-      "details": "Ce projet a été développé pour fournir des informations sur les offres de l'école et ses coordonnées."
-    },
-    "project7": {
-      "title": "Site Portfolio",
-      "description": "Un site portfolio personnel pour présenter mes compétences et mes projets.",
-      "details": "Ce projet a été développé pour mettre en avant mon parcours professionnel et les projets sur lesquels j'ai travaillé."
+      "title": "OtakuWorld",
+      "description": "Plateforme communautaire dédiée à la culture manga et anime, avec React et Tailwind.",
+      "details": "OtakuWorld est une plateforme communautaire immersive qui célèbre la culture manga et anime. Développée avec React et stylisée avec Tailwind CSS, elle offre une expérience utilisateur fluide et engageante pour les passionnés.\n\nFonctionnalités principales :\n- Catalogue d'animes et mangas avec système de notation\n- Fil d'actualités personnalisé selon les préférences\n- Forums de discussion thématiques\n- Système de recommandations basé sur les préférences\n- Calendrier des sorties et événements\n- Mode sombre et personnalisation de l'interface\n\nL'architecture du projet repose sur une API RESTful permettant des mises à jour en temps réel. L'optimisation des performances a été primordiale, avec l'implémentation de techniques de lazy loading et de code splitting pour garantir une expérience fluide même avec une large bibliothèque de contenus."
     },
     "project5": {
       "title": "Portfolio Personnel",
-      "description": "Mon portfolio personnel développé avec React, présentant mes projets et compétences.",
-      "details": "Ce portfolio a été conçu pour montrer mon parcours professionnel, mes compétences techniques et les projets sur lesquels j'ai travaillé. J'ai utilisé React pour sa flexibilité et sa performance, Framer Motion pour les animations fluides, et un design responsive pour assurer une expérience utilisateur optimale sur tous les appareils."
+      "description": "Portfolio interactif avec React et Framer Motion.",
+      "details": "Ce portfolio représente ma vision d'une présentation professionnelle moderne et interactive. Développé avec React et enrichi avec Framer Motion pour les animations, il met en valeur mon parcours et mes compétences techniques.\n\nCaractéristiques principales :\n- Design responsive s'adaptant à tous les appareils\n- Animations subtiles et fluides pour améliorer l'expérience utilisateur\n- Mode sombre/clair avec transition douce\n- Support multilingue (français et anglais)\n- Optimisation des performances avec lazy loading\n- Visualisation détaillée des projets et compétences\n\nL'architecture du site a été conçue en composants réutilisables, facilitant la maintenance et les évolutions futures. Une attention particulière a été portée à l'accessibilité et aux performances, avec des optimisations pour le Core Web Vitals et le référencement."
     },
-    "project6": {
-      "title": "Application Météo",
-      "description": "Une application météo simple qui récupère les données météorologiques en temps réel via une API.",
-      "details":" Ce projet a été développé pour fournir aux utilisateurs des informations météorologiques actuelles et des prévisions."
-        }
+    "features": "Fonctionnalités clés",
+    "details": "Détails du projet",
+    "moreDetails": "Voir plus de détails"
   },
-  "contact": "Contact",
-  "skills": "Mes Compétences"
-
+  "contact": "Contact"
 }

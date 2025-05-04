@@ -1,9 +1,11 @@
-import React from "react";
+import React, {  useEffect } from 'react';
 import { motion } from "framer-motion";
 import "./Projects.css";
 import { FaGithub } from "react-icons/fa";
 import useTranslation from './../../hooks/useTranslation';
 import { Link } from "react-router-dom";
+import { useReducedMotion } from "framer-motion";
+import { initMouseTracking } from '../../utils/mouseTracker';
 
 // Mise à jour des données de projet - limité aux 4 projets demandés
 const projectsData = [
@@ -55,6 +57,59 @@ const projectsData = [
 
 const Projects = () => {
   const t = useTranslation();
+  const prefersReducedMotion = useReducedMotion();
+  useEffect(() => {
+    // Initialise le suivi de souris pour l'effet de brillance
+    initMouseTracking();
+  }, []);
+  
+  // Nouvelles animations avancées (désactivées si l'utilisateur préfère réduire les animations)
+  const projectAnimation = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: prefersReducedMotion ? 0 : i * 0.1,
+        duration: 0.5,
+        ease: [0.43, 0.13, 0.23, 0.96]
+      }
+    }),
+    hover: {
+      y: -10,
+      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
+      transition: { duration: 0.3, ease: "easeOut" }
+    }
+  };
+  
+  const imageAnimation = {
+    hover: {
+      scale: 1.1,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
+  
+  const layerAnimation = {
+    rest: { opacity: 0 },
+    hover: {
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+        staggerChildren: 0.1
+      }
+    }
+  };
+  
+  const contentAnimation = {
+    rest: { opacity: 0, y: 20 },
+    hover: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3, ease: "easeOut" }
+    }
+  };
+  
   return (
     <section className="projects-section" id="projects">
       <motion.div
@@ -76,39 +131,64 @@ const Projects = () => {
           <motion.div
             key={project.id}
             className="project-box"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            custom={index}
+            initial="hidden"
+            whileInView="visible"
+            whileHover="hover"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={projectAnimation}
           >
-            <img
-              src={project.image}
-              alt={t(project.titleKey)}
-              className="project-image pharma"
-              loading="lazy"
-            />
-            <div className="project-layer">
-              <h4 className="project-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+            <motion.div className="project-image-container" variants={imageAnimation}>
+              <img
+                src={project.image}
+                alt={t(project.titleKey)}
+                className="project-image"
+                loading={index < 2 ? "eager" : "lazy"} // Charge immédiatement les 2 premières images
+              />
+            </motion.div>
+            
+            <motion.div 
+              className="project-layer"
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+              variants={layerAnimation}
+            >
+              <motion.h4 
+                className="project-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent"
+                variants={contentAnimation}
+              >
                 {t(project.titleKey)}
-              </h4>
-              <p>{t(project.descriptionKey)}</p>
-              <div className="project-actions">
-                {/* N'afficher l'icône GitHub que si le lien est valide */}
+              </motion.h4>
+              
+              <motion.p variants={contentAnimation}>
+                {t(project.descriptionKey)}
+              </motion.p>
+              
+              <motion.div className="project-actions" variants={contentAnimation}>
                 {project.link && project.link !== "https://github.com/MYK-OTAKU/" && (
-                  <a
+                  <motion.a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="project-link"
+                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    <FaGithub className="project-icon"></FaGithub>
-                  </a>
+                    <FaGithub className="project-icon" />
+                  </motion.a>
                 )}
-                <Link to={project.detailsPage} className="project-link">
-                  <i className="bx project-icon bx-link-external"></i>
-                </Link>
-              </div>
-            </div>
+                
+                <motion.div
+                  whileHover={{ scale: 1.2, rotate: -5 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Link to={project.detailsPage} className="project-link">
+                    <i className="bx project-icon bx-link-external"></i>
+                  </Link>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </motion.div>
         ))}
       </div>
