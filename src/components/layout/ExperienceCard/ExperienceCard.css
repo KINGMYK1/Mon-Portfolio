@@ -59,20 +59,24 @@
 }
 
 .experience-title {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: #fff;
   margin: 0;
 }
 
 .experience-company {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #ddd;
   margin: 0.2rem 0;
+  font-weight: bold;
+  
 }
 
 .experience-duration {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: bolder;
+
   color: #ccc;
 }
 
@@ -99,6 +103,8 @@
 
 .experience-description {
   font-size: 1rem;
+  font-weight: bold;
+
   color: #fff;
   margin-bottom: 1rem;
 }
@@ -139,4 +145,33 @@ justify-content: center;
 }
 
 
+}
+/* Ajoutez ces règles à votre fichier CSS existant */
+
+/* Optimisation pour les appareils tactiles */
+@media (hover: none) {
+  .experience-card {
+    cursor: pointer;
+  }
+  
+  /* Légère indication visuelle qu'on peut interagir */
+  .experience-card::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    z-index: 4;
+    pointer-events: none;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(0.8); opacity: 0.7; }
+    50% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(0.8); opacity: 0.7; }
+  }
 }

@@ -7,7 +7,7 @@ import OptimizedImage from "../../ui/OptimizedImage/OptimizedImage";
 import OptimizedVideo from "../../ui/OptimizedVideo/OptimizedVideo";
 import "./ExperienceDetails.css";
 
-// Données des expériences professionnelles
+// Modifiez les données d'expériences pour utiliser des placeholders
 const experienceData = [
   {
     id: "freelance",
@@ -19,10 +19,10 @@ const experienceData = [
     descriptionKey: "experience.freelance.description",
     detailsKey: "experience.freelance.details",
     tasksKey: "experience.freelance.tasks",
-    skills: ["React", "Angular", "Node.js", "MongoDB"],
+    skills: ["React", "Angular", "Node.js", "MongoDB", "TailwindCSS", "Material UI"],
     media: [
-      { type: "image", src: "/experiences/freelance1.jpg" },
-      { type: "image", src: "/experiences/freelance2.jpg" }
+      { type: "image", src: "https://placehold.co/600x400?text=Freelance+Work", poster: "" },
+      { type: "image", src: "https://placehold.co/600x400?text=Web+Development", poster: "" }
     ],
     projectLink: "/projects/5" // Lien vers le projet correspondant
   },
@@ -38,10 +38,28 @@ const experienceData = [
     tasksKey: "experience.digicard.tasks",
     skills: ["React Native", "JavaScript", "Node.js", "REST API"],
     media: [
-      { type: "video", src: "/text.mp4", poster: "/experiences/digicard-poster.jpg" },
-      { type: "image", src: "/experiences/digicard1.jpg" }
+      { type: "image", src: "https://placehold.co/600x400?text=Digicard+App", poster: "" },
+      { type: "image", src: "https://placehold.co/600x400?text=Mobile+Development", poster: "" }
     ],
     projectLink: "/projects/4"
+  },
+  // Ajout de l'expérience manquante "gouvernancia"
+  {
+    id: "gouvernancia",
+    titleKey: "experience.gouvernancia.title",
+    companyKey: "experience.gouvernancia.company",
+    locationKey: "experience.gouvernancia.location",
+    dateStartKey: "experience.gouvernancia.dateStart",
+    dateEndKey: "experience.gouvernancia.dateEnd",
+    descriptionKey: "experience.gouvernancia.description",
+    detailsKey: "experience.gouvernancia.details",
+    tasksKey: "experience.gouvernancia.tasks",
+    skills: ["Putty", "SSH", "Linux", "Shell Scripting", "Networking"],
+    media: [
+      { type: "image", src: "https://placehold.co/600x400?text=Gouvernancia", poster: "" },
+      { type: "image", src: "https://placehold.co/600x400?text=IT+Support", poster: "" }
+    ],
+    projectLink: "/projects/3" // Lien optionnel vers un projet lié
   }
 ];
 
@@ -207,14 +225,14 @@ const ExperienceDetails = () => {
             </div>
           </div>
           
-          {experience.projectLink && (
+          {/* {experience.p rojectLink && (
             <div className="exp-project-link">
               <h2 className="section-title">{t("experience.relatedProject")}</h2>
               <Link to={experience.projectLink} className="project-link-btn">
                 {t("experience.viewProject")}
               </Link>
             </div>
-          )}
+          )} */}
         </motion.div>
       </div>
     </div>

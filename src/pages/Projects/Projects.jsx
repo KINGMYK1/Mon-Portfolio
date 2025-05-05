@@ -40,7 +40,7 @@ const projectsData = [
     id: 4,
     titleKey: "projects.project4.title",      // OtakuWorld
     descriptionKey: "projects.project4.description",
-    technologies: ["React", "Tailwind CSS"],
+    technologies: ["Html", "Tailwind CSS", 'javascript'],
     link: "https://github.com/MYK-OTAKU/",    // Lien invalide - pas d'icône GitHub
     image: "/OtakuWorld/OtakuWorld.png",
     detailsPage: "/projects/4",

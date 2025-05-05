@@ -71,7 +71,7 @@
     "github": "GitHub"
   },
   "experience": {
-    "learnMore": "Show more",
+    "learnMore": "Learn more",
     "overview": "Overview",
     "responsibilities": "Responsibilities",
     "skillsUsed": "Skills Used",
@@ -82,7 +82,7 @@
       "title": "Full Stack Developer",
       "company": "Freelance",
       "location": "Casablanca, Morocco",
-      "dateStart": "January 2024",
+      "dateStart": "January 2025",
       "dateEnd": "Present",
       "description": "Small-scale freelance work and personal projects involving frontend and backend development.",
       "details": "As a freelance developer, I worked on small web components and custom frontend features for clients, including GPT‑MA. I also pursued various personal projects to improve my skills across the full web and mobile development stack.\n\nThese experiences allowed me to deepen my understanding of component-based design, RESTful API integration, and modern development tools.",
@@ -97,9 +97,9 @@
     "digicard": {
       "title": "Mobile Developer Intern",
       "company": "Digicard",
-      "location": "Rabat, Morocco",
-      "dateStart": "February 2024",
-      "dateEnd": "April 2024",
+      "location": "RaCasablancabat, Morocco",
+      "dateStart": "Jully 2024",
+      "dateEnd": "September 2024",
       "description": "Designed and built a mobile app based on provided specifications.",
       "details": "During my internship at Digicard, I developed a mobile application for internal use from scratch based on a provided functional specification document. The app was developed using React Native with Expo, Node.js for the backend, and Realm for local storage.\n\nThis experience helped me enhance my skills in mobile development, local data handling, and full-stack integration in a real-world context.",
       "tasks": [
@@ -115,8 +115,8 @@
       "title": "IT Intern",
       "company": "Gouvernancia",
       "location": "Casablanca, Morocco",
-      "dateStart": "July 2023",
-      "dateEnd": "August 2023",
+      "dateStart": "August 2023",
+      "dateEnd": "September 2023",
       "description": "Maintained and extended internal systems with added SSH logging features.",
       "details": "My internship at Gouvernancia involved working on existing internal tools to enhance their functionality. I was particularly focused on developing a script that records SSH sessions using Apache Guacamole.\n\nI also gained practical experience with SSH, PuTTY, and server-side configuration by installing and reconfiguring Guacamole for testing and production use.",
       "tasks": [
@@ -162,8 +162,8 @@
     },
     "project4": {
       "title": "OtakuWorld",
-      "description": "Community platform dedicated to manga and anime culture, developed with React and Tailwind CSS.",
-      "details": "OtakuWorld is an immersive community platform celebrating manga and anime culture. Developed with React and styled with Tailwind CSS, it offers a smooth and engaging user experience for enthusiasts.\n\nMain features:\n- Anime and manga catalog with rating system\n- Personalized news feed based on preferences\n- Thematic discussion forums\n- Recommendation system based on preferences\n- Release and event calendar\n- Dark mode and interface customization\n\nThe project architecture is based on a RESTful API allowing real-time updates. Performance optimization was paramount, with the implementation of lazy loading techniques and code splitting to ensure a smooth experience even with a large content library."
+      "description": "Community platform dedicated to manga and anime culture, developed with html , Tailwind CSS and Javascript.",
+      "details": "OtakuWorld is an immersive community platform celebrating manga and anime culture. Developed with Html and styled with Tailwind CSS animated width Javascript, it offers a smooth and engaging user experience for enthusiasts.\n\nMain features:\n- Anime and manga catalog with rating system\n- Personalized news feed based on preferences\n- Thematic discussion forums\n- Recommendation system based on preferences\n- Release and event calendar\n- Dark mode and interface customization\n\nThe project architecture is based on a RESTful API allowing real-time updates. Performance optimization was paramount, with the implementation of lazy loading techniques and code splitting to ensure a smooth experience even with a small content library."
     },
     "project5": {
       "title": "Personal Portfolio",

@@ -65,9 +65,10 @@ const projectsData = [
     link: "https://github.com/MYK-OTAKU/",
     demoLink: "",
     screenshots: [
-      "/OtakuWorld/OtakuWorld.png"
+      "/OtakuWorld/OtakuWorld.png",
+      "/OtakuWorld/OtakuWorld2.png"
     ],
-    technologies: ["React", "Tailwind CSS"]
+    technologies: ["Html", 'Javascript' ,"Tailwind CSS"]
   },
   {
     id: 5,

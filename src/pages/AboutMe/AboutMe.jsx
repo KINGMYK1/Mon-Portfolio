@@ -65,7 +65,7 @@ const AboutMe = () => {
       duration: `2024 - ${t("about.present", "Présent")}`,
       media: "/portfolio1.jpg",
       mediaType: "image", 
-      link: "/projects/5",
+      link: "/experience/freelance", // Correction du format avec le slash au début
     },
     {
       experienceId: "digicard-mobile", // ID pour la navigation vers ExperienceDetails
@@ -73,9 +73,9 @@ const AboutMe = () => {
       companyName: t("about.experiences.exp2.company", "Digicard"),
       description: t("about.experiences.exp2.description", "Développement d'une application Mobile pour des projets internes."),
       duration: "2024",
-      media: "/text.mp4", // Remplacez par le chemin réel de la vidéo
-      mediaType: "video",
-      link: "#",
+      media: "/logo.png",
+      mediaType: "image",
+      link: "/experience/digicard-mobile", // Correction du format
     },
     {
       experienceId: "gouvernancia", // ID pour la navigation vers ExperienceDetails
@@ -86,7 +86,7 @@ const AboutMe = () => {
       media: "/portfolio2.jpg",
       // Chemin vers l'image optimisée
       mediaType: "image",
-      link: "/experience/gouvernancia",
+      link: "/experience/gouvernancia", // Correction du format
     },
   ];
 
@@ -142,7 +142,7 @@ const AboutMe = () => {
             
             {/* Partie Titre */}
             <div className="profile-info">
-              <h3 className="section-title text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
+              <h3 className=" text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
                 {aboutData.name}
               </h3>
               <p className="profile-title">
@@ -160,7 +160,7 @@ const AboutMe = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <div className="education-title text-center">
-              <h2 className="section-title text-center text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
+              <h2 className=" text-center text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
                 {t("about.education", "Formation")}
               </h2>
             </div>
@@ -187,7 +187,7 @@ const AboutMe = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.8 }}
         >
-           <h2 className="section-title text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
+           <h2 className=" text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
              {t("about.experience", "Expérience")}
            </h2>
           <div className="experiences-container">
