@@ -102,7 +102,7 @@ const Header = () => {
                 {theme === 'dark' ? (
                   <SunIcon className="settings-icon" />
                 ) : (
-                  <MoonIcon className="settings-icon" />
+                  <MoonIcon alt="Setting" className="settings-icon" />
                 )}
               </motion.div>
               <motion.div

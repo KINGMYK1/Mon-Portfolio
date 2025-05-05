@@ -82,7 +82,7 @@
       "title": "Développeur Full Stack",
       "company": "Freelance",
       "location": "Casablanca, Morocco",
-      "dateStart": "January 2024",
+      "dateStart": "January 2025",
       "dateEnd": "Present",
       "description": "Travail en freelance sur de petits projets web et mobiles, ainsi que projets personnels.",
       "details": "En tant que développeur freelance, j'ai réalisé des composants web et des fonctionnalités frontend pour des clients, notamment GPT‑MA. J'ai également mené divers projets personnels pour approfondir mes compétences en développement web et mobile.\n\nCes expériences m'ont permis de renforcer ma maîtrise du design de composants, de l'intégration d'API REST et des outils modernes de développement.",
@@ -97,9 +97,9 @@
     "digicard": {
       "title": "Stagiaire Développeur Mobile",
       "company": "Digicard",
-      "location": "Rabat, Morocco",
-      "dateStart": "February 2024",
-      "dateEnd": "April 2024",
+      "location": "Casablanca, Morocco",
+      "dateStart": "Juillet 2024",
+      "dateEnd": "Septembre 2024",
       "description": "Conception et développement d’une application mobile interne selon un cahier des charges.",
       "details": "Durant mon stage chez Digicard, j'ai développé une application mobile de A à Z avec Expo React Native, un backend Node.js, et Realm pour la base locale.\n\nCette expérience m’a permis de perfectionner mes compétences en développement mobile et en intégration full‑stack.",
       "tasks": [
@@ -114,8 +114,8 @@
       "title": "Stagiaire IT",
       "company": "Gouvernancia",
       "location": "Casablanca, Morocco",
-      "dateStart": "July 2023",
-      "dateEnd": "August 2023",
+      "dateStart": "Août 2023",
+      "dateEnd": "Septembre 2023",
       "description": "Maintenance et extension d’outils internes, création d’un script de journalisation SSH.",
       "details": "Pendant mon stage, j’ai travaillé sur des outils internes existants pour ajouter des fonctionnalités, notamment un script d’enregistrement des sessions SSH via Apache Guacamole.\n\nJ’ai configuré et testé Guacamole et PuTTY, ce qui m’a permis d’approfondir mes connaissances en SSH.",
       "tasks": [
