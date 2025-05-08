@@ -103,6 +103,56 @@
   font-size: 1rem;
 }
 
+/* Tooltip pour les icônes */
+.tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--card-bg, rgba(30, 41, 59, 0.8));
+  color: var(--text-color, white);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  z-index: 1000;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background-color: inherit;
+  border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  border-left: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+}
+
+.tooltip-wrapper:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* Ajustement pour les tooltips dans le menu settings */
+.settings-option .tooltip {
+  bottom: -25px;
+}
+
 /* Adaptations responsives */
 
 /* Pour écrans moyens */
@@ -158,6 +208,10 @@
     transform: translate(-130px, 35px) !important;
    
 }
+  .tooltip {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
 }
 
 /* Pour mobiles */

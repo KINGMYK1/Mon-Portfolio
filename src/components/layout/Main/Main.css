@@ -80,7 +80,7 @@
 
 @media (max-width: 768px) {
   .main-container {
-    padding-bottom: var(--horizontal-nav-height);
+    margin-bottom: calc(var(--horizontal-nav-height) + 100px);
   }
 
   .navbar {
@@ -101,7 +101,33 @@
     max-height: calc(100vh - var(--footer-height) - 42px);
   }
 
- 
+  /* Ajoutez cet espace sous la navbar mobile */
+  /* Pour la structure générale de l'application */
+  .page-container,
+  .layout-container,
+  .main-content {
+    padding-top: 20px; /* Ajustez cette valeur selon vos besoins */
+  }
+  
+  /* Spécifiquement pour les en-têtes des pages */
+  .about-header,
+  .projects-header,
+  .skills-header,
+  .contact-header {
+    margin-top: 15px;
+  }
+}
+
+/* Si la navbar est fixe et que vous avez besoin de plus d'espace */
+@media (max-width: 768px) {
+  .horizontal-navbar + div,
+  .mobile-nav + div {
+    margin-top: 25px;
+  }
+  .main-container {
+    margin-bottom: calc(var(--horizontal-nav-height) + 100px);
+  }
+
 }
 
 @media (max-width: 550px) {

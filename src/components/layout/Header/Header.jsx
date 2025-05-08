@@ -67,7 +67,11 @@ const Header = () => {
       <div className="header-title">Mohamed Yehiya Koïta</div>
 
       <div className="header-settings">
-        <Cog6ToothIcon onClick={handleSettingsClick} className="settings-icon" />
+          <Cog6ToothIcon 
+            onClick={handleSettingsClick} 
+            className="settings-icon" 
+            title={t('header.settings', 'Paramètres')}
+          />
         <AnimatePresence>
           {isSettingsOpen && (
             <motion.div
@@ -88,7 +92,10 @@ const Header = () => {
                 className="settings-option settings-option-lang"
                 onClick={toggleLanguage}
               >
-                <GlobeAltIcon className="settings-icon" />
+                <GlobeAltIcon 
+                  className="settings-icon" 
+                  title={t('header.language', 'Changer la langue')}
+                />
               </motion.div>
               <motion.div
                 custom={{ x: -85, y: 65, delay: 0.2 }}
@@ -100,9 +107,15 @@ const Header = () => {
                 onClick={toggleTheme}
               >
                 {theme === 'dark' ? (
-                  <SunIcon className="settings-icon" />
+                  <SunIcon 
+                    className="settings-icon" 
+                    title={t('header.theme.dark', 'Mode clair')} 
+                  />
                 ) : (
-                  <MoonIcon alt="Setting" className="settings-icon" />
+                  <MoonIcon 
+                    className="settings-icon" 
+                    title={t('header.theme.light', 'Mode sombre')} 
+                  />
                 )}
               </motion.div>
               <motion.div
@@ -113,7 +126,10 @@ const Header = () => {
                 variants={iconVariants}
                 className="settings-option settings-option-robot"
               >
-                <FaRobot className="settings-icon" />
+                <FaRobot 
+                  className="settings-icon" 
+                  title={t('header.assistant', 'Assistant IA')} 
+                />
               </motion.div>
             </motion.div>
           )}

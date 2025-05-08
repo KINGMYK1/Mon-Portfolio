@@ -206,5 +206,14 @@
     "message": "Please enter a message",
     "messageLength": "Message must be at least 20 characters"
   }
-}
+},
+  "header": {
+    "settings": "Settings",
+    "language": "Change language",
+    "theme": {
+      "dark": "Light mode",
+      "light": "Dark mode"
+    },
+    "assistant": "AI Assistant"
+  }
 }

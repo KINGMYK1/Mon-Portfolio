@@ -283,6 +283,7 @@ body {
   .btn-text {
     position: relative;
     z-index: 2;
+    color:var(--text-color2);
   }
   
   .submit-btn:disabled {
