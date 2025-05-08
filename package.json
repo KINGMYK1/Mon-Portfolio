@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://kingmyk1.github.io/Mon-Portfolio/",
+  "homepage": "https://mohamedyehiyakoita.netlify.app/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
