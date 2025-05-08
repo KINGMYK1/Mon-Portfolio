@@ -40,8 +40,19 @@ const Contact = () => {
   // État pour l'animation des icônes sociales
   const [activeIcon, setActiveIcon] = useState(null);
   const [isOrbitPaused, setIsOrbitPaused] = useState(false);
+  const [tappedItem, setTappedItem] = useState(null);
+  const [showConfirm, setShowConfirm] = useState(false);
+  const [confirmLink, setConfirmLink] = useState('');
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Détection d'appareil mobile
+    const checkMobile = () => {
+      setIsMobile(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    };
+    
+    checkMobile();
+    
     // Configuration d'EmailJS
     emailjs.init({
       publicKey: "OxFutu7-O8y4U1W5C",
@@ -213,6 +224,86 @@ const Contact = () => {
       delay: 0.7
     },
   ];
+  // Tableau pour les liens additionnels
+const additionalLinks = [
+  {
+    id: 'telegram',
+    icon: <FaTelegram />,
+    label: 'Telegram',
+    href: 'https://t.me/MYKDEV1'
+  },
+  {
+    id: 'leetcode',
+    icon: <SiLeetcode />,
+    label: 'LeetCode',
+    href: 'https://leetcode.com/u/myk-otaku/'
+  },
+  {
+    id: 'discord',
+    icon: <FaDiscord />,
+    label: 'Discord',
+    href: 'https://discord.gg/ehhyjUDM'
+  }
+];
+  const handleOrbitItemClick = (e, link) => {
+    if (isMobile) {
+      e.preventDefault(); // Empêcher la navigation par défaut
+      
+      if (tappedItem === link.id) {
+        // Deuxième tap: afficher la confirmation
+        setConfirmLink(link.href);
+        setShowConfirm(true);
+      } else {
+        // Premier tap: mémoriser l'élément et arrêter l'orbite
+        setTappedItem(link.id);
+        setActiveIcon(link.id);
+        setIsOrbitPaused(true);
+        
+        // Réinitialiser après 3 secondes si pas de second tap
+        setTimeout(() => {
+          if (tappedItem === link.id) {
+            setTappedItem(null);
+          }
+        }, 3000);
+      }
+    }
+    // Sur desktop, comportement normal (pas besoin de preventDefault)
+  };
+  
+  // Ajoutez cette fonction pour la redirection après confirmation
+  const handleConfirm = () => {
+    window.open(confirmLink, '_blank');
+    setShowConfirm(false);
+    setTappedItem(null);
+  };
+  
+  // Ajoutez cette fonction pour annuler
+  const handleCancel = () => {
+    setShowConfirm(false);
+    setTappedItem(null);
+  };
+  const handleAdditionalLinkClick = (e, link) => {
+    if (isMobile) {
+      e.preventDefault(); // Empêcher la navigation par défaut
+      
+      if (tappedItem === `additional-${link.id}`) {
+        // Deuxième tap: afficher la confirmation
+        setConfirmLink(link.href);
+        setShowConfirm(true);
+      } else {
+        // Premier tap: mémoriser l'élément
+        setTappedItem(`additional-${link.id}`);
+        
+        // Réinitialiser après 3 secondes si pas de second tap
+        setTimeout(() => {
+          if (tappedItem === `additional-${link.id}`) {
+            setTappedItem(null);
+          }
+        }, 3000);
+      }
+    }
+    // Sur desktop, comportement normal (pas besoin de preventDefault)
+  };
   return (
     <div className="contact-page-container">
       <motion.div 
@@ -414,18 +505,22 @@ const Contact = () => {
     href={link.href}
     target={link.id !== 'email' && link.id !== 'phone' ? "_blank" : undefined}
     rel="noopener noreferrer"
-    className={`orbit-item ${activeIcon === link.id ? 'active' : ''}`}
+    className={`orbit-item ${activeIcon === link.id ? 'active' : ''} ${tappedItem === link.id ? 'tapped' : ''}`}
     style={{
       '--index': index,
-      '--total': 5 // Assurez-vous que cette valeur est 6
+      '--total': 5
     }}
+    onClick={(e) => handleOrbitItemClick(e, link)}
     onMouseEnter={() => {
-      setActiveIcon(link.id);
-      setIsOrbitPaused(true);
+      if (!isMobile) {
+        setActiveIcon(link.id);
+        setIsOrbitPaused(true);
+      }
     }}
     onMouseLeave={() => {
-      setActiveIcon(null);
-      // Ne pas désactiver la pause ici pour permettre à la pause de continuer après le hover
+      if (!isMobile) {
+        setActiveIcon(null);
+      }
     }}
   >
     <div className="orbit-icon">
@@ -444,17 +539,20 @@ const Contact = () => {
     </div>
     
     {/* Liens supplémentaires */}
-    {/* Liens supplémentaires */}
-<div className="additional-social-links">
-  <a href="https://t.me/MYKDEV" target="_blank" rel="noopener noreferrer" className="additional-link">
-    <FaTelegram />
-  </a>
-  <a href="https://leetcode.com/u/myk-otaku/" target="_blank" rel="noopener noreferrer" className="additional-link">
-    <SiLeetcode />
-  </a>
-  <a href="https://discord.gg/ehhyjUDM" target="_blank" rel="noopener noreferrer" className="additional-link">
-    <FaDiscord />
-  </a>
+    <div className="additional-social-links">
+  {additionalLinks.map(link => (
+    <a 
+      key={link.id}
+      href={link.href} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className={`additional-link ${tappedItem === `additional-${link.id}` ? 'tapped' : ''}`}
+      onClick={(e) => handleAdditionalLinkClick(e, link)}
+    >
+      {link.icon}
+      <span className="additional-tooltip">{link.label}</span>
+    </a>
+  ))}
 </div>
   </div>
 </div>
@@ -474,6 +572,22 @@ const Contact = () => {
           <div className="line line-3"></div>
         </div>
       </div>
+      {/* Boîte de dialogue de confirmation */}
+{showConfirm && (
+  <div className="confirm-dialog">
+    <div className="confirm-content">
+      <p>{t('contact.confirmRedirect', 'Êtes-vous sûr de vouloir accéder à ce lien ?')}</p>
+      <div className="confirm-buttons">
+        <button onClick={handleCancel} className="cancel-btn">
+          {t('contact.cancel', 'Annuler')}
+        </button>
+        <button onClick={handleConfirm} className="confirm-btn">
+          {t('contact.confirm', 'Confirmer')}
+        </button>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 };

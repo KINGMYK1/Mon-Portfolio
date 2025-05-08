@@ -1,23 +1,26 @@
-/* Variables pour les couleurs et transitions */
+/* SYSTÈME DE THÈME - Variables pour thème clair (défaut) */
 :root {
-    --main-color: #754ef9;
-    --secondary-color: #9333ea;
-    --accent-color: #ec4899;
-    --neon-glow: 0 0 10px rgba(117, 78, 249, 0.5), 0 0 20px rgba(117, 78, 249, 0.3);
-    --bg-color: rgba(15, 23, 42, 0.6);
-    --card-bg: rgba(30, 41, 59, 0.8);
-    --card-hover-bg: rgba(30, 41, 59, 0.95);
-    --text-color: #f1f5f9;
-    --text-secondary: #cbd5e1;
-    --border-color: rgba(255, 255, 255, 0.1);
-    --input-bg: rgba(51, 65, 85, 0.5);
-    --input-focus: rgba(71, 85, 105, 0.8);
-    --error-color: #ef4444;
-    --success-color: #10b981;
-    --transition-slow: 0.5s ease;
-    --transition-normal: 0.3s ease;
-    --transition-fast: 0.15s ease;
-  }
+  /* Couleurs principales restent les mêmes dans les deux thèmes */
+  --main-color: #754ef9;
+  --secondary-color: #9333ea;
+  --accent-color: #ec4899;
+  --neon-glow: 0 0 10px rgba(117, 78, 249, 0.5), 0 0 20px rgba(117, 78, 249, 0.3);
+  --error-color: #ef4444;
+  --success-color: #10b981;
+  
+  /* Variables pour thème clair */
+ 
+  
+  /* Transitions restent les mêmes */
+ 
+}
+
+/* THÈME SOMBRE - Redéfini quand la classe dark-mode est présente */
+.dark-mode {
+ 
+}
+
+
   html {
   font-size: 62.5%;
   overflow: hidden; /* Empêcher le défilement */
@@ -686,12 +689,13 @@ body {
 
     .additional-social-links {
     position: absolute;
-    bottom: -20px;
+    bottom: -15px;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 15px;
+    /* border-color:; */
   }
   @keyframes float {
     0% { transform: translateY(0); }
@@ -699,10 +703,12 @@ body {
   }
   
   .additional-link {
+    border: 2px solid  var(--border-color);
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(30, 41, 59, 0.6);
+
+    background: var(--orbit-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -881,6 +887,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+  background:none;
 }
 
 .orbit-item {
@@ -894,7 +901,7 @@ body {
   margin-top: -24px;
   margin-left: -24px;
   border-radius: 50%;
-  background: rgba(30, 41, 59, 0.8);
+  background: var(--orbit-bg);
   border: 2px solid var(--border-color);
   display: flex;
   align-items: center;
@@ -968,7 +975,8 @@ body {
 /* Info badge sous l'orbite */
 .orbit-info {
   position: absolute;
-  bottom: 60px;
+  /* bottom: 100px; */
+  top:60%;
   left: 0;
   width: 100%;
   text-align: center;
@@ -1011,6 +1019,18 @@ body {
 @keyframes rotateOrbit {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Augmenter la taille de 10% sur grands écrans */
+@media (min-width: 1024px) {
+  .contact-form-container,
+  .social-orbit-container {
+    min-height: 510px; /* 580px + 10% */
+  }
+  
+  .orbit-system {
+    min-height: 450px; /* 400px + 10% */
+  }
 }
 
 /* Responsive */
@@ -1070,7 +1090,11 @@ body {
     font-weight: 700;
     color: var(--text-color);
   }
-  
+  .orbit-info {
+    
+    top:65%;
+    
+  }
 }
 
 /* Ajustements spécifiques pour les très petits écrans */
@@ -1104,10 +1128,10 @@ body {
     margin-top: -17.5px;
     margin-left: -17.5px;
   }
-   .orbit-name{
-  top:-57px;
-  /* z-index:1332; */
-  position :relative;
+  .orbit-info {
+   
+    top:60%;
+    
   }
   
   /*
@@ -1121,4 +1145,127 @@ body {
       margin-bottom: -55px;
       z-index:-1;
       } */
+}
+
+
+/* Style pour l'élément tappé */
+.orbit-item.tapped {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(117, 78, 249, 0.8);
+  background: var(--main-color);
+  z-index: 100;
+}
+
+.orbit-item.tapped .orbit-icon {
+  color: white;
+  transform: scale(1.2);
+}
+
+/* Boîte de dialogue de confirmation */
+.confirm-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirm-content {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 85%;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+}
+
+.confirm-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.confirm-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cancel-btn, .confirm-btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.confirm-btn {
+  background: var(--main-color);
+  border: none;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.confirm-btn:hover {
+  background: var(--secondary-color);
+}/* Tooltip pour les liens additionnels */
+.additional-tooltip {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+/* État tappé pour les liens additionnels */
+.additional-link.tapped {
+  background: var(--main-color);
+  color: white;
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(117, 78, 249, 0.6);
+}
+
+/* Afficher le tooltip sur hover desktop */
+@media (min-width: 769px) {
+  .additional-link:hover .additional-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Style sur mobile */
+@media (max-width: 768px) {
+  .additional-link {
+    position: relative;
+  }
+  
+  .additional-link.tapped .additional-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }

@@ -14,15 +14,40 @@ body.dark {
   --nav-circle-active-bg: #3C3D37;
   --proffession-container-bg:  #121212;
   --details-section-background-color:#333;
-
+  --card-bg: rgba(30, 41, 59, 0.8);
+  --bg-color: rgba(15, 23, 42, 0.6);
+  --card-bg: rgba(30, 41, 59, 0.8);
+  --card-hover-bg: rgba(30, 41, 59, 0.95);
+  --text-color: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --input-bg: rgba(51, 65, 85, 0.5);
+  --input-focus: rgba(71, 85, 105, 0.8);
+  --transition-slow: 0.5s ease;
+  --transition-normal: 0.3s ease;
+  --transition-fast: 0.15s ease;
   --nav-circle-border: #ffff;
   /* --nav-circle-active-bg: #121212; */
+  --orbit-bg:rgba(30, 41, 59, 0.8);
 }
 
 body.light {
+  --orbit-bg:rgba(248, 250, 252, 0.8);
+
+  --transition-slow: 0.5s ease;
+  --transition-normal: 0.3s ease;
+  --transition-fast: 0.15s ease;
   --background-color: #FEF9F2;
   --details-section-background-color:#EBE8DB;
-
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --bg-color: rgba(248, 250, 252, 0.8);
+  /* --card-bg: rgba(255, 255, 255, 0.92); */
+  --card-hover-bg: rgba(255, 255, 255, 0.98);
+  --text-color: #1e293b;
+  --text-secondary: #475569;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --input-bg: rgba(241, 245, 249, 0.8);
+  --input-focus: rgba(226, 232, 240, 0.9);
   /* --background-color: linear-gradient(115deg, #fafafa, #faf7f7, #f0f0f0); */
   --text-color: #000000;
   --text-color2: #ffffff;
