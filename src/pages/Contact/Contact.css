@@ -1,0 +1,1124 @@
+/* Variables pour les couleurs et transitions */
+:root {
+    --main-color: #754ef9;
+    --secondary-color: #9333ea;
+    --accent-color: #ec4899;
+    --neon-glow: 0 0 10px rgba(117, 78, 249, 0.5), 0 0 20px rgba(117, 78, 249, 0.3);
+    --bg-color: rgba(15, 23, 42, 0.6);
+    --card-bg: rgba(30, 41, 59, 0.8);
+    --card-hover-bg: rgba(30, 41, 59, 0.95);
+    --text-color: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --input-bg: rgba(51, 65, 85, 0.5);
+    --input-focus: rgba(71, 85, 105, 0.8);
+    --error-color: #ef4444;
+    --success-color: #10b981;
+    --transition-slow: 0.5s ease;
+    --transition-normal: 0.3s ease;
+    --transition-fast: 0.15s ease;
+  }
+  html {
+  font-size: 62.5%;
+  overflow: hidden; /* Empêcher le défilement */
+}
+
+body {
+  /* background: var(--bg-color); */
+  color: var(--text-color);
+  height: 100vh; /* Hauteur fixe pour le corps */
+  overflow: hidden; /* Empêcheri le défilement */
+}
+  
+  /* Container principal avec layout grid */
+  .contact-page-container {
+    width: 100%;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    color: var(--text-color);
+    backdrop-filter: blur(10px);
+  }
+  
+  .contact-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Nouvelle grille avec formulaire à gauche */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+  }
+  
+  /* FORMULAIRE DE CONTACT (GAUCHE) */
+  .contact-form-wrapper {
+    position: relative;
+  }
+  
+  .contact-form-container {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  .contact-form-container::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    height: 5px;
+    background: linear-gradient(
+      90deg,
+      var(--main-color),
+      var(--secondary-color),
+      var(--accent-color),
+      var(--secondary-color),
+      var(--main-color)
+    );
+    background-size: 200% 100%;
+    animation: gradientBorder 4s linear infinite;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  @keyframes gradientBorder {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+  }
+  
+  .form-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, var(--main-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .form-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    position: relative;
+  }
+  
+  .label-text {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: var(--transition-normal);
+  }
+  
+  .input-container,
+  .textarea-container,
+  .select-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .input-container input,
+  .textarea-container textarea,
+  .select-container select {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all var(--transition-normal);
+  }
+  
+  .input-container input:focus,
+  .textarea-container textarea:focus,
+  .select-container select:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 3px rgba(117, 78, 249, 0.2);
+  }
+  
+  /* Effet futuriste de focus */
+  .input-focus-effect,
+  .textarea-focus-effect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--main-color), var(--secondary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-normal);
+  }
+  
+  .input-container input:focus ~ .input-focus-effect,
+  .textarea-container textarea:focus ~ .textarea-focus-effect {
+    transform: scaleX(1);
+  }
+  
+  .select-container {
+    position: relative;
+    display: block;
+  }
+  
+  .select-container select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 2rem;
+    cursor: pointer;
+  }
+  
+  .select-arrow {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    color: var(--main-color);
+    font-size: 0.8rem;
+    pointer-events: none;
+    transition: transform var(--transition-normal);
+  }
+  
+  .select-container:hover .select-arrow {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  
+  .error-message {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .error-message::before {
+    content: '⚠';
+    margin-right: 0.3rem;
+  }
+  
+  input.error,
+  textarea.error {
+    border-color: var(--error-color);
+  }
+  
+  .submit-btn {
+    background: linear-gradient(to right, var(--main-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+  }
+  
+  .submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 100%
+    );
+    transition: var(--transition-normal);
+  }
+  
+  .submit-btn:hover::before {
+    left: 100%;
+  }
+  
+  .btn-icon {
+    font-size: 1.2rem;
+    transition: transform var(--transition-normal);
+  }
+  
+  .submit-btn:hover .btn-icon {
+    transform: translateX(5px);
+  }
+  
+  .btn-text {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  .form-error-message {
+    text-align: center;
+    color: var(--error-color);
+    margin-top: 1rem;
+    padding: 0.7rem;
+    border-radius: 8px;
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+  
+  /* Message de succès futuriste */
+  .success-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .success-orbit {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .success-planet {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(117, 78, 249, 0.5);
+    animation: pulse 2s infinite ease-in-out;
+  }
+  
+  .success-check {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .orbit-line {
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(117, 78, 249, 0.3);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: rotate 8s linear infinite;
+  }
+  
+  .orbit-line::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    box-shadow: 0 0 10px var(--accent-color);
+  }
+  
+  .orbit-line::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10px;
+    right: 55px;
+    box-shadow: 0 0 8px var(--secondary-color);
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  .success-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--main-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .success-description {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    max-width: 80%;
+    line-height: 1.6;
+  }
+  
+  .reset-form-btn {
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .reset-form-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--main-color);
+    z-index: -1;
+    transition: var(--transition-normal);
+  }
+  
+  .reset-form-btn:hover {
+    color: white;
+  }
+  
+  .reset-form-btn:hover::before {
+    width: 100%;
+  }
+  
+  /* SECTION INFORMATIONS (DROITE) */
+  .contact-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* CARTE DE PROFIL AMÉLIORÉE */
+  .profile-card-container {
+    position: relative;
+  }
+  
+  .profile-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    background: var(--card-hover-bg);
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .profile-avatar-wrapper {
+    position: relative;
+    flex-shrink: 0;
+  }
+  
+  .profile-avatar-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid transparent;
+    background: linear-gradient(var(--main-color), var(--secondary-color)) padding-box,
+      linear-gradient(to right, var(--main-color), var(--secondary-color)) border-box;
+    z-index: 1;
+  }
+  
+  .avatar-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, var(--main-color) 0%, transparent 70%);
+    opacity: 0.5;
+    filter: blur(10px);
+    z-index: 0;
+  }
+  
+  .avatar-status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--card-bg);
+    z-index: 2;
+  }
+  
+  .avatar-status.online {
+    background-color: var(--success-color);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+  }
+  
+  .profile-details {
+    flex: 1;
+  }
+  
+  .profile-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+  }
+  
+  .profile-title {
+    font-size: 0.95rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  
+  .profile-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-item {
+    flex: 1;
+    border-radius: 8px;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    text-align: center;
+    transition: all var(--transition-normal);
+  }
+  
+  .stat-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+  }
+  
+  .stat-value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--main-color);
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+  
+  .profile-badge {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .badge-text {
+    padding: 0.4rem 0.8rem;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.1));
+    color: var(--success-color);
+    font-size: 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    display: flex;
+    align-items: center;
+  }
+  
+  .badge-text::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: var(--success-color);
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    box-shadow: 0 0 5px var(--success-color);
+    animation: pulseDot 2s infinite;
+  }
+  
+  @keyframes pulseDot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  /* SYSTÈME D'ORBITE AMÉLIORÉ */
+.social-orbit-container {
+  position: relative;
+  width: 100%;
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+  
+.social-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text-color);
+  position: relative;
+}
+
+.social-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(to right, var(--main-color), var(--secondary-color));
+  border-radius: 3px;
+}
+/* Liens sociaux supplémentaires */
+.orbit-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  /* background: ; */
+ 
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  border: 1px dashed var(--secondary-color);
+}
+.orbit-line-1 {
+  width: 280px;
+  height: 280px;
+  animation: rotateOrbit 30s linear infinite;
+}
+
+.orbit-line-2 {
+  transform: translate(-50%, -50%);
+  /* border: 1px dashed var(--secondary-color); */
+
+  width: 200px;
+  height: 200px;
+  animation: rotateOrbit 20s linear infinite reverse;
+}
+
+  
+/* Connexions moléculaires */
+.molecular-connection {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 2px;
+  transform-origin: left center;
+  opacity: 0;
+  transition: opacity 0.5s ease, width 0.5s ease;
+}
+
+.connection-1 {
+  background: linear-gradient(90deg, var(--main-color), transparent);
+  transform: rotate(30deg);
+}
+
+.connection-2 {
+  background: linear-gradient(90deg, var(--accent-color), transparent);
+  transform: rotate(150deg);
+}
+.orbit-system:hover .molecular-connection {
+  opacity: 0.7;
+  width: 140px;
+}
+
+    .additional-social-links {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  @keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-8px); }
+  }
+  
+  .additional-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(30, 41, 59, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    animation: float 3s infinite alternate ease-in-out;
+  }
+  
+  .additional-link:nth-child(1) { animation-delay: 0s; }
+  .additional-link:nth-child(2) { animation-delay: 0.5s; }
+  .additional-link:nth-child(3) { animation-delay: 1s; }
+  
+  .additional-link:hover {
+    transform: scale(1.2);
+  border-color: var(--secondary-color);
+    background: var(--main-color);
+    color: white;
+  }
+  
+  /* Statistiques */
+  .orbit-stats {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 20px;
+  }
+  
+  .orbit-stat {
+    flex: 1;
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+  }
+  
+  .orbit-stat:hover {
+    background: rgba(30, 41, 59, 0.7);
+    transform: translateY(-5px);
+  }
+  
+  .stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--main-color);
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+  
+  /* Système d'orbite avec avatar central fixe */
+  .orbit-system {
+    position: relative;
+    height: 360px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+/* Avatar central */
+.avatar-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.orbit-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background: 
+    linear-gradient(to right, var(--main-color), var(--secondary-color)) border-box;
+}
+
+.avatar-glow {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  border-radius: 99999px;
+  border-radius: 9999px;
+  background: linear-gradient(to top right, rgba(117, 78, 249, 0.6), rgba(117, 78, 249, 0.8));
+  background: radial-gradient(circle, rgba(117, 78, 249, 0.6) 0%, transparent 70%);
+  filter: blur(8px);
+  animation: pulse 2s infinite  ;
+  z-index: 10;
+  opacity: 0.8;
+  -webkit-border-radius: 99999px;
+  -moz-border-radius: 99999px;
+  -ms-border-radius: 99999px;
+  -o-border-radius: 99999px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Orbites */
+/* .orbit-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px dashed rgba(117, 78, 249, 0.4);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+} */
+
+.orbit-line-1 {
+  width: 280px;
+  height: 280px;
+  animation: rotateOrbit 30s linear infinite;
+}
+
+.orbit-line-2 {
+  width: 200px;
+  height: 200px;
+  animation: rotateOrbit 20s linear infinite reverse;
+}
+
+/* Connexions moléculaires */
+.molecular-connection {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 2px;
+  transform-origin: left center;
+  opacity: 0;
+  transition: opacity 0.5s ease, width 0.5s ease;
+}
+
+.connection-1 {
+  background: linear-gradient(90deg, var(--main-color), transparent);
+  transform: rotate(30deg);
+}
+
+.connection-2 {
+  background: linear-gradient(90deg, var(--accent-color), transparent);
+  transform: rotate(150deg);
+}
+
+.orbit-system:hover .molecular-connection {
+  opacity: 0.7;
+  width: 140px;
+}
+
+/* Éléments en orbite */
+.orbit-items-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.orbit-item {
+  --orbit-radius: 140px;
+  --angle: calc(360deg / 5 * var(--index));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  margin-top: -24px;
+  margin-left: -24px;
+  border-radius: 50%;
+  background: rgba(30, 41, 59, 0.8);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(var(--angle)) translateY(calc(-1 * var(--orbit-radius))) rotate(calc(-1 * var(--angle)));
+  animation: orbitRotate 20s linear infinite;
+  animation-delay: calc(var(--index) * -0s / 5);
+  /*Animationdécalée*/z-index: 5;
+  transition: all 0.3s ease;
+  -webkit-animation: orbitRotate 20s linear infinite;
+}
+@keyframes orbitRotate {
+  0% { 
+    transform: rotate(var(--angle)) translateY(calc(-1 * var(--orbit-radius))) rotate(calc(-1 * var(--angle)));
+  }
+  100% {
+    transform: rotate(calc(var(--angle) + 360deg)) translateY(calc(-1 * var(--orbit-radius))) rotate(calc(-1 * (var(--angle) + 360deg)));
+   
+}
+}
+
+/* Mise en pause quand l'orbite est survolée */
+.orbit-system.paused .orbit-item,
+.orbit-system.paused .orbit-line {
+  animation-play-state: paused;
+}
+
+.orbit-icon {
+  color: var(--text-color);
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+/* CORRECTION DU HOVER - pas de changement de position */
+.orbit-item:hover {
+  background: var(--main-color);
+  border-color: var(--secondary-color);
+  opacity: 0.9;
+  z-index: 20;
+  box-shadow: 0 0 15px rgba(117, 78, 249, 0.6);
+  /* Plus de transform qui change la position */
+}
+
+.orbit-item:hover .orbit-icon {
+  color: white;
+  transform: scale(1.2);
+}
+
+.orbit-tooltip {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.orbit-item:hover .orbit-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Info badge sous l'orbite */
+.orbit-info {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+.orbit-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-color);
+  /* margin-top:0px; */
+}
+
+.orbit-title {
+  font-size: 1rem;
+  margin: 2px 0 4px;
+  color: var(--main-color);
+}
+
+.orbit-badge {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--success-color);
+  font-size: 0.9rem;
+  padding: 3px 4px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+}
+.orbit-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: var(--success-color);
+  border-radius: 50%;
+  margin-right: 4px;
+  display: inline-block;
+}
+/* Animations */
+@keyframes rotateOrbit {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .orbit-system {
+    height: 320px;
+  }
+  
+  .orbit-line-1 {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .orbit-item {
+    --orbit-radius: 120px;
+  }
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-grid {
+    display: flex;
+    flex-direction: column-reverse; /* Orbite en haut, formulaire en bas */
+    gap: 1.5rem;
+  }
+  
+  .contact-form-wrapper,
+  .contact-info-wrapper {
+    width: 100%;
+    padding: 0;
+  }
+  
+  /* Pour s'assurer que les conteneurs prennent toute la largeur */
+  .contact-form-container,
+  .social-orbit-container {
+    width: 100%;
+    max-width: 100%;
+  }
+  .orbit-system {
+    height: 320px;
+  }
+  
+  .orbit-line-1 {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .orbit-item {
+    --orbit-radius: 120px;
+    width: 50px;
+    height: 50px;
+    margin-top: -20px;
+    margin-left: -20px;
+  }
+  
+  .profile-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-color);
+  }
+  
+}
+
+/* Ajustements spécifiques pour les très petits écrans */
+@media (max-width: 480px) {
+  .orbit-system {
+    height: 250px;
+  }
+
+  
+  .avatar-center {
+    /* padding-bottom: 1.8rem; */
+    width: 55px;
+    height: 55px;
+  }
+  
+  .orbit-line-1 {
+    width: 190px;
+    height: 190px;
+  }
+  
+  .orbit-line-2 {
+    width: 130px;
+    height: 130px;
+  }
+  
+  
+  .orbit-item {
+    --orbit-radius: 100px;
+    width: 35px;
+    height: 35px;
+    margin-top: -17.5px;
+    margin-left: -17.5px;
+  }
+   .orbit-name{
+  top:-57px;
+  /* z-index:1332; */
+  position :relative;
+  }
+  
+  /*
+  .orbit-title{
+    margin-top:5px;
+
+    margin-bottom:-30px;
+  }
+  .orbit-badge{
+    margin-top:25px;
+      margin-bottom: -55px;
+      z-index:-1;
+      } */
+}
