@@ -98,7 +98,7 @@
     height: auto !important;
   }
   .main-container.other-page {
-    max-height: calc(100vh - var(--footer-height) - 42px);
+    max-height: calc(100vh - var(--footer-height) - 70px);
   }
 
   /* Ajoutez cet espace sous la navbar mobile */
@@ -125,7 +125,7 @@
     margin-top: 25px;
   }
   .main-container {
-    margin-bottom: calc(var(--horizontal-nav-height) + 100px);
+    padding-bottom: calc(var(--horizontal-nav-height) + 100px);
   }
 
 }
