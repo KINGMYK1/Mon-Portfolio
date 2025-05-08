@@ -172,5 +172,54 @@
     "details": "Détails du projet",
     "moreDetails": "Voir plus de détails"
   },
-  "contact": "Contact"
+  
+    "contact": {
+      "title": "Contactez-moi",
+      "formTitle": "Envoyez-moi un message",
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "Votre adresse email",
+      "subject": "Sujet",
+      "message": "Message",
+      "messagePlaceholder": "Votre message ici...",
+      "send": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès! Je vous répondrai dans les plus brefs délais.",
+      "sendAnother": "Envoyer un autre message",
+      "error": "Une erreur est survenue. Veuillez réessayer ou me contacter directement par email.",
+      "submitting": "Envoi en cours...",
+      "contactInfo": "Mes informations de contact",
+      "emailMe": "M'envoyer un email",
+      "visitLinkedIn": "Visiter mon profil LinkedIn",
+      "visitGitHub": "Visiter mon profil GitHub",
+      "callMe": "M'appeler",
+      "faq": "Questions fréquentes",
+      "subjects": {
+        "general": "Discussion générale",
+        "project": "Discuter d'un projet",
+        "freelance": "Services freelance",
+        "quote": "Demande de devis"
+      },
+      "errors": {
+        "name": "Veuillez entrer votre nom",
+        "email": "Veuillez entrer votre email",
+        "emailInvalid": "Adresse email invalide",
+        "message": "Veuillez entrer un message",
+        "messageLength": "Le message doit contenir au moins 20 caractères"
+      },
+      "faq1": {
+        "question": "Quels services proposez-vous ?",
+        "answer": "Je propose des services de développement web et mobile, incluant la création de sites vitrines, d'applications web complexes et d'applications mobiles. Je travaille sur toute la stack technique, du frontend au backend."
+      },
+      "faq2": {
+        "question": "Comment se déroule une collaboration ?",
+        "answer": "Après un premier échange pour définir vos besoins, je vous propose un devis détaillé. Une fois accepté, nous établissons ensemble un planning avec des points d'étape réguliers pour assurer le suivi du projet jusqu'à sa livraison."
+      },
+      "faq3": {
+        "question": "Quels sont vos délais de réalisation ?",
+        "answer": "Les délais dépendent de la complexité du projet. Un site vitrine peut être réalisé en 2-3 semaines, tandis qu'une application complète peut prendre 1 à 3 mois. Je vous fournis toujours une estimation précise dans le devis initial."
+      }
+    }
+  
 }

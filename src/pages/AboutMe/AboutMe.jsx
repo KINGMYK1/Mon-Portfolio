@@ -142,7 +142,7 @@ const AboutMe = () => {
             
             {/* Partie Titre */}
             <div className="profile-info">
-              <h3 className=" text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
+              <h3 className=" text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
                 {aboutData.name}
               </h3>
               <p className="profile-title">
@@ -160,7 +160,7 @@ const AboutMe = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <div className="education-title text-center">
-              <h2 className=" text-center text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
+              <h2 className=" text-center text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
                 {t("about.education", "Formation")}
               </h2>
             </div>
@@ -187,7 +187,7 @@ const AboutMe = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.8 }}
         >
-           <h2 className=" text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
+           <h2 className=" text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
              {t("about.experience", "Expérience")}
            </h2>
           <div className="experiences-container">

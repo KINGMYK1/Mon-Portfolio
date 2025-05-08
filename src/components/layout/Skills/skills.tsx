@@ -94,7 +94,7 @@ const Skills = () => {
         transition={{ duration: 0.5 }}
         className="skills-header"
       >
-        <h2 className="section-title bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4  bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block">
         {t("about.skills")}
          
         </h2>
