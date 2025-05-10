@@ -4,13 +4,13 @@
     --footer-height: 7vh;
     --horizontal-nav-height: 60px;
   }
-  
-  .layout-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
     position: relative;
-  }
+}
   
   /* Section principale */
   
@@ -23,7 +23,7 @@
     
     /* Le footer est visible */
     .footer {
-      display: flex;
+      display: flex;  
     }
     
     /* La navbar horizontale est cachée */
@@ -75,4 +75,5 @@
       background-color: var(--color-grey-5);
       z-index: 100;
     } */
+    
   }
