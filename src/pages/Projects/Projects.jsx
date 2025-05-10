@@ -1,4 +1,4 @@
-import React, {  useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import "./Projects.css";
 import { FaGithub } from "react-icons/fa";
@@ -58,12 +58,19 @@ const projectsData = [
 const Projects = () => {
   const t = useTranslation();
   const prefersReducedMotion = useReducedMotion();
+  const [hoveredProject, setHoveredProject] = useState(null); // État pour gérer le hover
+
   useEffect(() => {
     // Initialise le suivi de souris pour l'effet de brillance
     initMouseTracking();
   }, []);
-  
-  // Nouvelles animations avancées (désactivées si l'utilisateur préfère réduire les animations)
+
+  const handleInteraction = (e, projectId) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setHoveredProject(hoveredProject === projectId ? null : projectId); // Basculer l'état
+  };
+
   const projectAnimation = {
     hidden: { opacity: 0, y: 30 },
     visible: (i) => ({
@@ -109,7 +116,7 @@ const Projects = () => {
       transition: { duration: 0.3, ease: "easeOut" }
     }
   };
-  
+
   return (
     <section className="projects-section" id="projects">
       <motion.div
@@ -134,7 +141,8 @@ const Projects = () => {
             custom={index}
             initial="hidden"
             whileInView="visible"
-            whileHover="hover"
+            whileHover={!hoveredProject ? "hover" : undefined} // Hover uniquement si aucune carte n'est active
+            onClick={(e) => handleInteraction(e, project.id)} // Gérer le clic sur mobile
             viewport={{ once: true, margin: "-50px" }}
             variants={projectAnimation}
           >
@@ -143,16 +151,17 @@ const Projects = () => {
                 src={project.image}
                 alt={t(project.titleKey)}
                 className="project-image"
-                loading={index < 2 ? "eager" : "lazy"} // Charge immédiatement les 2 premières images
+                loading={index < 2 ? "eager" : "lazy"}
               />
             </motion.div>
-            
-            <motion.div 
+
+            {/* Overlay qui s'affiche au survol ou au clic */}
+            <motion.div
               className="project-layer"
-              initial="rest"
-              whileHover="hover"
-              animate="rest"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: hoveredProject === project.id ? 1 : 0 }} // Afficher l'overlay si la carte est active
               variants={layerAnimation}
+              transition={{ duration: 0.3 }}
             >
               <motion.h4 
                 className="project-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent"
