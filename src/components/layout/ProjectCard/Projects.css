@@ -1,0 +1,122 @@
+/* Ajoutez ce CSS dans Projects.css */
+
+.project-box {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+    height: 300px;
+  }
+  
+  .project-image-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  /* Informations par défaut visibles */
+  .project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .tech-tag {
+    display: inline-block;
+    background: var(--main-color);
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-top: 5px;
+  }
+  
+  /* Overlay */
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(99, 102, 241, 0.9));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay-content {
+    padding: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .project-overlay-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .project-description {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .project-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .project-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .project-link:hover {
+    background: white;
+    color: var(--main-color);
+  }
+  
+  .details-button {
+    padding: 8px 16px;
+    background: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .details-button:hover {
+    background: white;
+    color: var(--main-color);
+  }

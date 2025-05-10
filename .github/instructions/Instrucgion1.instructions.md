@@ -1,0 +1,1 @@
+`je veux ameliorer la responisvité de mon application , et le terminer , j'ai deja developper plusieurs page mais ce qui me pose probleme c'est la disposition des componant , j'arrive pas trouver le bon bon equilibvre je suis resoluts a trouver la bonne solution meme si cela signifie revoir larchitecture `
