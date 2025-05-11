@@ -119,7 +119,9 @@ const Home = () => {
         )}
         <img 
           src="/Profil.png" 
-          alt="Home"
+          
+            alt="Photo de Mohamed Yehiya Koïta, développeur Full Stack" 
+
           loading="eager"
           fetchPriority="high"
           onLoad={() => setImageLoaded(true)}
