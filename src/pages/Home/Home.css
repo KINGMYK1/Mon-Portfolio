@@ -14,6 +14,8 @@
 :root {
   --bg-color:  #121212;
   --text-color: #333;
+  --secondary-color: #9333ea;
+
   --main-color: #754ef9;
   --white-color: #f8f9fa;
   --shadow-color: rgba(0, 0, 0, .2);
@@ -30,6 +32,10 @@
   --bg-color: #0b061f;
   --text-color: #fdfdfd;
   --shadow-color: rgba(0, 0, 0, .7);
+}
+a:focus, button:focus {
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
 }
 
 html {
@@ -378,7 +384,7 @@ span {
 
 @media (max-width: 768px) {
   .home {
-    padding: 0 3% 13rem;
+    padding: 0 3% 10rem;
     justify-content: center;
     text-align: center;
   }
@@ -392,7 +398,7 @@ span {
   }
 
   .home-content .social-media a {
-    margin: 2.5rem .75rem 3rem;
+    margin: 2.5rem .75rem 2rem;
   }
 
   .home .profession-container {
@@ -535,9 +541,92 @@ span {
 
   
 }
+@media (min-width: 450px) and (max-width: 550px) {
+  
+ .home .profession-box .profession:nth-child(1) {
+    transform: rotate(-90deg) translate(-120px, -230px);
+    
+}
+
+  .home .profession-box .profession:nth-child(1) i {
+    margin-right: 0;
+  }
+
+  .home .profession-box .profession:nth-child(2) {
+    transform: rotate(0deg) translate(0, -355px);
+  }
+
+  .home .profession-box .profession:nth-child(3) {
+    transform: rotate(90deg) translate(-130px, -501px);
+   
+}
+
+  .home .profession-box .profession:nth-child(4) {
+    transform: rotate(180deg) translate(-241px, -357px);
+    
+}
+
+  .home .profession-box .circle {
+    position: fixed;
+    width: 703px;
+    height: 703px;
+    z-index: -1;
+  }
+
+}
+@media (min-width: 550px) and (max-width: 768px) {
+.home .profession-container .overlay {
+    position: fixed;
+    top: 70rem;
+    left: 50%;
+    right: 0;
+    transform: rotate(90deg) translate(-69%, 48%) scaleY(3);
+    z-index:-3;
+   
+}
+.home .profession-box .profession {
+  
+  color: var(--main-color);
+  
+  background: transparent;
+  
+}
+  
+  .home .profession-box .circle {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    z-index: -1;
+  }
+
+
+   .home .profession-box .profession:nth-child(1) {
+    transform: rotate(-90deg) translate(-120px, -151px);
+    
+}
+
+  .home .profession-box .profession:nth-child(1) i {
+    margin-right: 0;
+  }
+
+  .home .profession-box .profession:nth-child(2) {
+    transform: rotate(0deg) translate(0, -274px);
+    
+}
+
+  .home .profession-box .profession:nth-child(3) {
+    transform: rotate(90deg) translate(-123px, -422px);
+    
+}
+
+  .home .profession-box .profession:nth-child(4) {
+    transform: rotate(180deg) translate(-245px, -282px);
+   
+}
+}
 @media (max-width: 450px) {
   .home {
-    padding: 15px 2% 13rem;
+    padding: 15px 2% 10rem;
     justify-content: center;
     text-align: center;
     flex-direction: column;
@@ -604,24 +693,28 @@ span {
   }
 
   .home .profession-box .profession:nth-child(1) {
-    transform: rotate(-90deg) translate(-120px, -210px);
-  }
+    transform: rotate(-90deg) translate(-136px, -200px);
+   
+}
 
   .home .profession-box .profession:nth-child(1) i {
     margin-right: 0;
   }
 
   .home .profession-box .profession:nth-child(2) {
-    transform: rotate(0deg) translate(0, -325px);
-  }
+    transform: rotate(0deg) translate(10px, -325px);
+   
+}
 
   .home .profession-box .profession:nth-child(3) {
-    transform: rotate(90deg) translate(-115px, -450px);
-  }
+    transform: rotate(90deg) translate(-122px, -465px);
+    
+}
 
   .home .profession-box .profession:nth-child(4) {
-    transform: rotate(180deg) translate(-220px, -325px);
-  }
+    transform: rotate(180deg) translate(-246px, -329px);
+    
+}
 
   .home .profession-box .circle {
     position: fixed;
@@ -642,3 +735,26 @@ span {
 
   
 }
+@media (max-width: 390px){
+ .home .profession-box .profession:nth-child(1) {
+    transform: rotate(-90deg) translate(-120px, -210px);
+  }
+
+  .home .profession-box .profession:nth-child(1) i {
+    margin-right: 0;
+  }
+
+  .home .profession-box .profession:nth-child(2) {
+    transform: rotate(0deg) translate(0, -340px);
+   
+}
+
+  .home .profession-box .profession:nth-child(3) {
+    transform: rotate(90deg) translate(-135px, -480px);
+   
+}
+
+  .home .profession-box .profession:nth-child(4) {
+    transform: rotate(180deg) translate(-236px, -343px);
+    
+}}

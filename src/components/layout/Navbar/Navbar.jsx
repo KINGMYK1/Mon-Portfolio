@@ -10,15 +10,19 @@ import {
   AiOutlineBook,
   AiOutlineMail,
 } from 'react-icons/ai';
-
+import {useLocation} from 'react-router-dom'
 const Navbar = () => {
+  const location  = useLocation();
+  const isHomePage = location.pathname === '/' ;
   const linkClasses = ({ isActive }) =>
     `nav-circle ${isActive ? 'active' : ''}`;
 
   return (
     <>
+
+    {/* className={`horizontal-nav ${isHomePage ? 'home-nav' : ''}`} */}
       {/* Navbar vertical pour les écrans larges */}
-      <div className="vertical-nav">
+      <div className={`vertical-nav ${isHomePage ?'home-nav-bar' : '' } `}>
         <NavLink to="/" className={linkClasses} title="Accueil">
           <AiOutlineHome className="nav-icon" />
         </NavLink>

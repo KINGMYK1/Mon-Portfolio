@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './HorizontalNav.css';
 import {
   AiOutlineHome,
@@ -7,13 +7,19 @@ import {
   AiOutlineBook,
   AiOutlineMail,
 } from 'react-icons/ai';
+import { NavLink } from 'react-router-dom';
 
 const HorizontalNav = () => {
+    const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  console.log('Is Home Page:', isHomePage);
+
   const linkClasses = ({ isActive }) =>
     `nav-circle ${isActive ? 'active' : ''}`;
 
   return (
-    <div className="horizontal-nav">
+    <div className={`horizontal-nav ${isHomePage ? 'home-nav' : ''}`} >
       <NavLink to="/" className={linkClasses} title="Accueil">
         <AiOutlineHome className="nav-icon" />
       </NavLink>

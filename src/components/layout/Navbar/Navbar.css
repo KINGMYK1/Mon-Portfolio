@@ -144,3 +144,23 @@
     font-size: 1.2rem;
   }
 }
+.vertical-nav.home-nav-bar   .nav-circle {
+  border-color: var(--main-color); /* Couleur spécifique pour la page Home */
+  background-color: var(--home-bg-color); /* Couleur de fond spécifique */
+  color: var(--main-color); /* Couleur des icônes spécifique */
+  }
+
+  .vertical-nav.home-nav-bar .nav-circle:hover {
+    background-color: var(--main-color); /* Couleur de fond au survol */
+    border-color: var(--border-color); /* Couleur de bordure au survol */
+  color: var(--icon-color); /* Couleur des icônes spécifique */
+
+  }
+    .vertical-nav.home-nav-bar .nav-circle.active {
+    /* background-color:var(--main-color); */
+  background-color: var(--home-bg-color); 
+
+    border-color: var(--main-color);
+    color: var(--icon-color);
+
+  } 

@@ -100,7 +100,7 @@ const Home = () => {
 
         <motion.a
           variants={textItemVariants(textDirection)}
-          href="/Mon-cv.pdf"
+          href="/Mohamed Yehiya Koita - CV.pdf"
           className="btn"
           download
         >

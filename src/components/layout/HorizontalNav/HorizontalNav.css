@@ -1,3 +1,12 @@
+:root {
+  --home-border-color: #ff6347; /* Exemple : rouge tomate */
+  --bg-color: #0b061f;
+
+  --home-bg-color: #121212; /* Exemple : rose clair */
+  --home-icon-color: #ff4500; /* Exemple : orange foncé */
+  --home-hover-bg-color: #ff4500; /* Exemple : orange foncé */
+  --home-hover-border-color: #ff6347; /* Exemple : rouge tomate */
+}
 .horizontal-nav {
     display: none; /* Caché par défaut */
     position: fixed;
@@ -11,6 +20,7 @@
     align-items: center;
     z-index: 100;
   }
+ 
   
   /* Cercles des icônes */
   .nav-circle {
@@ -18,11 +28,11 @@
     height: 50px;
     border-radius: 50%;
     background-color: var(--nav-circle-bg);
-    border: 2px solid var(--nav-circle-border);
+    border: 2px solid var(--main-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--icon-color);
+    color: var(--main-color);
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
   }
@@ -40,8 +50,10 @@
   
   /* État actif du lien */
   .nav-circle.active {
-    background-color: var(--nav-circle-active-bg);
-    border-color: var(--nav-circle-border);
+    background-color:var(--main-color);
+    border-color: var(--main-color);
+    color: var(--icon-color);
+
   }
   
   /* Responsive : afficher le HorizontalNav sur les petits écrans */
@@ -50,3 +62,28 @@
       display: flex; /* Afficher le navbar horizontal */
     }
   }
+
+
+@media (min-width: 550px) {
+
+.horizontal-nav.home-nav .nav-circle {
+  border-color: var(--main-color); /* Couleur spécifique pour la page Home */
+  background-color: var(--home-bg-color); /* Couleur de fond spécifique */
+  color: var(--main-color); /* Couleur des icônes spécifique */
+  }
+
+  .horizontal-nav.home-nav .nav-circle:hover {
+    background-color: var(--main-color); /* Couleur de fond au survol */
+    border-color: var(--border-color); /* Couleur de bordure au survol */
+  color: var(--icon-color); /* Couleur des icônes spécifique */
+
+  }
+    .horizontal-nav.home-nav .nav-circle.active {
+    /* background-color:var(--main-color); */
+  background-color: var(--home-bg-color); 
+
+    border-color: var(--main-color);
+    color: var(--icon-color);
+
+  }
+}
