@@ -3,19 +3,25 @@ import OpenAI from 'openai';
 // Récupération de la clé API depuis les variables d'environnement Vite
 const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
-// Vérification de la clé API
+// Vérification de la clé API avec message d'erreur plus explicite
 if (!apiKey) {
-  console.error("Erreur : La clé API OpenAI n'est pas définie dans les variables d'environnement");
+  console.error("⚠️ Erreur : Clé API OpenAI manquante dans les variables d'environnement.");
+  console.error("Veuillez créer un fichier .env à la racine du projet avec VITE_OPENAI_API_KEY=votre_clé");
 }
 
-// Création d'une instance OpenAI avec la clé API
-const openai = new OpenAI({
+// Création d'une instance OpenAI UNIQUEMENT si la clé existe
+const openai = apiKey ? new OpenAI({
   apiKey: apiKey,
-  dangerouslyAllowBrowser: true // Pour le développement uniquement
-});
+  dangerouslyAllowBrowser: true // Note: À utiliser avec précaution en production
+}) : null;
 
-// Fonction pour générer une réponse
+// Fonction pour générer une réponse avec vérification de l'API
 export const generateText = async (prompt) => {
+  // Vérifier si l'API est configurée
+  if (!openai) {
+    return "Configuration de l'API manquante. Veuillez contacter l'administrateur du site.";
+  }
+
   try {
     // Afficher un log pour débugger
     console.log("Envoi de requête à OpenAI avec prompt:", prompt.substring(0, 20) + "...");
