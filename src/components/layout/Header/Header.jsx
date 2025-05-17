@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import React, { useState, useEffect, useRef } from 'react';
-import  useTheme  from '../../../hooks/useTheme';
+import useTheme from '../../../hooks/useTheme';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import useTranslation from '../../../hooks/useTranslation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -9,13 +9,16 @@ import { Cog6ToothIcon, GlobeAltIcon, MoonIcon, SunIcon } from '@heroicons/react
 import { FaRobot } from "react-icons/fa";
 import './Header.css';
 import '../../../styles/animations.css';
+import AIAssistant from '../../ui/AIAssistant/AIAssistant';
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const { toggleLanguage } = useLanguage();
   const t = useTranslation();
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isAIAssistantOpen, setIsAIAssistantOpen] = useState(false);
   const settingsRef = useRef(null);
+  
   React.useEffect(() => {
     document.body.className = theme; // Appliquer la classe du thème au body
   }, [theme]);
@@ -31,6 +34,12 @@ const Header = () => {
       setIsSettingsOpen(false);
       console.log('Menu paramètres fermé par clic en dehors');
     }
+  };
+
+  const handleAIAssistantToggle = () => {
+    setIsAIAssistantOpen(prev => !prev);
+    // Fermer le menu des paramètres si ouvert
+    if (isSettingsOpen) setIsSettingsOpen(false);
   };
 
   useEffect(() => {
@@ -67,11 +76,11 @@ const Header = () => {
       <div className="header-title">Mohamed Yehiya Koïta</div>
 
       <div className="header-settings">
-          <Cog6ToothIcon 
-            onClick={handleSettingsClick} 
-            className="settings-icon" 
-            title={t('header.settings', 'Paramètres')}
-          />
+        <Cog6ToothIcon 
+          onClick={handleSettingsClick} 
+          className="settings-icon" 
+          title={t('header.settings', 'Paramètres')}
+        />
         <AnimatePresence>
           {isSettingsOpen && (
             <motion.div
@@ -125,6 +134,7 @@ const Header = () => {
                 exit="exit"
                 variants={iconVariants}
                 className="settings-option settings-option-robot"
+                onClick={handleAIAssistantToggle}
               >
                 <FaRobot 
                   className="settings-icon" 
@@ -135,6 +145,9 @@ const Header = () => {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Assistant IA */}
+      <AIAssistant isOpen={isAIAssistantOpen} onClose={() => setIsAIAssistantOpen(false)} />
     </header>
   );
 };

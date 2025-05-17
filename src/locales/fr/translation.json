@@ -95,36 +95,41 @@
       ]
     },
     "digicard": {
-      "title": "Stagiaire Développeur Mobile",
-      "company": "Digicard",
-      "location": "Casablanca, Morocco",
-      "dateStart": "Juillet 2024",
-      "dateEnd": "Septembre 2024",
-      "description": "Conception et développement d’une application mobile interne selon un cahier des charges.",
-      "details": "Durant mon stage chez Digicard, j'ai développé une application mobile de A à Z avec Expo React Native, un backend Node.js, et Realm pour la base locale.\n\nCette expérience m’a permis de perfectionner mes compétences en développement mobile et en intégration full‑stack.",
-      "tasks": [
-        "Conception des écrans UI suivant le cahier des charges",
-        "Développement avec Expo et React Native",
-        "Implémentation de la logique serveur avec Node.js et Express",
-        "Utilisation de Realm pour la gestion locale et le support hors‑ligne",
-        "Tests et débogage sur environnements Android"
-      ]
-    },
-    "gouvernancia": {
-      "title": "Stagiaire IT",
-      "company": "Gouvernancia",
-      "location": "Casablanca, Morocco",
-      "dateStart": "Août 2023",
-      "dateEnd": "Septembre 2023",
-      "description": "Maintenance et extension d’outils internes, création d’un script de journalisation SSH.",
-      "details": "Pendant mon stage, j’ai travaillé sur des outils internes existants pour ajouter des fonctionnalités, notamment un script d’enregistrement des sessions SSH via Apache Guacamole.\n\nJ’ai configuré et testé Guacamole et PuTTY, ce qui m’a permis d’approfondir mes connaissances en SSH.",
-      "tasks": [
-        "Ajout de fonctionnalités à des applications internes",
-        "Développement d’un script de journalisation SSH avec Apache Guacamole",
-        "Configuration et tests de Guacamole et PuTTY",
-        "Documentation des procédures et bonnes pratiques"
-      ]
-    },
+  "title": "Stagiaire Développeur Mobile",
+  "company": "Digicard",
+  "location": "Casablanca, Maroc",
+  "dateStart": "Juillet 2024",
+  "dateEnd": "Août 2024",
+  "description": "Développement d’une application mobile de scan et d’analyse de QR codes.",
+  "details": "Durant mon stage chez Digicard, j’ai participé au développement d’une application mobile conforme à un cahier des charges défini. L'application permet le scan de QR codes et l’analyse de leur sécurité via l’API VirusTotal. J’ai conçu une interface claire et conviviale, et intégré plusieurs modules comme la gestion des favoris, l’historique, et une authentification biométrique par empreinte digitale.\n\nSuite aux limitations liées à l’absence de scan hors ligne, une évolution vers une architecture hybride a été amorcée, avec l’utilisation de Realm pour la base de données locale et un backend Node.js pour la synchronisation. La version 1, fonctionnelle et stable, a été livrée avec documentation technique complète.",
+  "tasks": [
+    "Développement de l’interface mobile avec React Native (Expo)",
+    "Mise en œuvre du scan de QR codes et analyse via l’API VirusTotal",
+    "Création des modules Favoris et Historique avec persistance locale (Realm)",
+    "Ajout de l’authentification biométrique (empreinte digitale)",
+    "Refonte de l’architecture pour prise en charge future du mode hors ligne",
+    "Rédaction de la documentation technique du projet"
+  ]
+}
+,"gouvernancia": {
+  "title": "Stagiaire Développeur Web / Systèmes",
+  "company": "Gouvernancia",
+  "location": "Casablanca, Maroc",
+  "dateStart": "Juillet 2023",
+  "dateEnd": "Juillet 2023",
+  "description": "Exploration et amélioration de solutions d’enregistrement de sessions SSH.",
+  "details": "Lors de ce stage, j’ai travaillé sur l’enregistrement des sessions SSH pour des besoins internes de supervision. J’ai d’abord développé un script basé sur asciinema, qui permettait de lancer automatiquement l’enregistrement dès le début d’une session. Toutefois, le format de sortie n’étant pas compatible avec Apache Guacamole, j’ai ensuite étudié en profondeur ce dernier, en l’installant et en le testant à plusieurs reprises.\n\nCela m’a permis de découvrir que Guacamole intègre déjà une fonctionnalité native d’enregistrement des sessions SSH, qui peut être activée par configuration. Ce stage m’a offert une première immersion dans l’administration système et la mise en place d’outils de monitoring sécurisés.",
+  "tasks": [
+    "Développement d’un script automatisé d’enregistrement de session SSH avec asciinema",
+    "Analyse des limitations de compatibilité avec Apache Guacamole",
+    "Installation, configuration et tests de Guacamole en environnement local",
+    "Découverte et expérimentation de la fonctionnalité native d’enregistrement SSH",
+    "Utilisation de PuTTY et SSH pour les tests de connexion"
+    
+    
+  ]
+}
+,
     "buttons": {
       "back": "Retour",
       "backToExperiences": "Retour aux expériences"

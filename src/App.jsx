@@ -1,15 +1,20 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import AppRoutes from './routes/AppRoutes';
-import Starfield from './components/background/Starfield'; // ton background animé
+import Starfield from './components/background/Starfield';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
-import './styles/theme.css'; // Importer le fichier CSS des thèmes
-
+import { initEmailJS } from './services/emailService';
+import './styles/theme.css';
 
 function App() {
+  useEffect(() => {
+    // Initialiser EmailJS au démarrage de l'application
+    initEmailJS();
+  }, []);
+
   return (
     <BrowserRouter>
       <ThemeProvider  >

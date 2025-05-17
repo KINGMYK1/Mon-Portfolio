@@ -95,38 +95,41 @@
       ]
     },
     "digicard": {
-      "title": "Mobile Developer Intern",
-      "company": "Digicard",
-      "location": "RaCasablancabat, Morocco",
-      "dateStart": "Jully 2024",
-      "dateEnd": "September 2024",
-      "description": "Designed and built a mobile app based on provided specifications.",
-      "details": "During my internship at Digicard, I developed a mobile application for internal use from scratch based on a provided functional specification document. The app was developed using React Native with Expo, Node.js for the backend, and Realm for local storage.\n\nThis experience helped me enhance my skills in mobile development, local data handling, and full-stack integration in a real-world context.",
-      "tasks": [
-        "Designed UI screens following design specifications",
-        "Developed mobile app using Expo and React Native",
-        "Implemented backend logic with Node.js and Express",
-        "Used Realm for local database and offline support",
-        "Handled navigation, state management, and API integration",
-        "Tested and debugged features across Android environments"
-      ]
-    },
-    "gouvernancia": {
-      "title": "IT Intern",
-      "company": "Gouvernancia",
-      "location": "Casablanca, Morocco",
-      "dateStart": "August 2023",
-      "dateEnd": "September 2023",
-      "description": "Maintained and extended internal systems with added SSH logging features.",
-      "details": "My internship at Gouvernancia involved working on existing internal tools to enhance their functionality. I was particularly focused on developing a script that records SSH sessions using Apache Guacamole.\n\nI also gained practical experience with SSH, PuTTY, and server-side configuration by installing and reconfiguring Guacamole for testing and production use.",
-      "tasks": [
-        "Added new features to existing internal applications",
-        "Developed a script to log SSH sessions using Apache Guacamole",
-        "Configured and reinstalled Guacamole for testing purposes",
-        "Used PuTTY and SSH for secure server access and testing",
-        "Documented setup processes and best practices for future use"
-      ]
-    },
+  "title": "Mobile Developer Intern",
+  "company": "Digicard",
+  "location": "Casablanca, Morocco",
+  "dateStart": "July 2024",
+  "dateEnd": "August 2024",
+  "description": "Developed a mobile application for scanning and analyzing QR codes.",
+  "details": "During my internship at Digicard, I contributed to the development of a mobile application based on a detailed specifications document. The app included QR code scanning and security analysis using the VirusTotal API. I designed a clean and user-friendly interface and implemented key modules such as Favorites, History, and biometric authentication (fingerprint).\n\nFaced with the limitation of no offline scanning, I started redesigning the app toward a hybrid architecture using Realm as a local database and a Node.js backend for data synchronization. The version 1 of the app, fully functional without offline scanning, was delivered with complete technical documentation.",
+  "tasks": [
+    "Built the mobile UI using React Native (Expo)",
+    "Implemented QR code scanning and security checks via VirusTotal API",
+    "Developed Favorites and History modules using local storage (Realm)",
+    "Added fingerprint authentication for secure access",
+    "Redesigned architecture for potential offline scan support with sync logic",
+    "Wrote technical documentation for the project"
+  ]
+}
+,
+   "gouvernancia": {
+  "title": "IT Intern – Web & Systems",
+  "company": "Gouvernancia",
+  "location": "Casablanca, Morocco",
+  "dateStart": "July 2023",
+  "dateEnd": "July 2023",
+  "description": "Explored and implemented SSH session recording solutions.",
+  "details": "During my internship at Gouvernancia, I worked on setting up a system to record SSH sessions for internal monitoring. I first created a script using Asciinema to automatically start recording at session launch. However, due to format incompatibility with Apache Guacamole, I then explored and tested Guacamole by installing and configuring it multiple times.\n\nI discovered that Guacamole natively supports SSH session recording, which only requires proper activation. This internship gave me hands-on experience with server configuration, remote access tools, and secure session monitoring.",
+  "tasks": [
+    "Created a script using Asciinema to automate SSH session recording",
+    "Identified format limitations and incompatibility with Guacamole",
+    "Installed and configured Apache Guacamole for repeated testing",
+    "Explored Guacamole's built-in SSH session recording feature",
+    "Used PuTTY and SSH to test secure remote connections",
+    "Documented procedures and findings for internal use"
+  ]
+}
+,
    "buttons": {
     "back": "Back",
     "backToExperiences": "Back to experiences"

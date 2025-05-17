@@ -6,7 +6,11 @@
 @import './styles/themes.css';
 @import './styles/animations.css';
 @import './styles/performance.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Vos styles personnalisés */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; 
  

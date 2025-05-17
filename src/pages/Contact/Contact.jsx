@@ -2,11 +2,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import useTranslation from '../../hooks/useTranslation';
 // Ajoutez ces imports pour les nouvelles icônes
-
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 import { SiLeetcode } from 'react-icons/si';
 import OptimizedImage from '../../components/ui/OptimizedImage/OptimizedImage';
 import useTheme from '../../hooks/useTheme';
-import emailjs from '@emailjs/browser';
+import { sendEmail } from '../../services/emailService';
 import './Contact.css';
 import { 
   FaLinkedin, 
@@ -52,11 +54,6 @@ const Contact = () => {
     };
     
     checkMobile();
-    
-    // Configuration d'EmailJS
-    emailjs.init({
-      publicKey: "OxFutu7-O8y4U1W5C",
-    });
     
     // Animation aléatoire des icônes (facultatif - vous pouvez le garder ou le supprimer)
     const animationInterval = setInterval(() => {
@@ -129,26 +126,17 @@ const Contact = () => {
     });
 
     try {
-      // Préparation de l'objet à envoyer
-      const templateParams = {
+      // Utiliser notre service d'email unifié
+      await sendEmail({
+        // Ne pas préciser templateId pour utiliser le template par défaut
+        subject: getSubjectLabel(formData.subject),
         from_name: formData.name,
         from_email: formData.email,
-        subject: getSubjectLabel(formData.subject),
         message: formData.message,
-        time: new Date().toLocaleString() // Ajoute l'horodatage pour le template
-      };
-
-      // Vérifiez les valeurs avant l'envoi pour le débogage
-      console.log("Paramètres envoyés:", templateParams);
-
-      // Utilisez la nouvelle syntaxe d'EmailJS v3
-      const result = await emailjs.send(
-        "service_ukrprkh",
-        "template_fyggidq" ,       // Votre Template ID
-        templateParams            // Ne pas inclure la clé publique ici
-      );
-      
-      console.log("Résultat EmailJS:", result);
+        // Assurez-vous que ces variables sont bien reconnues
+        userName: formData.name,      // Ajout de cette ligne
+        userEmail: formData.email,    // Ajout de cette ligne
+      });
       
       // Email envoyé avec succès
       setSubmitStatus({
